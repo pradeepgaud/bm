@@ -262,7 +262,14 @@ export default function Navbar() {
                           </div>
 
                           <div className="mega-column">
-                            <h4>Ads And Campaigns</h4>
+                            <h4>
+                              <Link
+                                to="/ads-and-campaigns"
+                                onClick={handleMegaClose}
+                              >
+                                Ads And Campaigns
+                              </Link>
+                            </h4>
                             <ul>
                               <li>
                                 <Link to="/performance-marketing">
@@ -285,7 +292,14 @@ export default function Navbar() {
                           </div>
 
                           <div className="mega-column">
-                            <h4>Social Media Management</h4>
+                            <h4>
+                              <Link
+                                to="/social-media-management"
+                                onClick={handleMegaClose}
+                              >
+                                Social Media Management
+                              </Link>
+                            </h4>
                             <ul>
                               <li>
                                 <Link to="#">Brand Awareness</Link>
