@@ -67,7 +67,7 @@ const ServiceSectionCard = () => {
                   </div>
                   <h4 className="title">
                     <Link to="/ads-and-campaigns">Ads And Campaigns</Link>
-                    <a href="page-service-details.html">Brand Strategy</a>
+                    {/* <a href="page-service-details.html">Brand Strategy</a> */}
                   </h4>
                   <div className="text">
                     It is a long established fact that a reader will be
