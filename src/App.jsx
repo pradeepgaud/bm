@@ -20,6 +20,8 @@ import NewHome from "./pages/Home/NewHome";
 // import ReactDetailscopy from "./pages/Web Development/ReactDetailscopy";
 import PerformanceMarketing from "./pages/performance Marketing/PerformanceMarketing";
 import ShopifyDetails from "./pages/Web Development/ShopifyDetails";
+import SocialMediaManagement from "./pages/SocialMediaManagement/SocialMediaManagement";
+// import AdsAndCampaigns from "./pages/AdsAndCampaigns/AdsAndCampaigns";
 
 // LAZY LOAD PAGES 🚀
 const Home = lazy(() => import("./pages/Home/Home"));
@@ -30,6 +32,9 @@ const WebDevelopment = lazy(
 );
 const WebDevelopmentNew = lazy(
   () => import("./pages/Web Development/WebDevelopmentNew"),
+);
+const AdsAndCampaigns = lazy(
+  () => import("./pages/AdsAndCampaigns/AdsAndCampaigns"),
 );
 const ServiceDetails = lazy(
   () => import("./components/ServicePage/ServiceDetails"),
@@ -85,6 +90,8 @@ function App() {
               path="/web-development-new"
               element={<WebDevelopmentNew />}
             />
+            <Route path="/ads-and-campaigns" element={<AdsAndCampaigns />} />
+            <Route path="/social-media-management" element={<SocialMediaManagement />} />
             <Route path="/react" element={<ReactDetails />} />
             <Route
               path="/performance-marketing"

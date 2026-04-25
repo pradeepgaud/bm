@@ -66,14 +66,14 @@ const ServiceSectionCard = () => {
                     <img src={service2Icon} alt="" />
                   </div>
                   <h4 className="title">
-                    <Link to="/web-development">Brand Strategy</Link>
+                    <Link to="/ads-and-campaigns">Ads And Campaigns</Link>
                     <a href="page-service-details.html">Brand Strategy</a>
                   </h4>
                   <div className="text">
                     It is a long established fact that a reader will be
                     distracted by the readable
                   </div>
-                  <Link to="/web-development" className="arrow-link">
+                  <Link to="/ads-and-campaigns" className="arrow-link">
                     View Details
                     <svg width="19" height="16" viewBox="0 0 19 16">
                       <path
@@ -102,13 +102,15 @@ const ServiceSectionCard = () => {
                     <img src={service1Icon} alt="" />
                   </div>
                   <h4 className="title">
-                    <Link to="/service-details">UI/UX Design</Link>
+                    <Link to="/social-media-management">
+                      Social Media Management
+                    </Link>
                   </h4>
                   <div className="text">
                     It is a long established fact that a reader will be
                     distracted by the readable
                   </div>
-                  <Link to="/service-details" className="arrow-link">
+                  <Link to="/social-media-management" className="arrow-link">
                     View Details
                     <svg width="19" height="16" viewBox="0 0 19 16">
                       <path
