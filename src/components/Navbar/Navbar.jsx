@@ -342,7 +342,14 @@ export default function Navbar() {
                           </div>
 
                           <div className="mega-column">
-                            <h4>SEO Optimizing</h4>
+                            <h4>
+                              <Link
+                                to="/seo-optimizing"
+                                onClick={handleMegaClose}
+                              >
+                                SEO Optimizing
+                              </Link>
+                            </h4>
                             <ul>
                               <li>
                                 <Link to="#">Organic Traffic</Link>

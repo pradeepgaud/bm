@@ -164,7 +164,7 @@ const ServiceSectionCard = () => {
           {/* Service 5 */}
           <div
             className="col-xl-4 col-lg-6 col-sm-6 wow fadeInUp"
-            data-wow-delay=".5s"
+            data-wow-delay=".3s"
           >
             <div className="service-block-one">
               <div className="inner-block">
@@ -175,13 +175,14 @@ const ServiceSectionCard = () => {
                     <img src={service5Icon} alt="" />
                   </div>
                   <h4 className="title">
-                    <a href="page-service-details.html">Search Optimization</a>
+                    {/* <a href="page-service-details.html">UI/UX And Audits</a> */}
+                    <Link to="/seo-optimizing">SEO Optimizing</Link>
                   </h4>
                   <div className="text">
                     It is a long established fact that a reader will be
                     distracted by the readable
                   </div>
-                  <a href="page-service-details.html" className="arrow-link">
+                  <Link to="/seo-optimizing" className="arrow-link">
                     View Details
                     <svg width="19" height="16" viewBox="0 0 19 16">
                       <path
@@ -190,7 +191,7 @@ const ServiceSectionCard = () => {
                         strokeWidth="1.5"
                       />
                     </svg>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
