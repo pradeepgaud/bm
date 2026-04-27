@@ -317,7 +317,14 @@ export default function Navbar() {
                           </div>
 
                           <div className="mega-column">
-                            <h4>UI/UX And Audits</h4>
+                            <h4>
+                              <Link
+                                to="/ui-ux-audits"
+                                onClick={handleMegaClose}
+                              >
+                                UI/UX And Audits
+                              </Link>
+                            </h4>
                             <ul>
                               <li>
                                 <Link to="#">Custom Web Design</Link>

@@ -21,7 +21,6 @@ import NewHome from "./pages/Home/NewHome";
 import PerformanceMarketing from "./pages/performance Marketing/PerformanceMarketing";
 import ShopifyDetails from "./pages/Web Development/ShopifyDetails";
 import SocialMediaManagement from "./pages/SocialMediaManagement/SocialMediaManagement";
-// import AdsAndCampaigns from "./pages/AdsAndCampaigns/AdsAndCampaigns";
 
 // LAZY LOAD PAGES 🚀
 const Home = lazy(() => import("./pages/Home/Home"));
@@ -36,6 +35,7 @@ const WebDevelopmentNew = lazy(
 const AdsAndCampaigns = lazy(
   () => import("./pages/AdsAndCampaigns/AdsAndCampaigns"),
 );
+const UiUx = lazy(() => import("./pages/Uiux/UiUx"));
 const ServiceDetails = lazy(
   () => import("./components/ServicePage/ServiceDetails"),
 );
@@ -91,7 +91,12 @@ function App() {
               element={<WebDevelopmentNew />}
             />
             <Route path="/ads-and-campaigns" element={<AdsAndCampaigns />} />
-            <Route path="/social-media-management" element={<SocialMediaManagement />} />
+            <Route path="/ui-ux-audits" element={<UiUx />} />
+            <Route
+              path="/social-media-management"
+              element={<SocialMediaManagement />}
+            />
+
             <Route path="/react" element={<ReactDetails />} />
             <Route
               path="/performance-marketing"
