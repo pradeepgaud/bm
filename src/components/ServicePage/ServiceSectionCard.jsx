@@ -34,8 +34,8 @@ const ServiceSectionCard = () => {
                     <Link to="/web-development-new">Web Development</Link>
                   </h4>
                   <div className="text">
-                    It is a long established fact that a reader will be
-                    distracted by the readable
+                    Build fast, responsive websites designed to convert visitors
+                    into customers.
                   </div>
                   <Link to="/web-development-new" className="arrow-link">
                     View Details
@@ -67,11 +67,10 @@ const ServiceSectionCard = () => {
                   </div>
                   <h4 className="title">
                     <Link to="/ads-and-campaigns">Ads And Campaigns</Link>
-                    {/* <a href="page-service-details.html">Brand Strategy</a> */}
                   </h4>
                   <div className="text">
-                    It is a long established fact that a reader will be
-                    distracted by the readable
+                    Run targeted ad campaigns that drive quality leads and
+                    maximize ROI
                   </div>
                   <Link to="/ads-and-campaigns" className="arrow-link">
                     View Details
@@ -107,8 +106,8 @@ const ServiceSectionCard = () => {
                     </Link>
                   </h4>
                   <div className="text">
-                    It is a long established fact that a reader will be
-                    distracted by the readable
+                    Grow your brand presence with engaging content and
+                    consistent social strategies.
                   </div>
                   <Link to="/social-media-management" className="arrow-link">
                     View Details
@@ -143,8 +142,8 @@ const ServiceSectionCard = () => {
                     <Link to="/ui-ux-audits">UI/UX And Audits</Link>
                   </h4>
                   <div className="text">
-                    It is a long established fact that a reader will be
-                    distracted by the readable
+                    Improve user experience with data-driven audits and
+                    optimized design flow.
                   </div>
                   <Link to="/ui-ux-audits" className="arrow-link">
                     View Details
@@ -179,8 +178,8 @@ const ServiceSectionCard = () => {
                     <Link to="/seo-optimizing">SEO Optimizing</Link>
                   </h4>
                   <div className="text">
-                    It is a long established fact that a reader will be
-                    distracted by the readable
+                    Boost your visibility on Google with strategic SEO and
+                    performance tracking.
                   </div>
                   <Link to="/seo-optimizing" className="arrow-link">
                     View Details
@@ -198,9 +197,10 @@ const ServiceSectionCard = () => {
           </div>
 
           {/* Service 6 */}
+
           <div
             className="col-xl-4 col-lg-6 col-sm-6 wow fadeInUp"
-            data-wow-delay=".7s"
+            data-wow-delay=".3s"
           >
             <div className="service-block-one">
               <div className="inner-block">
@@ -211,13 +211,13 @@ const ServiceSectionCard = () => {
                     <img src={service6Icon} alt="" />
                   </div>
                   <h4 className="title">
-                    <a href="page-service-details.html">Digital Marketing</a>
+                    <Link to="ecommerce-management">Ecommerce Management</Link>
                   </h4>
                   <div className="text">
-                    It is a long established fact that a reader will be
-                    distracted by the readable
+                    Manage and scale your online store with optimized listings
+                    and conversion strategies.
                   </div>
-                  <a href="page-service-details.html" className="arrow-link">
+                  <Link to="/ecommerce-management" className="arrow-link">
                     View Details
                     <svg width="19" height="16" viewBox="0 0 19 16">
                       <path
@@ -226,7 +226,42 @@ const ServiceSectionCard = () => {
                         strokeWidth="1.5"
                       />
                     </svg>
-                  </a>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Service 7 */}
+          <div
+            className="col-xl-4 col-lg-6 col-sm-6 wow fadeInUp"
+            data-wow-delay=".3s"
+          >
+            <div className="service-block-one">
+              <div className="inner-block">
+                <span className="dot"></span>
+                <span className="number">07</span>
+                <div className="content-box">
+                  <div className="icon">
+                    <img src={service1Icon} alt="" />
+                  </div>
+                  <h4 className="title">
+                    <Link to="/brand-identity">Brand Identity</Link>
+                  </h4>
+                  <div className="text">
+                    Create a strong brand image with impactful design and
+                    consistent visual identity.
+                  </div>
+                  <Link to="/brand-identity" className="arrow-link">
+                    View Details
+                    <svg width="19" height="16" viewBox="0 0 19 16">
+                      <path
+                        d="M0 8.00008L15 8.00008M18.3361 8.01939C15.2241 7.82927 9 9.16017 9 16.0048M18.3361 7.98545C15.2241 8.17558 9 6.84467 9 0"
+                        stroke="#FF6B1E"
+                        strokeWidth="1.5"
+                      />
+                    </svg>
+                  </Link>
                 </div>
               </div>
             </div>

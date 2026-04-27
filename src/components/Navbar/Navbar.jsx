@@ -367,7 +367,14 @@ export default function Navbar() {
                           </div>
 
                           <div className="mega-column">
-                            <h4>Ecommerce Management</h4>
+                            <h4>
+                              <Link
+                                to="/ecommerce-management"
+                                onClick={handleMegaClose}
+                              >
+                                Ecommerce Management
+                              </Link>
+                            </h4>
                             <ul>
                               <li>
                                 <Link to="#">Amazon Management</Link>
@@ -380,6 +387,31 @@ export default function Navbar() {
                               </li>
                               <li>
                                 <Link to="#">Snapdeal Management</Link>
+                              </li>
+                            </ul>
+                          </div>
+
+                          <div className="mega-column">
+                            <h4>
+                              <Link
+                                to="/brand-identity"
+                                onClick={handleMegaClose}
+                              >
+                                Brand Identity
+                              </Link>
+                            </h4>
+                            <ul>
+                              <li>
+                                <Link to="#">Logo Design</Link>
+                              </li>
+                              <li>
+                                <Link to="#">Promotional Material Design</Link>
+                              </li>
+                              <li>
+                                <Link to="#">Corporate Identity Design</Link>
+                              </li>
+                              <li>
+                                <Link to="#">Corporate Presentations</Link>
                               </li>
                             </ul>
                           </div>

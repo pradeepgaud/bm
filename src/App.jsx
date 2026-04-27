@@ -42,6 +42,15 @@ const UiUx = lazy(() => import("./pages/Uiux/UiUx"));
 const SEOOptimizing = lazy(
   () => import("./pages/SEO Optimizing/SEOOptimizing"),
 );
+
+const EcomManagement = lazy(
+  () => import("./pages/Ecom Management/EcomManagement"),
+);
+
+const BrandIdentity = lazy(
+  () => import("./pages/Brand Identity/BrandIdentity"),
+);
+
 const ServiceDetails = lazy(
   () => import("./components/ServicePage/ServiceDetails"),
 );
@@ -99,6 +108,8 @@ function App() {
             <Route path="/ads-and-campaigns" element={<AdsAndCampaigns />} />
             <Route path="/ui-ux-audits" element={<UiUx />} />
             <Route path="/seo-optimizing" element={<SEOOptimizing />} />
+            <Route path="/ecommerce-management" element={<EcomManagement />} />
+            <Route path="/brand-identity" element={<BrandIdentity />} />
             <Route
               path="/social-media-management"
               element={<SocialMediaManagement />}
