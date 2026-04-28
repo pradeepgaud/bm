@@ -750,7 +750,10 @@ export default function Navbar() {
                 </a>
               </li>
               <li>
-                <a href="#" aria-label="Instagram">
+                <a
+                  href="https://www.instagram.com/brandmingo?igsh=MWRjY2h5ZHJxMGZseQ%3D%3D"
+                  aria-label="Instagram"
+                >
                   <IconInstagram />
                 </a>
               </li>
