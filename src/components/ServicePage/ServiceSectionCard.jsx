@@ -749,7 +749,8 @@ const LOTTIE_SRCS = {
   seo: "https://lottie.host/66ac1cbb-d906-44b8-8725-f5aaa788f549/LnWeYDVb96.lottie",
   ecommerce:
     "https://lottie.host/631d8e50-0d72-4394-9b70-f8238c8fcabe/DzBa2qZPBS.lottie",
-  brand: "https://cdnl.iconscout.com/lottie/premium/preview-watermark",
+  brand:
+    "https://lottie.host/f0ecf788-6465-47be-a8f8-f21feb4e662e/Jy1zxAcsMq.lottie",
 };
 
 const LottieIcon = ({ type }) => (
