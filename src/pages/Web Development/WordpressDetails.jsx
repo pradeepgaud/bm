@@ -5,17 +5,15 @@ import d1 from "../../assets/images/resource/service-d1.jpg";
 import d2 from "../../assets/images/resource/service-d2.jpg";
 import RelatedServices from "../../components/RelatedServices/RelatedServices";
 import PortfolioSlider from "../../components/PortfolioSlider/PortfolioSlider";
-import ReactExpertiseDetails from "../../components/ReactExpertiseDetails/ReactExpertiseDetails";
-import TechnologyStack from "../../components/TechnologyStack/TechnologyStack";
-// import ReactExpertiseTabs from "../../components/ReactExpertiseTabs/ModernDigital";
-import WhyChooseBrandmingo from "../../servicespags/ReactComponents/WhyChooseBrandmingo";
-import CtaBanner from "../../servicespags/ReactComponents/CtaBanner";
-import EngagementModels from "../../servicespags/ReactComponents/EngagementModels";
-import PricingSection from "../../servicespags/ReactComponents/PricingSection";
-import ReactDetailsHero from "../../servicespags/ReactComponents/ReactDetailsHero";
-import ProcessSection from "../../servicespags/ReactComponents/ProcessSection";
-import PricingPlans from "../../servicespags/ReactComponents/PricingPlans";
-import ModernDigital from "../../components/ReactExpertiseTabs/ModernDigital";
+import WordpressDetailsHero from "../../servicespags/wordPressComponents/WordpressDetailsHero";
+import WordpressExpertiseDetails from "../../servicespags/wordPressComponents/WordpressExpertiseDetails";
+import WordpressProcessSection from "../../servicespags/wordPressComponents/WordpressProcessSection";
+import WordpressModernDigital from "../../servicespags/wordPressComponents/WordpressModernDigital";
+import WordpressCtaBanner from "../../servicespags/wordPressComponents/WordpressCtaBanner";
+import WordpressPricingPlans from "../../servicespags/wordPressComponents/WordpressPricingPlans";
+import WordpressWhyChooseBm from "../../servicespags/wordPressComponents/WordpressWhyChooseBm";
+import WordpressEngagementModels from "../../servicespags/wordPressComponents/WordpressEngagementModels";
+import WordpressPricingSection from "../../servicespags/wordPressComponents/WordpressPricingSection";
 
 const THEME = "#ff6b1e";
 
@@ -78,7 +76,7 @@ const WordpressDetails = () => {
 `}</style>
 
       {/* HERO */}
-      <ReactDetailsHero />
+      <WordpressDetailsHero />
 
       {/* MAIN */}
       <section
@@ -763,39 +761,35 @@ const WordpressDetails = () => {
                     </div>
                   </div>
 
-                  <div className="tech-stack-section">
-                    <TechnologyStack />
-                  </div>
-
                   <div className="react-expertise-section">
-                    <ReactExpertiseDetails />
+                    <WordpressExpertiseDetails />
                   </div>
 
                   {/* S6 */}
                   <div className="process-section-wrapper">
-                    <ProcessSection />
+                    <WordpressProcessSection />
                   </div>
 
                   <div className="modern-cta-section">
-                    <ModernDigital />
-                    <CtaBanner />
+                    <WordpressModernDigital />
+                    <WordpressCtaBanner />
                   </div>
 
                   {/* PricingPlans */}
                   <div className="pricing-section">
-                    <PricingPlans />
+                    <WordpressPricingPlans />
                   </div>
 
                   <div className="why-brandmingo-section">
-                    <WhyChooseBrandmingo />
+                    <WordpressWhyChooseBm />
                   </div>
 
                   <div className="engagement-section">
-                    <EngagementModels />
+                    <WordpressEngagementModels />
                   </div>
 
                   <div className="pricing-final-section">
-                    <PricingSection />
+                    <WordpressPricingSection />
                   </div>
 
                   {/* FAQ */}
