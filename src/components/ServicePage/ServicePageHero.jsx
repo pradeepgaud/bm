@@ -1,42 +1,8 @@
-// import React from "react";
-// import { Link } from "react-router-dom";
-// import pageTitleBg from "../../assets/images/background/page-title.jpg";
-
-// const ServicePageHero = ({ title = "Services" }) => {
-//   return (
-//     <section
-//       className="page-title"
-//       style={{
-//         backgroundImage: `url(${pageTitleBg})`,
-//       }}
-//     >
-//       <div className="auto-container">
-//         <div className="title-outer text-center">
-//           <h1 className="title">{title}</h1>
-
-//           <ul className="page-breadcrumb">
-//             <li>
-//               <Link to="/">Home</Link>
-//             </li>
-//             <li>{title}</li>
-//           </ul>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default ServicePageHero;
-
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
-/* ═══════════════════════════════════════════════
-   Floating Animated Service Icons (right side)
-═══════════════════════════════════════════════ */
 const FloatingIcons = () => (
   <div className="sph-icons" aria-hidden="true">
-    {/* Card 1 — Web Dev */}
     <div className="sph-fcard sph-fcard--1">
       <div className="sph-fcard__ico">
         <svg
@@ -63,7 +29,6 @@ const FloatingIcons = () => (
       <div className="sph-fcard__dot" />
     </div>
 
-    {/* Card 2 — SEO */}
     <div className="sph-fcard sph-fcard--2">
       <div className="sph-fcard__ico">
         <svg
@@ -89,7 +54,6 @@ const FloatingIcons = () => (
       <div className="sph-fcard__dot" />
     </div>
 
-    {/* Card 3 — Ads */}
     <div className="sph-fcard sph-fcard--3">
       <div className="sph-fcard__ico">
         <svg
@@ -112,7 +76,6 @@ const FloatingIcons = () => (
       <div className="sph-fcard__dot" />
     </div>
 
-    {/* Card 4 — Brand */}
     <div className="sph-fcard sph-fcard--4">
       <div className="sph-fcard__ico">
         <svg
@@ -135,7 +98,6 @@ const FloatingIcons = () => (
       <div className="sph-fcard__dot" />
     </div>
 
-    {/* Central Orbit Ring */}
     <div className="sph-orbit">
       <div className="sph-orbit__ring sph-orbit__ring--1" />
       <div className="sph-orbit__ring sph-orbit__ring--2" />
@@ -155,11 +117,9 @@ const FloatingIcons = () => (
           <path d="M2 12l10 5 10-5" />
         </svg>
       </div>
-      {/* Orbiting dot */}
       <div className="sph-orbit__dot" />
     </div>
 
-    {/* Stat badge */}
     <div className="sph-stat">
       <span className="sph-stat__num">
         200<span>+</span>
@@ -167,7 +127,6 @@ const FloatingIcons = () => (
       <span className="sph-stat__lbl">Projects Done</span>
     </div>
 
-    {/* Floating particles */}
     <span className="sph-particle sph-particle--a" />
     <span className="sph-particle sph-particle--b" />
     <span className="sph-particle sph-particle--c" />
@@ -175,11 +134,7 @@ const FloatingIcons = () => (
   </div>
 );
 
-/* ═══════════════════════════════════════════════
-   Inline CSS (scoped, uses theme CSS vars)
-═══════════════════════════════════════════════ */
 const CSS = `
-  /* ── Wrap ── */
   .sph-section {
     position: relative;
     background: var(--body-bg, #0d0d0d);
@@ -189,8 +144,6 @@ const CSS = `
     display: flex;
     align-items: center;
   }
-
-  /* ── Background effects (no image) ── */
   .sph-section::before {
     content: "";
     position: absolute;
@@ -209,8 +162,6 @@ const CSS = `
     pointer-events: none;
     z-index: 0;
   }
-
-  /* Horizontal rule line */
   .sph-rule {
     position: absolute;
     bottom: 0; left: 0; right: 0;
@@ -218,8 +169,6 @@ const CSS = `
     background: linear-gradient(90deg, transparent, rgba(255,107,30,0.25) 35%, rgba(255,107,30,0.25) 65%, transparent);
     z-index: 1;
   }
-
-  /* ── Container ── */
   .sph-inner {
     position: relative;
     z-index: 2;
@@ -232,10 +181,7 @@ const CSS = `
     padding: 0 24px;
     width: 100%;
   }
-
-  /* ── Left side ── */
   .sph-left { position: relative; }
-
   .sph-tag {
     display: inline-flex;
     align-items: center;
@@ -263,8 +209,6 @@ const CSS = `
     text-transform: uppercase;
     letter-spacing: 2.5px;
   }
-
-  /* Title */
   .sph-title {
     font-family: var(--heading-font-family, 'Poppins', sans-serif);
     font-size: clamp(36px, 5vw, 64px);
@@ -287,8 +231,6 @@ const CSS = `
     background: linear-gradient(90deg, #FF6B1E, transparent);
     border-radius: 2px;
   }
-
-  /* Desc */
   .sph-desc {
     font-family: var(--body-font-family, 'Mont', sans-serif);
     font-size: 15px;
@@ -299,8 +241,6 @@ const CSS = `
     max-width: 440px;
     margin-bottom: 36px;
   }
-
-  /* Breadcrumb */
   .sph-breadcrumb {
     display: flex;
     align-items: center;
@@ -336,15 +276,11 @@ const CSS = `
     color: #FF6B1E;
     font-weight: 600;
   }
-
-  /* ── RIGHT: Floating Icons area ── */
   .sph-icons {
     position: relative;
     width: 100%;
     height: 440px;
   }
-
-  /* Orbit */
   .sph-orbit {
     position: absolute;
     top: 50%; left: 50%;
@@ -360,7 +296,6 @@ const CSS = `
   .sph-orbit__ring--1 { width: 160px; height: 160px; animation: sph-spin 18s linear infinite; }
   .sph-orbit__ring--2 { width: 220px; height: 220px; animation: sph-spin 28s linear infinite reverse; border-color: rgba(255,107,30,0.1); }
   @keyframes sph-spin { to { transform: rotate(360deg); } }
-
   .sph-orbit__core {
     width: 72px; height: 72px;
     border-radius: 18px;
@@ -374,7 +309,6 @@ const CSS = `
     0%,100% { box-shadow: 0 0 0 0 rgba(255,107,30,0.3); }
     50% { box-shadow: 0 0 0 16px rgba(255,107,30,0); }
   }
-
   .sph-orbit__dot {
     position: absolute;
     width: 10px; height: 10px;
@@ -387,8 +321,6 @@ const CSS = `
     box-shadow: 0 0 8px rgba(255,107,30,0.6);
   }
   @keyframes sph-orbit-dot { to { transform: rotate(360deg); } }
-
-  /* Floating cards */
   .sph-fcard {
     position: absolute;
     display: flex;
@@ -409,15 +341,12 @@ const CSS = `
     border-color: rgba(255,107,30,0.35);
     box-shadow: 0 12px 32px rgba(0,0,0,0.4);
   }
-
   .sph-fcard--1 { top: 4%;  left: -8%;  animation: sph-float1 4s 0s    infinite ease-in-out alternate; }
   .sph-fcard--2 { top: 30%; right: -4%; animation: sph-float2 4.5s 0.6s infinite ease-in-out alternate; }
   .sph-fcard--3 { bottom: 28%; left: -6%; animation: sph-float1 3.8s 1.2s infinite ease-in-out alternate; }
   .sph-fcard--4 { bottom: 5%; right: 0%; animation: sph-float2 4.2s 0.3s infinite ease-in-out alternate; }
-
   @keyframes sph-float1 { from { transform: translateY(0px); } to { transform: translateY(-12px); } }
   @keyframes sph-float2 { from { transform: translateY(0px); } to { transform: translateY(10px); } }
-
   .sph-fcard__ico {
     width: 42px; height: 42px;
     border-radius: 10px;
@@ -426,9 +355,7 @@ const CSS = `
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
   }
-  .sph-fcard__txt {
-    display: flex; flex-direction: column; gap: 3px;
-  }
+  .sph-fcard__txt { display: flex; flex-direction: column; gap: 3px; }
   .sph-fcard__label {
     font-family: var(--heading-font-family, 'Poppins', sans-serif);
     font-size: 12.5px; font-weight: 600;
@@ -449,8 +376,6 @@ const CSS = `
     flex-shrink: 0;
     animation: sph-blink 2s infinite;
   }
-
-  /* Stat badge */
   .sph-stat {
     position: absolute;
     top: 50%; right: -2%;
@@ -476,8 +401,6 @@ const CSS = `
     text-transform: uppercase; letter-spacing: 1.5px;
     white-space: nowrap;
   }
-
-  /* Particles */
   .sph-particle {
     position: absolute;
     border-radius: 50%;
@@ -504,7 +427,12 @@ const CSS = `
     .sph-fcard--2 { top: 2%;  right: 0%; }
     .sph-fcard--3 { bottom: 2%; left: 0%; }
     .sph-fcard--4 { bottom: 2%; right: 0%; }
-    .sph-stat { right: 50%; transform: translate(50%, -50%); }
+
+    /* ✅ CHANGE 1: "What We Offer" tag top spacing on mobile */
+    .sph-tag { margin-top: 24px; }
+
+    /* ✅ CHANGE 2: Stat badge shifted slightly left on mobile */
+    .sph-stat { right: auto; left: 10%; transform: translateY(-50%); }
   }
 
   @media (max-width: 767px) {
@@ -533,39 +461,25 @@ const CSS = `
   }
 `;
 
-/* ═══════════════════════════════════════════════
-   Component
-═══════════════════════════════════════════════ */
 const ServicePageHero = ({ title = "Services" }) => {
   return (
     <>
       <style>{CSS}</style>
-
       <section className="sph-section">
-        {/* Decorative layers */}
         <div className="sph-rule" aria-hidden="true" />
-
         <div className="sph-inner">
-          {/* ── LEFT ── */}
           <div className="sph-left">
-            {/* Tag pill */}
             <div className="sph-tag" aria-hidden="true">
               <span className="sph-tag__dot" />
               <span className="sph-tag__text">What We Offer</span>
             </div>
-
-            {/* Heading */}
             <h1 className="sph-title">
               Our <span>{title}</span>
             </h1>
-
-            {/* Description */}
             <p className="sph-desc">
               We craft digital experiences that drive real business growth. From
               strategy to execution — everything under one roof.
             </p>
-
-            {/* Breadcrumb */}
             <ul className="sph-breadcrumb">
               <li>
                 <Link to="/">Home</Link>
@@ -573,8 +487,6 @@ const ServicePageHero = ({ title = "Services" }) => {
               <li>{title}</li>
             </ul>
           </div>
-
-          {/* ── RIGHT ── */}
           <FloatingIcons />
         </div>
       </section>
