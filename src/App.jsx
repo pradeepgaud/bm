@@ -1,5 +1,5 @@
 import { useEffect, useState, lazy, Suspense } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import AOS from "aos";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
@@ -9,20 +9,17 @@ import "./assets/css/style.css";
 import "./assets/css/responsive.css";
 import "aos/dist/aos.css";
 
-// COMPONENTS (normal load)
+// COMPONENTS
 import Preloader from "./components/Preloader/Preloader";
-import BackToTop from "./components/BackToTop/BackToTop";
-import Cursor from "./components/Cursor/Cursor";
 import Navbar from "./components/Navbar/Navbar";
-// import Footer from "./components/Footer/Footer";
-import NewFooter from "./components/Footer/NewFooter";
-import NewHome from "./pages/Home/NewHome";
-// import ReactDetailscopy from "./pages/Web Development/ReactDetailscopy";
-import PerformanceMarketing from "./pages/performance Marketing/PerformanceMarketing";
-import ShopifyDetails from "./pages/Web Development/ShopifyDetails";
 
-// LAZY LOAD PAGES 🚀
-const Home = lazy(() => import("./pages/Home/Home"));
+// LAZY COMPONENTS
+const Cursor = lazy(() => import("./components/Cursor/Cursor"));
+const BackToTop = lazy(() => import("./components/BackToTop/BackToTop"));
+const NewFooter = lazy(() => import("./components/Footer/NewFooter"));
+
+// PAGES
+const NewHome = lazy(() => import("./pages/Home/NewHome"));
 const About = lazy(() => import("./pages/About/About"));
 const Services = lazy(() => import("./pages/Services/Services"));
 const WebDevelopment = lazy(
@@ -34,7 +31,6 @@ const WebDevelopmentNew = lazy(
 const AdsAndCampaigns = lazy(
   () => import("./pages/AdsAndCampaigns/AdsAndCampaigns"),
 );
-
 const SocialMediaManagement = lazy(
   () => import("./pages/SocialMediaManagement/SocialMediaManagement"),
 );
@@ -42,33 +38,46 @@ const UiUx = lazy(() => import("./pages/Uiux/UiUx"));
 const SEOOptimizing = lazy(
   () => import("./pages/SEO Optimizing/SEOOptimizing"),
 );
-
 const EcomManagement = lazy(
   () => import("./pages/Ecom Management/EcomManagement"),
 );
-
 const BrandIdentity = lazy(
   () => import("./pages/Brand Identity/BrandIdentity"),
 );
-
 const ServiceDetails = lazy(
   () => import("./components/ServicePage/ServiceDetails"),
 );
 const ReactDetails = lazy(() => import("./pages/Web Development/ReactDetails"));
+const WordpressDetails = lazy(
+  () => import("./pages/Web Development/WordpressDetails"),
+);
+const ShopifyDetails = lazy(
+  () => import("./pages/Web Development/ShopifyDetails"),
+);
+const PerformanceMarketing = lazy(
+  () => import("./pages/performance Marketing/PerformanceMarketing"),
+);
+
+// ✅ ScrollToTop — har route change pe window top pe jaayegi
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 function App() {
   const [showLoader, setShowLoader] = useState(false);
 
   useEffect(() => {
-    // AOS INIT (optimized)
     AOS.init({
       duration: 800,
       once: true,
       easing: "ease-in-out",
-      disable: window.innerWidth < 768, // mobile performance boost
+      disable: window.innerWidth < 768,
     });
 
-    // SESSION BASED LOADER
     const hasLoaded = sessionStorage.getItem("hasLoaded");
 
     if (!hasLoaded) {
@@ -83,20 +92,18 @@ function App() {
 
   return (
     <>
-      <Cursor />
-
       <BrowserRouter>
-        {/* FIRST LOAD LOADER */}
+        <ScrollToTop />
+
         {showLoader && <Preloader />}
 
         <Navbar />
 
-        {/* LAZY LOAD ROUTES */}
-        <Suspense fallback={<Preloader />}>
-          <Routes>
-            {/* <Route path="/" element={<Home />} /> */}
-            <Route path="/" element={<NewHome />} />
+        <Suspense fallback={<></>}>
+          <Cursor />
 
+          <Routes>
+            <Route path="/" element={<NewHome />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/service-details" element={<ServiceDetails />} />
@@ -114,19 +121,18 @@ function App() {
               path="/social-media-management"
               element={<SocialMediaManagement />}
             />
-
             <Route path="/react" element={<ReactDetails />} />
             <Route
               path="/performance-marketing"
               element={<PerformanceMarketing />}
             />
             <Route path="/shopify" element={<ShopifyDetails />} />
+            <Route path="/wordpress" element={<WordpressDetails />} />
           </Routes>
-        </Suspense>
 
-        {/* <Footer /> */}
-        <NewFooter />
-        <BackToTop />
+          <NewFooter />
+          <BackToTop />
+        </Suspense>
       </BrowserRouter>
     </>
   );
