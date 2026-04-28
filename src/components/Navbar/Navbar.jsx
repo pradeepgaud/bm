@@ -17,7 +17,6 @@ const IconPhone = () => (
     <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 .01h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z" />
   </svg>
 );
-
 const IconEnvelope = () => (
   <svg
     viewBox="0 0 24 24"
@@ -33,7 +32,6 @@ const IconEnvelope = () => (
     <polyline points="22,6 12,13 2,6" />
   </svg>
 );
-
 const IconClock = () => (
   <svg
     viewBox="0 0 24 24"
@@ -49,25 +47,21 @@ const IconClock = () => (
     <polyline points="12,6 12,12 16,14" />
   </svg>
 );
-
 const IconTwitter = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15">
     <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
   </svg>
 );
-
 const IconFacebook = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15">
     <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
   </svg>
 );
-
 const IconPinterest = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15">
     <path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z" />
   </svg>
 );
-
 const IconInstagram = () => (
   <svg
     viewBox="0 0 24 24"
@@ -84,7 +78,6 @@ const IconInstagram = () => (
     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
   </svg>
 );
-
 const IconChevronDown = () => (
   <svg
     viewBox="0 0 24 24"
@@ -99,7 +92,6 @@ const IconChevronDown = () => (
     <polyline points="6 9 12 15 18 9" />
   </svg>
 );
-
 const IconChevronUp = () => (
   <svg
     viewBox="0 0 24 24"
@@ -115,36 +107,262 @@ const IconChevronUp = () => (
   </svg>
 );
 
+/* ── Mega menu service data ── */
+const MEGA_SERVICES = [
+  {
+    category: "Web Development",
+    to: "/web-development-new",
+    icon: "fa-solid fa-code",
+    desc: "We build fast, secure and responsive websites that not only look great but also deliver exceptional performance and user experience.",
+    items: [
+      {
+        label: "Wordpress Website",
+        to: "/wordpress",
+        icon: "fa-brands fa-wordpress",
+        desc: "Custom WordPress websites that are easy to manage and built for growth.",
+      },
+      {
+        label: "Woocommerce Website",
+        to: "#",
+        icon: "fa-solid fa-cart-shopping",
+        desc: "Powerful eCommerce stores with WooCommerce for seamless online selling.",
+      },
+      {
+        label: "Shopify Website",
+        to: "/shopify",
+        icon: "fa-brands fa-shopify",
+        desc: "High-converting Shopify stores that drive sales and customer loyalty.",
+      },
+      {
+        label: "React Development",
+        to: "/react",
+        icon: "fa-brands fa-react",
+        desc: "Scalable and dynamic web applications using the latest React technologies.",
+      },
+    ],
+  },
+  {
+    category: "Ads And Campaigns",
+    to: "/ads-and-campaigns",
+    icon: "fa-solid fa-bullhorn",
+    desc: "Data-driven advertising campaigns that maximize ROI and put your brand in front of the right audience at the right time.",
+    items: [
+      {
+        label: "Performance Marketing",
+        to: "/performance-marketing",
+        icon: "fa-solid fa-chart-line",
+        desc: "Results-driven marketing strategies focused on measurable outcomes.",
+      },
+      {
+        label: "Google Ads",
+        to: "#",
+        icon: "fa-brands fa-google",
+        desc: "Targeted Google Ads campaigns that bring high-intent customers.",
+      },
+      {
+        label: "Facebook / Instagram Ads",
+        to: "#",
+        icon: "fa-brands fa-meta",
+        desc: "Social ads that capture attention and convert at scale.",
+      },
+      {
+        label: "Linkedin Ads",
+        to: "#",
+        icon: "fa-brands fa-linkedin",
+        desc: "B2B focused LinkedIn campaigns to reach decision makers.",
+      },
+    ],
+  },
+  {
+    category: "Social Media Management",
+    to: "/social-media-management",
+    icon: "fa-solid fa-share-nodes",
+    desc: "Complete social media management to build your brand presence, grow your audience, and drive real engagement.",
+    items: [
+      {
+        label: "Brand Awareness",
+        to: "#",
+        icon: "fa-solid fa-star",
+        desc: "Build a recognizable brand that stands out in the market.",
+      },
+      {
+        label: "Social Media Engagement",
+        to: "#",
+        icon: "fa-solid fa-heart",
+        desc: "Foster meaningful connections with your target audience.",
+      },
+      {
+        label: "Social Media Posting",
+        to: "#",
+        icon: "fa-solid fa-pen-to-square",
+        desc: "Consistent, creative content that keeps your feed active.",
+      },
+      {
+        label: "Social Media Boosting",
+        to: "#",
+        icon: "fa-solid fa-rocket",
+        desc: "Amplify your best content to reach a wider audience fast.",
+      },
+    ],
+  },
+  {
+    category: "UI/UX And Audits",
+    to: "/ui-ux-audits",
+    icon: "fa-solid fa-pen-ruler",
+    desc: "User-centered design that creates intuitive, beautiful interfaces and comprehensive UX audits to improve your product.",
+    items: [
+      {
+        label: "Custom Web Design",
+        to: "#",
+        icon: "fa-solid fa-palette",
+        desc: "Unique, on-brand web designs crafted for your business goals.",
+      },
+      {
+        label: "Corporate Branding",
+        to: "#",
+        icon: "fa-solid fa-building",
+        desc: "Cohesive brand identity that communicates professionalism.",
+      },
+      {
+        label: "Mobile App Design",
+        to: "#",
+        icon: "fa-solid fa-mobile-screen",
+        desc: "Intuitive mobile app interfaces with seamless user flows.",
+      },
+      {
+        label: "Product Design",
+        to: "#",
+        icon: "fa-solid fa-cube",
+        desc: "End-to-end product design from concept to final delivery.",
+      },
+    ],
+  },
+  {
+    category: "SEO Optimizing",
+    to: "/seo-optimizing",
+    icon: "fa-solid fa-magnifying-glass-chart",
+    desc: "Proven SEO strategies that improve your search rankings, drive organic traffic, and grow your business sustainably.",
+    items: [
+      {
+        label: "Organic Traffic",
+        to: "#",
+        icon: "fa-solid fa-seedling",
+        desc: "Sustainable traffic growth through white-hat SEO techniques.",
+      },
+      {
+        label: "Genuine Inquiries",
+        to: "#",
+        icon: "fa-solid fa-envelope-open-text",
+        desc: "Attract quality leads that are ready to convert.",
+      },
+      {
+        label: "Mobile Search",
+        to: "#",
+        icon: "fa-solid fa-mobile-screen-button",
+        desc: "Optimize for mobile-first indexing and local search.",
+      },
+      {
+        label: "Local Search Dominance",
+        to: "#",
+        icon: "fa-solid fa-location-dot",
+        desc: "Dominate local search results and capture nearby customers.",
+      },
+    ],
+  },
+  {
+    category: "Ecommerce Management",
+    to: "/ecommerce-management",
+    icon: "fa-solid fa-bag-shopping",
+    desc: "Full-service ecommerce management across major platforms to maximize your online sales and streamline operations.",
+    items: [
+      {
+        label: "Amazon Management",
+        to: "#",
+        icon: "fa-brands fa-amazon",
+        desc: "Optimize your Amazon store for maximum visibility and sales.",
+      },
+      {
+        label: "Flipkart Management",
+        to: "#",
+        icon: "fa-solid fa-store",
+        desc: "Complete Flipkart store setup, listing, and management.",
+      },
+      {
+        label: "Shopsy Management",
+        to: "#",
+        icon: "fa-solid fa-cart-shopping",
+        desc: "Grow your Shopsy presence with expert account management.",
+      },
+      {
+        label: "Snapdeal Management",
+        to: "#",
+        icon: "fa-solid fa-tags",
+        desc: "Boost Snapdeal sales with optimized listings and ads.",
+      },
+    ],
+  },
+  {
+    category: "Brand Identity",
+    to: "/brand-identity",
+    icon: "fa-solid fa-award",
+    desc: "Craft a powerful, memorable brand identity that resonates with your audience and sets you apart from the competition.",
+    items: [
+      {
+        label: "Logo Design",
+        to: "#",
+        icon: "fa-solid fa-pen-nib",
+        desc: "Distinctive logos that capture your brand's essence.",
+      },
+      {
+        label: "Promotional Material Design",
+        to: "#",
+        icon: "fa-solid fa-print",
+        desc: "Eye-catching promotional materials that drive engagement.",
+      },
+      {
+        label: "Corporate Identity Design",
+        to: "#",
+        icon: "fa-solid fa-id-card",
+        desc: "Unified corporate identity across all touchpoints.",
+      },
+      {
+        label: "Corporate Presentations",
+        to: "#",
+        icon: "fa-solid fa-display",
+        desc: "Professional presentations that win clients and close deals.",
+      },
+    ],
+  },
+];
+
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [openDropdowns, setOpenDropdowns] = useState({});
-  const location = useLocation();
   const [isMegaOpen, setIsMegaOpen] = useState(false);
+  const [activeCategory, setActiveCategory] = useState(0);
+  const location = useLocation();
 
   const toggleMobileMenu = () => {
     const next = !mobileMenuOpen;
     setMobileMenuOpen(next);
-    if (next) {
-      document.body.classList.add("mobile-menu-visible");
-    } else {
+    if (next) document.body.classList.add("mobile-menu-visible");
+    else {
       document.body.classList.remove("mobile-menu-visible");
       setOpenDropdowns({});
     }
   };
 
-  const handleMegaClose = () => {
-    setIsMegaOpen(false);
-  };
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
     document.body.classList.remove("mobile-menu-visible");
     setOpenDropdowns({});
   };
 
-  const toggleDropdown = (key) => {
+  const handleMegaClose = () => setIsMegaOpen(false);
+
+  const toggleDropdown = (key) =>
     setOpenDropdowns((prev) => ({ ...prev, [key]: !prev[key] }));
-  };
 
   const isActive = (path) => (location.pathname === path ? "current" : "");
 
@@ -154,16 +372,13 @@ export default function Navbar() {
   }, [location]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsSticky(window.scrollY > 100);
-    };
+    const handleScroll = () => setIsSticky(window.scrollY > 100);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <>
-      {/* Main Header */}
       <header className="main-header header-style-one header-1">
         <div className="container">
           <div className="header-lower">
@@ -216,204 +431,136 @@ export default function Navbar() {
                       </Link>
                     </li>
 
-                    {/* Services Mega Dropdown */}
+                    {/* ══ PREMIUM MEGA MENU ══ */}
                     <li
                       className={`dropdown has-mega ${isMegaOpen ? "active" : ""}`}
                       onMouseEnter={() => setIsMegaOpen(true)}
-                      onMouseLeave={() => setIsMegaOpen(false)}
+                      onMouseLeave={() => {
+                        setIsMegaOpen(false);
+                        setActiveCategory(0);
+                      }}
                     >
-                      <Link
-                        to="/services"
-                        onClick={() => setIsMegaOpen(false)} // 🔥 click pe close
-                      >
+                      <Link to="/services" onClick={handleMegaClose}>
                         Services
                       </Link>
 
-                      <div className={`mega-menu ${isMegaOpen ? "show" : ""}`}>
-                        <div className="mega-container">
-                          <div className="mega-column">
-                            <h4>
+                      <div className={`mega-menu${isMegaOpen ? " show" : ""}`}>
+                        <div className="mega-inner">
+                          {/* LEFT — category sidebar */}
+                          <div className="mega-sidebar">
+                            <p className="mega-sidebar-label">Our Services</p>
+                            {MEGA_SERVICES.map((s, i) => (
                               <Link
-                                to="/web-development-new"
+                                key={i}
+                                to={s.to}
+                                className={`mega-cat-item${activeCategory === i ? " mega-cat-active" : ""}`}
+                                onMouseEnter={() => setActiveCategory(i)}
                                 onClick={handleMegaClose}
                               >
-                                Web Development
-                              </Link>
-                            </h4>
-                            <ul>
-                              <li>
-                                <Link
-                                  to="/wordpress"
-                                  onClick={() => setIsMegaOpen(false)}
+                                <span className="mega-cat-icon">
+                                  <i className={s.icon} />
+                                </span>
+                                <span className="mega-cat-label">
+                                  {s.category}
+                                </span>
+                                <svg
+                                  className="mega-cat-arrow"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  width="14"
+                                  height="14"
                                 >
-                                  Wordpress Website
+                                  <polyline points="9 18 15 12 9 6" />
+                                </svg>
+                              </Link>
+                            ))}
+                          </div>
+
+                          {/* RIGHT — sub-items panel */}
+                          <div className="mega-panel">
+                            {/* Panel header: big icon + title + desc */}
+                            <div className="mega-panel-header">
+                              <div className="mega-panel-hrow">
+                                <div className="mega-panel-hicon">
+                                  <i
+                                    className={
+                                      MEGA_SERVICES[activeCategory].icon
+                                    }
+                                  />
+                                </div>
+                                <Link
+                                  to={MEGA_SERVICES[activeCategory].to}
+                                  className="mega-panel-title"
+                                  onClick={handleMegaClose}
+                                >
+                                  {MEGA_SERVICES[activeCategory].category}
                                 </Link>
-                              </li>
-                              <li>
-                                <Link to="#">Woocommerce Website</Link>
-                              </li>
-                              <li>
-                                <Link to="/shopify">Shopify Website</Link>
-                              </li>
-                              <li>
-                                <Link to="/react">React Development</Link>
-                              </li>
-                            </ul>
-                          </div>
+                              </div>
+                              <p className="mega-panel-desc">
+                                {MEGA_SERVICES[activeCategory].desc}
+                              </p>
+                              <div className="mega-panel-divider" />
+                            </div>
 
-                          <div className="mega-column">
-                            <h4>
-                              <Link
-                                to="/ads-and-campaigns"
-                                onClick={handleMegaClose}
-                              >
-                                Ads And Campaigns
-                              </Link>
-                            </h4>
-                            <ul>
-                              <li>
-                                <Link to="/performance-marketing">
-                                  Performance Marketing
-                                </Link>
-                              </li>
-                              <li>
-                                <Link to="#">Google Ads</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Facebook / Instagram Ads</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Linkedin Ads</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Quora Ads</Link>
-                              </li>
-                            </ul>
-                          </div>
+                            {/* 2×2 sub-item cards */}
+                            <div className="mega-panel-cards">
+                              {MEGA_SERVICES[activeCategory].items.map(
+                                (item, j) => (
+                                  <Link
+                                    key={j}
+                                    to={item.to}
+                                    onClick={handleMegaClose}
+                                    className="mega-sub-card"
+                                  >
+                                    <div className="mega-sub-icon">
+                                      <i className={item.icon} />
+                                    </div>
+                                    <div className="mega-sub-body">
+                                      <span className="mega-sub-title">
+                                        {item.label}
+                                      </span>
+                                      <span className="mega-sub-desc">
+                                        {item.desc}
+                                      </span>
+                                    </div>
+                                    <svg
+                                      className="mega-sub-arrow"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      strokeWidth="2"
+                                      width="14"
+                                      height="14"
+                                    >
+                                      <polyline points="9 18 15 12 9 6" />
+                                    </svg>
+                                  </Link>
+                                ),
+                              )}
+                            </div>
 
-                          <div className="mega-column">
-                            <h4>
+                            {/* CTA bottom */}
+                            <div className="mega-panel-cta">
                               <Link
-                                to="/social-media-management"
+                                to="/contact"
                                 onClick={handleMegaClose}
+                                className="mega-cta-btn"
                               >
-                                Social Media Management
+                                Get a Free Quote
+                                <svg
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  width="14"
+                                  height="14"
+                                >
+                                  <polyline points="9 18 15 12 9 6" />
+                                </svg>
                               </Link>
-                            </h4>
-                            <ul>
-                              <li>
-                                <Link to="#">Brand Awareness</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Social Media Engagement</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Social Media Posting</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Social Media Boosting</Link>
-                              </li>
-                            </ul>
-                          </div>
-
-                          <div className="mega-column">
-                            <h4>
-                              <Link
-                                to="/ui-ux-audits"
-                                onClick={handleMegaClose}
-                              >
-                                UI/UX And Audits
-                              </Link>
-                            </h4>
-                            <ul>
-                              <li>
-                                <Link to="#">Custom Web Design</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Corporate Branding</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Mobile App Design</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Product Design</Link>
-                              </li>
-                            </ul>
-                          </div>
-
-                          <div className="mega-column">
-                            <h4>
-                              <Link
-                                to="/seo-optimizing"
-                                onClick={handleMegaClose}
-                              >
-                                SEO Optimizing
-                              </Link>
-                            </h4>
-                            <ul>
-                              <li>
-                                <Link to="#">Organic Traffic</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Genuine Inquiries</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Mobile Search</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Local Search Dominance</Link>
-                              </li>
-                            </ul>
-                          </div>
-
-                          <div className="mega-column">
-                            <h4>
-                              <Link
-                                to="/ecommerce-management"
-                                onClick={handleMegaClose}
-                              >
-                                Ecommerce Management
-                              </Link>
-                            </h4>
-                            <ul>
-                              <li>
-                                <Link to="#">Amazon Management</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Flipkart Management</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Shopsy Management</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Snapdeal Management</Link>
-                              </li>
-                            </ul>
-                          </div>
-
-                          <div className="mega-column">
-                            <h4>
-                              <Link
-                                to="/brand-identity"
-                                onClick={handleMegaClose}
-                              >
-                                Brand Identity
-                              </Link>
-                            </h4>
-                            <ul>
-                              <li>
-                                <Link to="#">Logo Design</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Promotional Material Design</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Corporate Identity Design</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Corporate Presentations</Link>
-                              </li>
-                            </ul>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -457,8 +604,6 @@ export default function Navbar() {
                       </Link>
                     </div>
                   </div>
-
-                  {/* Mobile Nav Toggler */}
                   <div
                     className={`mobile-nav-toggler${mobileMenuOpen ? " active" : ""}`}
                     onClick={toggleMobileMenu}
@@ -473,7 +618,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* ── Mobile Menu ── */}
+        {/* ══ MOBILE MENU ══ */}
         <div
           className={`mobile-menu${mobileMenuOpen ? " mobile-menu-visible" : ""}`}
         >
@@ -496,47 +641,11 @@ export default function Navbar() {
 
             {/* Navigation */}
             <ul className="navigation clearfix">
-              {/* Home */}
-              <li className={`dropdown ${isActive("/")}`}>
-                <div className="mob-nav-row">
-                  <Link to="/" onClick={closeMobileMenu}>
-                    Home
-                  </Link>
-                  <span
-                    className="mob-arrow"
-                    onClick={() => toggleDropdown("home")}
-                  >
-                    {openDropdowns["home"] ? (
-                      <IconChevronUp />
-                    ) : (
-                      <IconChevronDown />
-                    )}
-                  </span>
-                </div>
-                {openDropdowns["home"] && (
-                  <ul>
-                    <li>
-                      <Link to="/" onClick={closeMobileMenu}>
-                        Digital Agency
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/index-2" onClick={closeMobileMenu}>
-                        SEO Agency
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/index-3" onClick={closeMobileMenu}>
-                        IT Company
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/index-4" onClick={closeMobileMenu}>
-                        Freelancer
-                      </Link>
-                    </li>
-                  </ul>
-                )}
+              {/* Home — no dropdown arrow on mobile */}
+              <li className={isActive("/")}>
+                <Link to="/" onClick={closeMobileMenu}>
+                  Home
+                </Link>
               </li>
 
               {/* About */}
@@ -546,44 +655,51 @@ export default function Navbar() {
                 </Link>
               </li>
 
-              {/* Services */}
-              <li className={isActive("/services")}>
-                <Link to="/services" onClick={closeMobileMenu}>
-                  Services
-                </Link>
-              </li>
-
-              {/* News */}
+              {/* ── Services mobile — arrow toggle → 7 parent links only ── */}
               <li className="dropdown">
                 <div className="mob-nav-row">
-                  <Link to="#" onClick={(e) => e.preventDefault()}>
-                    News
+                  <Link to="/services" onClick={closeMobileMenu}>
+                    Services
                   </Link>
                   <span
                     className="mob-arrow"
-                    onClick={() => toggleDropdown("news")}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggleDropdown("services");
+                    }}
                   >
-                    {openDropdowns["news"] ? (
+                    {openDropdowns["services"] ? (
                       <IconChevronUp />
                     ) : (
                       <IconChevronDown />
                     )}
                   </span>
                 </div>
-                {openDropdowns["news"] && (
-                  <ul>
-                    <li>
-                      <Link to="/news" onClick={closeMobileMenu}>
-                        News Grid
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/news-details" onClick={closeMobileMenu}>
-                        News Details
-                      </Link>
-                    </li>
-                  </ul>
+                {openDropdowns["services"] && (
+                  <div className="mob-services-list">
+                    {MEGA_SERVICES.map((s, i) => (
+                      <div key={i} className="mob-services-list-item">
+                        <Link
+                          to={s.to}
+                          onClick={closeMobileMenu}
+                          className="mob-service-parent"
+                        >
+                          <span className="mob-service-icon">
+                            <i className={s.icon} />
+                          </span>
+                          <span>{s.category}</span>
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
                 )}
+              </li>
+
+              {/* News — no dropdown arrow on mobile */}
+              <li>
+                <Link to="/news" onClick={closeMobileMenu}>
+                  News
+                </Link>
               </li>
 
               {/* Contact */}
@@ -602,7 +718,7 @@ export default function Navbar() {
                     <IconPhone />
                   </span>
                   <span className="title">Call Now</span>
-                  <a href="tel:+92880098670">+92 (8800) - 98670</a>
+                  <a href="tel:+919990613140">+91 99906 13140</a>
                 </div>
               </li>
               <li>
@@ -611,16 +727,7 @@ export default function Navbar() {
                     <IconEnvelope />
                   </span>
                   <span className="title">Send Email</span>
-                  <a href="mailto:help@company.com">help@company.com</a>
-                </div>
-              </li>
-              <li>
-                <div className="contact-info-box">
-                  <span className="icon">
-                    <IconClock />
-                  </span>
-                  <span className="title">Working Hours</span>
-                  <span>Mon - Sat 8:00 - 6:30, Sunday - CLOSED</span>
+                  <a href="mailto:hello@brandmingo.com">hello@brandmingo.com</a>
                 </div>
               </li>
             </ul>
@@ -651,7 +758,7 @@ export default function Navbar() {
           </nav>
         </div>
 
-        {/* Sticky Header */}
+        {/* ══ STICKY HEADER ══ */}
         <div className={`sticky-header${isSticky ? " fixed-header" : ""}`}>
           <div className="auto-container">
             <div className="inner-container">
@@ -673,7 +780,6 @@ export default function Navbar() {
                       <li className={isActive("/about")}>
                         <Link to="/about">About</Link>
                       </li>
-
                       <li className="dropdown">
                         <Link to="/services">Services</Link>
                       </li>
