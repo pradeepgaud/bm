@@ -8,91 +8,92 @@ import React, { useEffect, useRef, useState } from "react";
 const DIFF_FEATURES = [
   {
     fa: "fa-solid fa-bullseye",
-    title: "Highly Targeted Strategy",
-    desc: "Reach the right customers with precise product and audience targeting.",
+    title: "Highly Targeted Branding",
+    desc: "Reach the right audience with clear positioning and messaging.",
   },
   {
     fa: "fa-solid fa-chart-line",
-    title: "ROI-Focused Growth",
-    desc: "Optimized to maximize sales and return on every investment.",
+    title: "ROI-Focused Branding",
+    desc: "Designed to deliver long-term value and brand growth.",
   },
   {
     fa: "fa-solid fa-chart-pie",
-    title: "Data-Driven Optimization",
-    desc: "Continuous analysis and improvements to boost store performance.",
+    title: "Data-Driven Strategy",
+    desc: "Continuous insights and improvements for better brand impact.",
   },
   {
-    fa: "fa-solid fa-cart-shopping",
-    title: "Conversion-Focused Approach",
-    desc: "Designed to turn visitors into paying customers consistently.",
+    fa: "fa-solid fa-bullhorn",
+    title: "Conversion-Focused Identity",
+    desc: "Built to turn attention into trust and loyal customers.",
   },
   {
     fa: "fa-solid fa-sliders",
-    title: "Easy Store Management",
-    desc: "Transparent reporting and simple insights for better decisions.",
+    title: "Easy Brand Management",
+    desc: "Clear guidelines and simple systems for consistent branding.",
   },
 ];
 
 const ECOM_ALLOWS = [
-  "Increase conversions & sales",
-  "Manage products efficiently",
-  "Target the right customers",
-  "Scale your business faster",
+  "Build strong brand recognition",
+  "Create a consistent visual presence",
+  "Connect with the right audience",
+  "Stand out from competitors",
 ];
 
 const ECOM_PROVIDES = [
-  "Product & catalog management",
-  "Store optimization & UX improvement",
-  "Order & inventory management",
-  "Performance tracking & scaling",
+  "Logo & visual identity design",
+  "Brand guidelines & consistency ",
+  "Corporate & marketing assets",
+  "Brand strategy & positioning",
 ];
 
 const PLATFORMS = [
   {
-    fa: "fa-solid fa-box",
-    title: "Product Optimization",
+    fa: "fa-solid fa-pen-nib",
+    title: "Logo & Visual Identity",
     sub: "BEST FOR",
-    desc: "Improving listings & product performance",
+    desc: "Building a strong and recognizable brand foundation",
   },
   {
-    fa: "fa-solid fa-screwdriver-wrench",
-    title: "Store Optimization",
+    fa: "fa-solid fa-layer-group",
+    title: "Brand Guidelines",
     sub: "BEST FOR",
-    desc: "Speed, UX & conversion improvements",
+    desc: "Maintaining consistency across all brand touchpoints",
   },
   {
-    fa: "fa-solid fa-cart-shopping",
-    title: "Sales & Order Management",
+    fa: "fa-solid fa-id-card",
+    title: "Corporate Identity",
     sub: "BEST FOR",
-    desc: "Handling orders & increasing efficiency",
+    desc: "Professional branding for business communication",
   },
   {
-    fa: "fa-solid fa-chart-line",
-    title: "Performance Scaling",
+    fa: "fa-solid fa-bullhorn",
+    title: "Marketing & Brand Assets",
     sub: "BEST FOR",
-    desc: "Boosting sales & revenue growth",
+    desc: "Creating consistent visuals for campaigns & promotions",
   },
 ];
+
 const FAQS = [
   {
-    fa: "fa-solid fa-store",
-    q: "What ecommerce services do you offer?",
-    a: "We handle product management, store optimization, inventory, order management, and performance tracking to grow your sales.",
+    fa: "fa-solid fa-pen-nib",
+    q: "What branding services do you offer?",
+    a: "We provide logo design, brand identity creation, brand guidelines, and marketing assets to build a strong and consistent brand presence.",
   },
   {
     fa: "fa-solid fa-chart-line",
-    q: "Which ecommerce strategy is best for my business?",
-    a: "It depends on your goals — we choose the right approach based on your products, audience, and growth stage.",
+    q: "Which branding strategy is best for my business?",
+    a: "It depends on your goals — we craft a custom brand identity based on your audience, industry, and positioning.",
   },
   {
     fa: "fa-solid fa-clock",
-    q: "How soon can I see results from ecommerce management?",
-    a: "You can start seeing improvements in performance and conversions within weeks, with steady growth over time.",
+    q: "How long does it take to build a brand identity?",
+    a: "Most branding projects take a few weeks, depending on scope, with a structured process to ensure quality and consistency.",
   },
   {
     fa: "fa-solid fa-gear",
-    q: "How do you increase sales and conversions?",
-    a: "We optimize product listings, improve store UX, analyze data, and continuously refine strategies for better results.",
+    q: "How do you ensure brand consistency?",
+    a: "We create detailed brand guidelines and systems to maintain consistency across all platforms and marketing materials.",
   },
 ];
 
@@ -129,13 +130,12 @@ const WebDevDiff = () => {
           <div className="wde-left">
             <div className="wds-section-label">OUR PROMISE</div>
             <h3 className="wde-heading">
-              What Makes Our Ecommerce <span>Different?</span>
+              What Makes Our Branding <span>Different?</span>
             </h3>
             <p className="wde-desc">
-              Most stores get traffic — but don’t convert. We focus on
-              performance. Our ecommerce strategies are built to drive real
-              sales, higher conversions, and measurable growth for your
-              business.
+              Most brands get noticed — but don’t stay remembered. We focus on
+              impact. Our branding strategies are built to create recognition,
+              trust, and long-term brand value.
             </p>
             <div className="wde-gradient-bar" />
           </div>
@@ -165,8 +165,8 @@ const WebDevDiff = () => {
                 <i className="fa-solid fa-rocket" />
               </div>
               <p>
-                If your store is not converting, <em>— you’re losing </em>
-                potential sales.
+                If your brand is not memorable, <em>you’re losing </em>
+                potential customers.
               </p>
             </div>
           </div>
@@ -190,14 +190,13 @@ const WebDevEcom = () => {
             <div className="wds-section-label">GROW YOUR BUSINESS</div>
             <h3 className="wdec-heading">
               Do You Need
-              <span>Ecommerce Management?</span>
+              <span>Brand Identity?</span>
             </h3>
             <div className="wdec-divider" />
             <p className="wdec-desc">
-              If your store is not performing and relying only on ads — you're
-              limiting your growth. Ecommerce management helps you optimize your
-              store, increase conversions, and generate consistent sales over
-              time.
+              If your brand lacks clarity and consistency — you're limiting your
+              growth. A strong brand identity helps you stand out, build trust,
+              and create lasting impressions across every platform.
             </p>
           </div>
 
@@ -208,10 +207,10 @@ const WebDevEcom = () => {
               style={visible ? { animationDelay: "0.1s" } : {}}
             >
               <div className="wdec-card-icon">
-                <i className="fa-solid fa-cart-shopping" />
+                <i className="fa-solid fa-palette" />
               </div>
               <h4>
-                Ecommerce Management<span>Allows You To:</span>
+                Brand Identity<span>Allows You To:</span>
               </h4>
               <ul className="wdec-list">
                 {ECOM_ALLOWS.map((item, i) => (
@@ -262,13 +261,13 @@ const WebDevPlatform = () => {
           <div className="wdpl-left">
             <div className="wds-section-label">CHOOSE WHAT’S RIGHT</div>
             <h3 className="wdpl-heading">
-              Which Ecommerce Strategy is<span>Best</span> for You?
+              Which Brand Identity Strategy is<span>Best</span> for You?
             </h3>
             <p className="wdpl-desc">
-              Choosing the right ecommerce strategy is crucial. Every store
-              needs a different approach — and using the wrong one can limit
-              your growth. We help you choose the right path for maximum sales
-              and performance.
+              Choosing the right branding strategy is crucial. Every business
+              needs a different approach — and using the wrong one can weaken
+              your brand. We help you build the right identity for maximum
+              impact.
             </p>
           </div>
 
@@ -309,8 +308,8 @@ const WebDevPlatform = () => {
                 <i className="fa-solid fa-lightbulb" />
               </div>
               <p>
-                The right ecommerce strategy depends on your goals — and we help
-                you scale in the right direction from day one.
+                The right branding strategy depends on your goals — and we help
+                you build it right from day one.
               </p>
             </div>
           </div>

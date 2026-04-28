@@ -3,57 +3,57 @@ import React, { useEffect, useRef, useState } from "react";
 
 const NAV = [
   {
-    fa: "fa-brands fa-amazon",
-    label: "Amazon Management",
+    fa: "fa-solid fa-pen-nib",
+    label: "Logo Design",
   },
   {
-    fa: "fa-solid fa-store",
-    label: "Flipkart Management",
+    fa: "fa-solid fa-bullhorn",
+    label: "Promotional Material Design",
   },
   {
-    fa: "fa-solid fa-bag-shopping",
-    label: "Shopsy Management",
+    fa: "fa-solid fa-id-card",
+    label: "Corporate Identity Design",
   },
   {
-    fa: "fa-solid fa-cart-shopping",
-    label: "Snapdeal Management",
+    fa: "fa-solid fa-file-powerpoint",
+    label: "Corporate Presentations",
   },
 ];
 
 const REASONS = [
   {
-    fa: "fa-solid fa-store",
-    title: "Optimize Your Store Performance",
-    desc: "Improve your store experience to increase conversions and sales.",
+    fa: "fa-solid fa-eye",
+    title: "Build Brand Recognition",
+    desc: "Make your brand instantly recognizable across all platforms.",
   },
   {
-    fa: "fa-solid fa-box",
-    title: "Manage Products Efficiently",
-    desc: "Organize listings, pricing, and inventory for better performance.",
+    fa: "fa-solid fa-palette",
+    title: "Create Visual Consistency",
+    desc: "Maintain a consistent look and feel across every touchpoint.",
   },
   {
     fa: "fa-solid fa-users",
-    title: "Drive More Sales",
-    desc: "Convert visitors into customers with optimized store strategies.",
+    title: "Connect With Your Audience",
+    desc: "Build emotional connections that turn users into loyal customers.",
   },
   {
-    fa: "fa-solid fa-chart-line",
-    title: "Track & Improve Results",
-    desc: "Monitor performance and optimize for better sales outcomes.",
+    fa: "fa-solid fa-shield-heart",
+    title: "Build Trust & Credibility",
+    desc: "Establish a professional image that builds confidence in your brand.",
   },
   {
     fa: "fa-solid fa-rocket",
-    title: "Scale Your Business Faster",
-    desc: "Grow your ecommerce store with data-driven strategies.",
+    title: "Stand Out From Competitors",
+    desc: "Differentiate your brand and create a strong market presence.",
   },
 ];
 
 const STATS = [
   {
-    fa: "fa-solid fa-box",
+    fa: "fa-solid fa-pen-nib",
     key: "p",
     suffix: "+",
-    label: "Orders Managed",
+    label: "Brand Projects Delivered",
     target: 150,
   },
   {
@@ -67,14 +67,14 @@ const STATS = [
     fa: "fa-solid fa-headset",
     key: "h",
     suffix: "/7",
-    label: "Store Support Available",
+    label: "Brand Support Available",
     target: 24,
   },
   {
-    fa: "fa-solid fa-chart-line",
+    fa: "fa-solid fa-award",
     key: "e",
     suffix: "+",
-    label: "Years Ecommerce Experience",
+    label: "Years Branding Experience",
     target: 5,
   },
 ];
@@ -159,18 +159,19 @@ const BrandIdentityAbout = () => {
           <div className="wda-main-card wda-call">
             <i className="fa-solid fa-rocket wda-rocket" />
             <h3>
-              Let’s Grow Your <span>Business with Ecommerce</span>
+              Let’s Build Your
+              <span>Brand That Stands Out</span>
             </h3>
             <p>
-              Want to boost your online sales? Let’s turn your store into a
-              high-converting machine that drives consistent orders and
-              long-term revenue growth.
+              Want to create a strong brand presence? Let’s craft a unique
+              identity that builds recognition, trust, and long-term brand
+              value.
             </p>
             <div className="wda-ring">
               <i className="fa-solid fa-phone" />
             </div>
             <small className="wda-expert-label">
-              Talk to an Ecommerce expert
+              Talk to a branding expert
             </small>
             <strong className="wda-phone">+91 99906 13140</strong>
             <small className="wda-expert-label wda-timing">
@@ -220,11 +221,11 @@ const BrandIdentityAbout = () => {
               <div className="wda-hero-txt">
                 <div className="wda-hero-badge">
                   <i className="fa-solid fa-laptop-code" />
-                  ABOUT ECOMMERCE MANAGEMENT
+                  ABOUT BRAND IDENTITY
                 </div>
                 <h2>
-                  Driving Online Sales With{" "}
-                  <span> High-Performance Ecommerce</span>
+                  Building Strong Brands With{" "}
+                  <span>High-Impact Design & Strategy</span>
                 </h2>
               </div>
             </div>
@@ -236,26 +237,24 @@ const BrandIdentityAbout = () => {
               <i className="fa-solid fa-circle" />
               Introduction
             </div>
-            <h2 className="wda-h1">What is Ecommerce Management?</h2>
+            <h2 className="wda-h1">What is Brand Identity?</h2>
             <p className="wda-p">
-              Ecommerce management is the process of handling and optimizing
-              your online store to increase sales and performance. It includes
-              product management, pricing strategy, inventory control, and
-              conversion optimization to maximize revenue.
+              Brand identity is the process of defining how your business looks,
+              feels, and communicates with your audience. It includes logo
+              design, visual elements, brand voice, and consistency to create a
+              strong and recognizable presence.
               <br />
-              Think of it this way — your store is not just a website, it’s your
-              sales engine working 24/7. Without proper management, you’re
-              losing potential customers, orders, and valuable growth
-              opportunities.
+              Think of it this way — your brand is not just a logo, it’s the
+              perception people have about your business. Without a clear
+              identity, you’re missing recognition, trust, and long-term brand
+              value.
             </p>
 
             <div className="wda-lbl" style={{ marginTop: "40px" }}>
               <i className="fa-solid fa-circle" />
               Strategy
             </div>
-            <h3 className="wda-h2">
-              Why Your Business Needs Ecommerce Management
-            </h3>
+            <h3 className="wda-h2">Why Your Business Needs Brand Identity</h3>
 
             <div className="wda-reasons">
               {REASONS.map((r, i) => (
@@ -282,8 +281,8 @@ const BrandIdentityAbout = () => {
                 <i className="fa-solid fa-quote-right" />
               </div>
               <span>
-                If your store is not converting, you’re already{" "}
-                <em> — losing potential sales.</em>
+                If your brand is not memorable, you’re already{" "}
+                <em> — losing potential customers.</em>
               </span>
             </div>
 
@@ -296,11 +295,11 @@ const BrandIdentityAbout = () => {
                 />
                 <div className="wda-img-card-body">
                   <div className="wda-img-card-icon">
-                    <i className="fa-solid fa-cart-shopping" />
+                    <i className="fa-solid fa-palette" />
                   </div>
                   <p>
-                    Smart, data-driven ecommerce strategies optimized for higher
-                    conversions, increased sales, and long-term revenue growth.
+                    Strategic, design-driven brand identities crafted to build
+                    recognition, consistency, and long-term brand value.
                   </p>
                   <a href="#contact" className="wda-img-card-arrow">
                     <i className="fa-solid fa-arrow-right" />
@@ -315,11 +314,11 @@ const BrandIdentityAbout = () => {
                 />
                 <div className="wda-img-card-body">
                   <div className="wda-img-card-icon">
-                    <i className="fa-solid fa-chart-line" />
+                    <i className="fa-solid fa-bullseye" />
                   </div>
                   <p>
-                    Conversion-focused ecommerce solutions that attract the
-                    right customers and drive real business results.
+                    Impact-focused branding solutions that connect with your
+                    audience and create a strong, memorable presence.
                   </p>
                   <a href="#contact" className="wda-img-card-arrow">
                     <i className="fa-solid fa-arrow-right" />

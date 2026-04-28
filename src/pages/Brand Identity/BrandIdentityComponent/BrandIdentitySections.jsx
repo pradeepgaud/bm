@@ -5,83 +5,84 @@ import React, { useEffect, useRef, useState } from "react";
 
 const WEBSITE_TYPES = [
   {
-    fa: "fa-solid fa-box",
+    fa: "fa-solid fa-pen-nib",
     num: "01",
-    title: "Product & Catalog Management",
-    desc: "Optimize product listings, pricing, and categories to boost sales.",
+    title: "Logo & Visual Identity",
+    desc: "Design logos, colors, and visuals that define your brand identity.",
   },
   {
-    fa: "fa-solid fa-screwdriver-wrench",
+    fa: "fa-solid fa-layer-group",
     num: "02",
-    title: "Store Optimization",
-    desc: "Enhance store design, speed, and UX for better conversions.",
+    title: "Brand Guidelines",
+    desc: "Create consistent brand rules for design, tone, and communication.",
   },
   {
-    fa: "fa-solid fa-cart-shopping",
+    fa: "fa-solid fa-id-card",
     num: "03",
-    title: "Order & Inventory Management",
-    desc: "Manage orders and inventory efficiently for smooth operations.",
+    title: "Corporate Identity Design",
+    desc: "Build business cards, letterheads, and professional brand assets.",
   },
   {
-    fa: "fa-solid fa-chart-line",
+    fa: "fa-solid fa-bullhorn",
     num: "04",
-    title: "Sales & Performance Tracking",
-    desc: "Track performance data to improve conversions and revenue.",
+    title: "Marketing & Brand Assets",
+    desc: "Design creatives that maintain consistency across campaigns.",
   },
 ];
 
 const TECHNOLOGIES = [
   {
-    fa: "fa-solid fa-store",
-    title: "Ecommerce Platforms",
-    desc: "Manage and scale your store on Shopify, WooCommerce, and more.",
+    fa: "fa-solid fa-pen-ruler",
+    title: "Design Tools",
+    desc: "Create logos, visuals, and brand assets with precision and creativity.",
   },
   {
     fa: "fa-solid fa-chart-line",
-    title: "Sales Analytics Tools",
-    desc: "Track sales, orders, and performance with accurate data insights.",
+    title: "Brand Strategy Tools",
+    desc: "Analyze positioning, audience, and brand direction for clarity.",
   },
   {
-    fa: "fa-solid fa-box",
-    title: "Inventory Management Tools",
-    desc: "Monitor stock, products, and orders for smooth operations.",
+    fa: "fa-solid fa-layer-group",
+    title: "Brand Asset Systems",
+    desc: "Organize and manage brand elements for consistency across platforms.",
   },
   {
-    fa: "fa-solid fa-screwdriver-wrench",
-    title: "Store Optimization Tools",
-    desc: "Improve speed, UX, and conversions for better sales performance.",
+    fa: "fa-solid fa-swatchbook",
+    title: "Visual Identity Tools",
+    desc: "Define colors, typography, and styles for a cohesive brand look.",
   },
 ];
+
 const PROCESS_STEPS = [
   {
     num: "01",
     fa: "fa-solid fa-magnifying-glass",
-    title: "Store Audit & Analysis",
-    desc: "We analyze your store, products, and competitors to identify opportunities.",
+    title: "Brand Audit & Research",
+    desc: "We analyze your business, audience, and competitors to find opportunities.",
   },
   {
     num: "02",
-    fa: "fa-solid fa-clipboard-list",
-    title: "Strategy & Planning",
-    desc: "We define pricing, product strategy, and growth direction.",
+    fa: "fa-solid fa-lightbulb",
+    title: "Strategy & Positioning",
+    desc: "We define brand voice, messaging, and positioning for clarity.",
   },
   {
     num: "03",
-    fa: "fa-solid fa-box",
-    title: "Product & Store Optimization",
-    desc: "We optimize listings, store design, and user experience.",
+    fa: "fa-solid fa-pen-nib",
+    title: "Visual Identity Design",
+    desc: "We create logos, colors, and visuals that represent your brand.",
   },
   {
     num: "04",
-    fa: "fa-solid fa-chart-line",
-    title: "Performance Optimization",
-    desc: "We improve conversions and scale high-performing products.",
+    fa: "fa-solid fa-layer-group",
+    title: "Brand Consistency",
+    desc: "We ensure consistent design and messaging across all touchpoints.",
   },
   {
     num: "05",
-    fa: "fa-solid fa-chart-pie",
-    title: "Tracking & Growth",
-    desc: "We monitor performance and continuously optimize for higher sales.",
+    fa: "fa-solid fa-chart-line",
+    title: "Growth & Evolution",
+    desc: "We refine and evolve your brand as your business grows.",
   },
 ];
 
@@ -112,12 +113,14 @@ const WebDevTypes = () => {
         <div className="wds-types-grid">
           {/* Left */}
           <div className="wds-types-left">
-            <div className="wds-section-label">WHAT WE MANAGE</div>
-            <h3 className="wds-types-heading">Types of Ecommerce We Manage</h3>
+            <div className="wds-section-label">WHAT WE CREATE</div>
+            <h3 className="wds-types-heading">
+              Types of Brand Identity We Create
+            </h3>
             <p className="wds-types-desc">
-              Not every store needs the same strategy — and that’s where most
-              sellers go wrong. We analyze your business first, then implement
-              the right ecommerce approach for maximum sales and growth.
+              Not every brand needs the same identity — and that’s where most
+              businesses go wrong. We analyze your vision first, then craft the
+              right brand identity for maximum recognition and impact.
             </p>
 
             {/* Decorative dot grid + arc */}
@@ -231,11 +234,13 @@ const WebDevTech = () => {
           {/* Left */}
           <div className="wdt-left">
             <div className="wds-section-label">BUILT WITH POWERFUL TOOLS</div>
-            <h3 className="wdt-heading">Ecommerce Tools & Platforms We Use</h3>
+            <h3 className="wdt-heading">
+              Brand Identity Tools & Platforms We Use
+            </h3>
             <p className="wdt-desc">
-              We don’t rely on guesswork. We use proven ecommerce tools and
-              platforms optimized for performance, order management, and
-              measurable sales growth — tailored to your business goals.
+              We don’t rely on guesswork. We use proven branding tools and
+              platforms optimized for creativity, consistency, and impactful
+              brand development — tailored to your business goals.
             </p>
           </div>
 
@@ -292,11 +297,11 @@ const WebDevProcess = () => {
           {/* Left */}
           <div className="wdp-left">
             <div className="wds-section-label">OUR WORKFLOW</div>
-            <h3 className="wdp-heading"> Our Ecommerce Process</h3>
+            <h3 className="wdp-heading"> Our Branding Process</h3>
             <p className="wdp-desc">
-              Successful ecommerce growth is never random. We follow a
-              structured, data-driven approach to increase sales, optimize store
-              performance, and ensure long-term business growth.
+              Successful branding is never random. We follow a structured,
+              strategic approach to build a strong identity, ensure consistency,
+              and create long-term brand impact.
             </p>
 
             {/* CTA box */}
@@ -305,10 +310,10 @@ const WebDevProcess = () => {
                 <i className="fa-solid fa-comments" />
               </div>
               <div className="wdp-cta-text">
-                <h4>Have an ecommerce project in mind?</h4>
+                <h4>Have a branding project in mind?</h4>
                 <p>
-                  Let’s build a high-performing store that drives sales and real
-                  growth.
+                  Let’s build a powerful brand identity that creates impact and
+                  long-term value.
                 </p>
                 <a href="#contact" className="wdp-cta-btn">
                   Let’s Talk <i className="fa-solid fa-arrow-right" />
