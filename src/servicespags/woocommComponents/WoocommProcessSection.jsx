@@ -6,36 +6,35 @@ const PATH =
 const steps = [
   {
     num: "01",
-    icon: "fa-solid fa-magnifying-glass-chart",
+    icon: "fa-solid fa-magnifying-glass",
     title: "Requirement Analysis",
-    desc: "Understanding your business, audience, and website goals before starting the project.",
+    desc: "Understanding your business, products, and target audience before starting.",
   },
   {
     num: "02",
     icon: "fa-solid fa-pen-ruler",
-    title: "UI/UX Design",
-    desc: "Designing a clean, modern, and user-friendly layout aligned with your brand identity.",
+    title: "Store Design",
+    desc: "Designing a clean, modern, and user-friendly store that reflects your brand.",
   },
   {
     num: "03",
-    icon: "fa-brands fa-wordpress",
-    title: "WordPress Development",
-    desc: "Building a fast, scalable, and fully functional WordPress website using best practices.",
+    icon: "fa-solid fa-cart-shopping",
+    title: "Store Development",
+    desc: "Building a scalable, secure, and fully functional WooCommerce store.",
   },
   {
     num: "04",
     icon: "fa-solid fa-shield-halved",
     title: "Testing",
-    desc: "Ensuring your website works perfectly across all devices and browsers.",
+    desc: "Ensuring your store works perfectly across all devices and browsers.",
   },
   {
     num: "05",
     icon: "fa-solid fa-rocket",
     title: "Launch",
-    desc: "Deploying your website smoothly and making it live without any performance issues.",
+    desc: "Deploying your store smoothly and making it live without any issues.",
   },
 ];
-
 /* Circle centers evenly spread ~200px apart horizontally
    01→cx=160  02→cx=360  03→cx=560  04→cx=760  05→cx=980  */
 const STEP_CONFIG = [
@@ -91,7 +90,7 @@ const STEP_CONFIG = [
   },
 ];
 
-export default function WordpressProcessSection() {
+export default function WoocommProcessSection() {
   const [animated, setAnimated] = useState(false);
   const [pLen, setPLen] = useState(1600);
   const pathRef = useRef(null);
@@ -160,9 +159,9 @@ export default function WordpressProcessSection() {
             and <span className="ora">proven process</span>
           </h2>
           <p className="ps-sub">
-            We follow a streamlined WordPress development process to deliver
-            fast, secure, and high-performing websites that drive real business
-            growth.
+            We follow a streamlined WooCommerce development process to deliver
+            fast, secure, and high-performing online stores that drive real
+            sales.
           </p>
           <a href="#contact" className="ps-btn">
             Get Started <span>→</span>

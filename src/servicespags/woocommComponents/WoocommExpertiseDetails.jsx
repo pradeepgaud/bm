@@ -3,95 +3,95 @@ import React, { useState } from "react";
 const servicesData = [
   {
     id: "custom",
-    title: "Custom WordPress Development",
-    desc: "We build fully customized WordPress websites tailored to your brand, ensuring flexibility, performance, and scalability.",
+    title: "Custom Store Development",
+    desc: "We build fully customized WooCommerce stores tailored to your business, ensuring performance, flexibility, and high conversions.",
     points: [
-      "Develop custom designs aligned with your business goals",
-      "Create clean and scalable website structure",
-      "Ensure fast performance and optimized code",
-      "Build websites that grow with your business",
+      "Develop custom store designs aligned with your business goals",
+      "Create scalable and conversion-focused store structure",
+      "Ensure fast performance and smooth user experience",
+      "Build stores that grow with your business",
     ],
   },
   {
-    id: "theme",
-    title: "Theme Customization",
-    desc: "We customize WordPress themes to match your brand identity while improving design, usability, and performance.",
+    id: "design",
+    title: "Store Design & UI/UX",
+    desc: "We design visually appealing and user-friendly store interfaces that improve engagement and boost conversions.",
     points: [
-      "Customize layouts and UI based on your needs",
-      "Enhance design for better user experience",
-      "Optimize theme speed and responsiveness",
-      "Ensure compatibility across all devices",
+      "Design clean and modern store layouts",
+      "Optimize user journey for better conversions",
+      "Create mobile-first responsive designs",
+      "Enhance overall shopping experience",
     ],
   },
   {
-    id: "woocommerce",
-    title: "WooCommerce Development",
-    desc: "We create powerful WooCommerce stores that are secure, scalable, and optimized for conversions.",
+    id: "setup",
+    title: "WooCommerce Setup",
+    desc: "We handle complete WooCommerce setup to get your online store ready for selling quickly and efficiently.",
     points: [
-      "Build complete online stores with product management",
-      "Integrate secure payment gateways",
-      "Optimize checkout flow for higher conversions",
-      "Manage inventory and orders efficiently",
+      "Setup products, categories, and attributes",
+      "Configure payment and shipping options",
+      "Install essential plugins and tools",
+      "Ensure smooth store functionality",
     ],
   },
   {
     id: "plugin",
-    title: "Plugin Development",
-    desc: "We develop and integrate custom WordPress plugins to extend your website’s functionality.",
+    title: "Plugin & Feature Development",
+    desc: "We extend your store functionality with custom features and integrations tailored to your business needs.",
     points: [
-      "Build custom plugins for specific business needs",
+      "Develop custom plugins and store features",
       "Integrate third-party tools and APIs",
-      "Enhance website functionality and automation",
-      "Ensure smooth performance and compatibility",
+      "Enhance store functionality and automation",
+      "Ensure secure and stable performance",
     ],
   },
   {
     id: "optimization",
-    title: "Website Optimization",
-    desc: "We optimize your WordPress website for speed, performance, and better user experience.",
+    title: "Store Optimization",
+    desc: "We optimize your WooCommerce store for speed, performance, and better user experience.",
     points: [
-      "Improve page speed and Core Web Vitals",
+      "Improve loading speed and Core Web Vitals",
       "Optimize images, scripts, and database",
-      "Reduce load time for better engagement",
-      "Enhance overall website performance",
+      "Reduce bounce rate and improve engagement",
+      "Enhance overall store performance",
     ],
   },
   {
     id: "seo",
-    title: "SEO Setup",
-    desc: "We implement SEO best practices to help your WordPress website rank higher and attract organic traffic.",
+    title: "SEO for E-commerce",
+    desc: "We implement SEO strategies to help your store rank higher and attract quality organic traffic.",
     points: [
-      "Optimize website structure and URLs",
-      "Implement on-page SEO fundamentals",
-      "Improve search engine visibility",
-      "Set up SEO tools and tracking systems",
+      "Optimize product pages and categories",
+      "Improve site structure and URLs",
+      "Implement on-page SEO best practices",
+      "Increase visibility and organic traffic",
     ],
   },
   {
     id: "migration",
-    title: "WordPress Migration",
-    desc: "We safely migrate your existing website to WordPress without data loss or downtime.",
+    title: "Store Migration",
+    desc: "We safely migrate your existing store to WooCommerce without data loss or downtime.",
     points: [
-      "Migrate from any platform securely",
-      "Preserve data, SEO, and performance",
-      "Ensure smooth transition with zero downtime",
-      "Optimize website after migration",
+      "Migrate products, users, and orders securely",
+      "Preserve SEO, URLs, and performance",
+      "Ensure smooth transition with minimal downtime",
+      "Optimize store after migration",
     ],
   },
   {
     id: "support",
     title: "Maintenance & Support",
-    desc: "We provide ongoing support to keep your WordPress website secure, updated, and running smoothly.",
+    desc: "We provide ongoing support to keep your store secure, updated, and running smoothly.",
     points: [
       "Regular updates and security monitoring",
       "Fix bugs and technical issues quickly",
-      "Ensure website uptime and stability",
+      "Ensure store uptime and stability",
       "Provide continuous improvements and support",
     ],
   },
 ];
 
-const WordpressExpertiseDetails = () => {
+const WoocommExpertiseDetails = () => {
   const [activeTab, setActiveTab] = useState(servicesData[0]);
   const [openAccordion, setOpenAccordion] = useState(servicesData[0].id);
 
@@ -104,7 +104,7 @@ const WordpressExpertiseDetails = () => {
       <div className="react-expertise-section">
         <div className="auto-container">
           <h3 className="mb-5 text-center section-main-h3">
-            Our WordPress Development Expertise
+            Our WooCommerce Development Expertise
           </h3>
 
           {/* ── DESKTOP: same as before ── */}
@@ -411,4 +411,4 @@ const WordpressExpertiseDetails = () => {
   );
 };
 
-export default WordpressExpertiseDetails;
+export default WoocommExpertiseDetails;

@@ -56,7 +56,7 @@ const engagementData = [
   },
 ];
 
-const WordpressEngagementModels = () => {
+const WoocommEngagementModels = () => {
   const [activeCard, setActiveCard] = useState("dedicated");
 
   return (
@@ -69,10 +69,10 @@ const WordpressEngagementModels = () => {
           <h3 className="eng-title">
             Our Engagement Models
             <br />
-            for Brandmingo Services
+            for WooCommerce Services
           </h3>
           <p className="eng-subtitle">
-            Choose flexible engagement models designed to match your project
+            Choose flexible engagement models designed to match your store
             requirements, timelines, and business goals.
           </p>
         </div>
@@ -121,4 +121,4 @@ const WordpressEngagementModels = () => {
   );
 };
 
-export default WordpressEngagementModels;
+export default WoocommEngagementModels;

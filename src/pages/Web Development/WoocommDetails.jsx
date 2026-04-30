@@ -5,19 +5,19 @@ import d1 from "../../assets/images/resource/service-d1.jpg";
 import d2 from "../../assets/images/resource/service-d2.jpg";
 import RelatedServices from "../../components/RelatedServices/RelatedServices";
 import PortfolioSlider from "../../components/PortfolioSlider/PortfolioSlider";
-import WordpressDetailsHero from "../../servicespags/wordPressComponents/WordpressDetailsHero";
-import WordpressExpertiseDetails from "../../servicespags/wordPressComponents/WordpressExpertiseDetails";
-import WordpressProcessSection from "../../servicespags/wordPressComponents/WordpressProcessSection";
-import WordpressModernDigital from "../../servicespags/wordPressComponents/WordpressModernDigital";
-import WordpressCtaBanner from "../../servicespags/wordPressComponents/WordpressCtaBanner";
-import WordpressPricingPlans from "../../servicespags/wordPressComponents/WordpressPricingPlans";
-import WordpressWhyChooseBm from "../../servicespags/wordPressComponents/WordpressWhyChooseBm";
-import WordpressEngagementModels from "../../servicespags/wordPressComponents/WordpressEngagementModels";
-import WordpressPricingSection from "../../servicespags/wordPressComponents/WordpressPricingSection";
+import WoocommDetailsHero from "../../servicespags/woocommComponents/WoocommDetailsHero";
+import WoocommExpertiseDetails from "../../servicespags/woocommComponents/WoocommExpertiseDetails";
+import WoocommProcessSection from "../../servicespags/woocommComponents/WoocommProcessSection";
+import WoocommModernDigital from "../../servicespags/woocommComponents/WoocommModernDigital";
+import WoocommCtaBanner from "../../servicespags/woocommComponents/WoocommCtaBanner";
+import WoocommPricingPlans from "../../servicespags/woocommComponents/WoocommPricingPlans";
+import WoocommWhyChooseBm from "../../servicespags/woocommComponents/WoocommWhyChooseBm";
+import WoocommEngagementModels from "../../servicespags/woocommComponents/WoocommEngagementModels";
+import WoocommPricingSection from "../../servicespags/woocommComponents/WoocommPricingSection";
 
 const THEME = "#ff6b1e";
 
-const WordpressDetails = () => {
+const WoocommDetails = () => {
   const [activeIndex, setActiveIndex] = useState(null);
   const location = useLocation();
 
@@ -76,7 +76,7 @@ const WordpressDetails = () => {
 `}</style>
 
       {/* HERO */}
-      <WordpressDetailsHero />
+      <WoocommDetailsHero />
 
       {/* MAIN */}
       <section
@@ -95,20 +95,20 @@ const WordpressDetails = () => {
                       <div className="col-lg-6 col-md-12">
                         <div className="react-build-content">
                           <h3 className="mt-0 mb-3 theme-h3">
-                            Build with WordPress
+                            Build WooCommerce
                           </h3>
                           <p className="text mb-3">
-                            WordPress development is the process of building
-                            flexible, scalable, and high-performance websites
-                            using the world’s most popular CMS. If your website
-                            feels outdated or hard to manage, you’re losing
-                            potential customers every day.
+                            WooCommerce development is the process of building
+                            flexible, scalable, and high-performance online
+                            stores using the world’s most powerful e-commerce
+                            platform. If your store feels outdated or hard to
+                            manage, you’re losing potential customers every day.
                           </p>
 
                           <p className="text mb-4">
-                            We create fast, SEO-friendly, and easy-to-manage
-                            WordPress websites that improve user experience and
-                            help you grow your business online.
+                            We create fast, conversion-focused, and
+                            easy-to-manage WooCommerce stores that improve user
+                            experience and help you grow your business online.
                           </p>
 
                           {/* Stats Row */}
@@ -116,7 +116,7 @@ const WordpressDetails = () => {
                             <div className="react-stat-item">
                               <span className="react-stat-num">10x</span>
                               <span className="react-stat-label">
-                                Faster Load
+                                Faster Store
                               </span>
                             </div>
                             <div className="react-stat-divider" />
@@ -130,15 +130,15 @@ const WordpressDetails = () => {
                             <div className="react-stat-item">
                               <span className="react-stat-num">500+</span>
                               <span className="react-stat-label">
-                                Websites Built
+                                Stores Delivered
                               </span>
                             </div>
                           </div>
 
                           {/* Feature Tag */}
                           <div className="react-feature-tag">
-                            <i className="fas fa-bolt spin-icon"></i>
-                            <span>SEO & Performance Optimized</span>
+                            <i className="fas fa-cart-shopping spin-icon"></i>
+                            <span>E-commerce & Conversion Optimized</span>
                           </div>
                         </div>
                       </div>
@@ -391,31 +391,28 @@ const WordpressDetails = () => {
 
                   {/* S2 */}
                   <h3 style={{ marginTop: "60px" }} className="mb-2 ">
-                    What is WordPress Development?
+                    What is WooCommerce Development?
                   </h3>
                   <p className="text mb-3">
-                    WordPress development is the process of building flexible,
-                    SEO-friendly, and easy-to-manage websites using the world’s
-                    most popular content management system.
+                    WooCommerce development is the process of building flexible,
+                    scalable, and conversion-focused online stores using the
+                    world’s most powerful e-commerce platform.
                   </p>
                   <p className="text mb-2">
                     Let’s simplify this — instead of relying on complex coding
-                    for every update, WordPress allows you to manage content
-                    easily while maintaining performance, design, and
-                    scalability. This makes your website:
+                    for every update, WooCommerce allows you to manage products,
+                    orders, and payments easily while maintaining performance,
+                    design, and scalability. This makes your store:
                   </p>
                   {/* <div className="row g-2 mb-3"> */}
                   <div className="row g-4 mb-4">
                     {[
                       { icon: "fas fa-bolt", label: "Fast Loading" },
+                      { icon: "fas fa-mobile-alt", label: "Fully Responsive" },
+                      { icon: "fas fa-cart-shopping", label: "Easy to Manage" },
                       {
-                        icon: "fas fa-mobile-screen",
-                        label: "Fully Responsive",
-                      },
-                      { icon: "fas fa-pen-to-square", label: "Easy to Manage" },
-                      {
-                        icon: "fas fa-magnifying-glass",
-                        label: "SEO Friendly",
+                        icon: "fas fa-chart-line",
+                        label: "Conversion Focused",
                       },
                     ].map((item, i) => (
                       <div className="col-12 col-sm-6" key={i}>
@@ -496,9 +493,8 @@ const WordpressDetails = () => {
                   </div>
 
                   <p className="benefit-footer-text mb-4">
-                    So in simple terms — WordPress makes your website easy to
-                    manage, flexible to scale, and powerful enough to grow your
-                    business online.
+                    So in simple terms — WooCommerce helps you manage your store
+                    easily, scale faster, and grow your sales effectively.
                   </p>
 
                   {/* SLIDER */}
@@ -551,12 +547,12 @@ const WordpressDetails = () => {
                           <div className="discuss-content">
                             {/* h3 = style.css se auto apply hoga — koi custom override nahi */}
                             <h3>
-                              Build Your High-Performance WordPress Website with
-                              a Leading WordPress Development Company.
+                              Build Your High-Performance WooCommerce Store with
+                              a Leading E-commerce Development Company.
                             </h3>
 
                             <a href="/contact" className="discuss-cta">
-                              Let’s Build Your Website{" "}
+                              Let’s Build Your Store{" "}
                               <i className="fas fa-arrow-right"></i>
                             </a>
                           </div>
@@ -568,12 +564,11 @@ const WordpressDetails = () => {
                   {/* S4 */}
                   {/* --- WHAT YOU GET / DELIVERABLES SECTION --- */}
                   <div className="mt-0" style={{ paddingTop: "70px" }}>
-                    <h3 className="mb-2">
-                      What You Get with Our WordPress Development Services
-                    </h3>
+                    <h3 className="mb-2">What You Get with WooCommerce</h3>
                     <p className="text mb-4">
-                      We don’t just build websites — we create scalable,
-                      easy-to-manage, and SEO-optimized WordPress solutions.
+                      We don’t just build online stores — we create scalable,
+                      easy-to-manage, and conversion-driven WooCommerce
+                      solutions.
                     </p>
 
                     <div className="deliverables-outer-card">
@@ -605,8 +600,8 @@ const WordpressDetails = () => {
                                 <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
                               </svg>
                             ),
-                            label: "Custom WordPress Design",
-                            desc: "Tailored to your brand identity",
+                            label: "Custom Store Design",
+                            desc: "Tailored to match your brand identity",
                           },
                           {
                             icon: (
@@ -630,7 +625,7 @@ const WordpressDetails = () => {
                                 <line x1="12" y1="18" x2="12.01" y2="18" />
                               </svg>
                             ),
-                            label: "Fully Responsive Website",
+                            label: "Fully Responsive Store",
                             desc: "Optimized for all devices",
                           },
                           {
@@ -650,8 +645,8 @@ const WordpressDetails = () => {
                                 <line x1="10" y1="14" x2="21" y2="3" />
                               </svg>
                             ),
-                            label: "Fully Responsive Website",
-                            desc: "Optimized for all devices",
+                            label: "Secure Checkout System",
+                            desc: "Safe and seamless transactions",
                           },
                           {
                             icon: (
@@ -669,7 +664,7 @@ const WordpressDetails = () => {
                               </svg>
                             ),
                             label: "Plugins & Integrations",
-                            desc: "Extended functionality support",
+                            desc: "Extended store functionality",
                           },
                           {
                             icon: (
@@ -707,7 +702,7 @@ const WordpressDetails = () => {
                                 <polyline points="16,11 18,13 22,9" />
                               </svg>
                             ),
-                            label: "SEO-Ready Structure",
+                            label: "SEO-Ready Store",
                             desc: "Built to rank higher",
                           },
                         ].map((item, i) => (
@@ -745,34 +740,34 @@ const WordpressDetails = () => {
                   </div>
 
                   <div className="react-expertise-section">
-                    <WordpressExpertiseDetails />
+                    <WoocommExpertiseDetails />
                   </div>
 
                   {/* S6 */}
                   <div className="process-section-wrapper">
-                    <WordpressProcessSection />
+                    <WoocommProcessSection />
                   </div>
 
                   <div className="modern-cta-section">
-                    <WordpressModernDigital />
-                    <WordpressCtaBanner />
+                    <WoocommModernDigital />
+                    <WoocommCtaBanner />
                   </div>
 
                   {/* PricingPlans */}
                   <div className="pricing-section">
-                    <WordpressPricingPlans />
+                    <WoocommPricingPlans />
                   </div>
 
                   <div className="why-brandmingo-section">
-                    <WordpressWhyChooseBm />
+                    <WoocommWhyChooseBm />
                   </div>
 
                   <div className="engagement-section">
-                    <WordpressEngagementModels />
+                    <WoocommEngagementModels />
                   </div>
 
                   <div className="pricing-final-section">
-                    <WordpressPricingSection />
+                    <WoocommPricingSection />
                   </div>
 
                   {/* FAQ */}
@@ -781,20 +776,20 @@ const WordpressDetails = () => {
                     <ul className="accordion-box mt-40">
                       {[
                         {
-                          q: "Frequently Asked Question",
-                          a: "WordPress is used to build websites like business sites, blogs, portfolios, and e-commerce stores with easy management.",
+                          q: "What is WooCommerce used for?",
+                          a: "WooCommerce is used to build and manage online stores on WordPress. It allows you to sell products, manage orders, accept payments, and scale your e-commerce business easily.",
                         },
                         {
-                          q: "Is WordPress better than custom development?",
-                          a: "WordPress is ideal for fast, cost-effective websites, while custom development is better for advanced features and scalability.",
+                          q: "Is WooCommerce better than custom e-commerce development?",
+                          a: "WooCommerce is cost-effective, flexible, and faster to launch. Custom development offers more control, but WooCommerce is ideal for most businesses starting or scaling online stores.",
                         },
                         {
-                          q: "Is WordPress SEO-friendly?",
-                          a: "Yes, WordPress is highly SEO-friendly with proper structure, plugins, and optimization techniques to rank on Google.",
+                          q: "Is WooCommerce SEO-friendly?",
+                          a: "Yes, WooCommerce is SEO-friendly when properly optimized. With the right setup, it helps improve rankings, product visibility, and organic traffic.",
                         },
                         {
-                          q: "How much does a WordPress website cost?",
-                          a: "The cost depends on features, design, and complexity. We provide flexible pricing based on your business needs.",
+                          q: "How much does a WooCommerce store cost?",
+                          a: "The cost depends on store complexity, features, design, and integrations. Basic stores cost less, while advanced stores with custom features require higher investment.",
                         },
                       ].map((item, index) => (
                         <li
@@ -841,4 +836,4 @@ const WordpressDetails = () => {
   );
 };
 
-export default WordpressDetails;
+export default WoocommDetails;

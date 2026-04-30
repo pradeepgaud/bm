@@ -1,6 +1,6 @@
 import React from "react";
 
-const WordpressCtaBanner = () => {
+const WoocommCtaBanner = () => {
   return (
     <>
       <style>{`
@@ -300,18 +300,18 @@ const WordpressCtaBanner = () => {
               <h3 className="cta-heading">
                 Ready to Build a High-Performing
                 <br className="d-none d-lg-block" />
-                WordPress Website?
+                WooCommerce Store?
               </h3>
 
               <p className="cta-subtext">
-                We create fast, scalable, and SEO-optimized WordPress websites
-                that help you attract more visitors, generate leads, and grow
+                We create fast, scalable, and conversion-optimized WooCommerce
+                stores that help you attract customers, increase sales, and grow
                 your business online.
               </p>
 
               <div className="cta-btn-wrap">
                 <a href="#contact" className="cta-main-btn">
-                  Start Your Project
+                  Start Your Store
                   <i className="fas fa-arrow-right" />
                 </a>
                 <a href="#portfolio" className="cta-link">
@@ -328,7 +328,7 @@ const WordpressCtaBanner = () => {
                 </div>
                 <div className="badge-info">
                   <span className="val">500+</span>
-                  <span className="lbl">WEBSITES DELIVERED</span>
+                  <span className="lbl">STORES BUILT</span>
                 </div>
               </div>
 
@@ -359,4 +359,4 @@ const WordpressCtaBanner = () => {
   );
 };
 
-export default WordpressCtaBanner;
+export default WoocommCtaBanner;

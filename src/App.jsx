@@ -58,6 +58,10 @@ const PerformanceMarketing = lazy(
   () => import("./pages/performance Marketing/PerformanceMarketing"),
 );
 
+const WoocommDetails = lazy(
+  () => import("./pages/Web Development/WoocommDetails"),
+);
+
 // ✅ ScrollToTop — har route change pe window top pe jaayegi
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -128,6 +132,7 @@ function App() {
             />
             <Route path="/shopify" element={<ShopifyDetails />} />
             <Route path="/wordpress" element={<WordpressDetails />} />
+            <Route path="/woocommerce" element={<WoocommDetails />} />
           </Routes>
 
           <NewFooter />

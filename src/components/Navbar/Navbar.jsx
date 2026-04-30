@@ -123,7 +123,7 @@ const MEGA_SERVICES = [
       },
       {
         label: "Woocommerce Website",
-        to: "#",
+        to: "/woocommerce",
         icon: "fa-solid fa-cart-shopping",
         desc: "Powerful eCommerce stores with WooCommerce for seamless online selling.",
       },

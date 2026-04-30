@@ -43,7 +43,7 @@ const GradientText = ({ text, fontFamily }) => (
   </>
 );
 
-const WordpressDetailsHero = () => {
+const WoocommDetailsHero = () => {
   const [ff, setFf] = React.useState("var(--heading-font-family)");
   const [isMobile, setIsMobile] = useState(false);
 
@@ -74,7 +74,7 @@ const WordpressDetailsHero = () => {
             }}
           >
             <div className="rdh-eyebrow">Premium Solution</div>
-            <h1 className="title">Wordpress</h1>
+            <h1 className="title">WooCommerce</h1>
             <div className="rdh-liquid-wrap">
               <GradientText text="Marketing" fontFamily={ff} />
             </div>
@@ -83,7 +83,7 @@ const WordpressDetailsHero = () => {
                 <a href="/">Home</a>
               </li>
               <li className="sep">/</li>
-              <li className="active">WordPress Development</li>
+              <li className="active">WooCommerce Development</li>
             </ul>
           </div>
 
@@ -95,7 +95,7 @@ const WordpressDetailsHero = () => {
 
             <div className="rdh-atom-wrap rdh-no-spin">
               <DotLottieReact
-                src="https://lottie.host/d8a11679-7e1a-4302-ae8d-199509a96a17/ZC7781bao5.lottie"
+                src="https://lottie.host/232b15b0-b27f-4ad4-8039-9ae2e0f69359/JxfFJeelXA.lottie"
                 autoplay
                 loop
                 style={{
@@ -108,7 +108,7 @@ const WordpressDetailsHero = () => {
               <i className="fas fa-chart-line" /> High Performance
             </div>
             <div className="rdh-chip rdh-chip-2">
-              <i className="fas fa-bullseye" /> Tailored WordPress
+              <i className="fas fa-bullseye" /> Tailored WooCommerce
             </div>
             <div className="rdh-chip rdh-chip-3">
               <i className="fas fa-rocket" /> Growth Ready
@@ -121,9 +121,9 @@ const WordpressDetailsHero = () => {
           {/* BLOCK 3 — desc + buttons + badges */}
           <div className="rdh-bottom-block">
             <p className="rdh-desc">
-              Build powerful WordPress websites that are fast, secure, and easy
-              to manage. We create solutions that help your business grow and
-              deliver a smooth user experience.
+              Build powerful WooCommerce stores that are fast, secure, and
+              optimized for conversions. We create scalable e-commerce solutions
+              that help you sell more and grow your business online.
             </p>
             <div className="rdh-btn-row">
               <a href="#contact" className="rdh-btn-primary">
@@ -177,4 +177,4 @@ const WordpressDetailsHero = () => {
   );
 };
 
-export default WordpressDetailsHero;
+export default WoocommDetailsHero;

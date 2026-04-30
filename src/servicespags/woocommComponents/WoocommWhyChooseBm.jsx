@@ -1,15 +1,15 @@
 import React from "react";
 
-const WordpressWhyChooseBm = () => {
+const WoocommWhyChooseBm = () => {
   return (
     <section className="wcb-section">
       <div className="auto-container">
         {/* Header */}
         <div className="wcb-header">
-          <h3>Why Choose Brandmingo for WordPress Development</h3>
+          <h3>Why Choose Brandmingo for WooCommerce Development</h3>
           <p className="wcb-subtitle">
-            We build high-performance WordPress websites that are fast,
-            scalable, and designed to drive real business growth.
+            We build high-performance WooCommerce stores that are fast,
+            scalable, and designed to drive real sales and business growth.
           </p>
         </div>
 
@@ -162,4 +162,4 @@ const WordpressWhyChooseBm = () => {
   );
 };
 
-export default WordpressWhyChooseBm;
+export default WoocommWhyChooseBm;

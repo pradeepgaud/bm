@@ -2,28 +2,43 @@ import React, { useState } from "react";
 // import "./pricing-section.css";
 
 const pricingFactors = [
-  { icon: "fas fa-sitemap", label: "Website Type & Complexity" },
-  { icon: "fas fa-handshake", label: "Selected Engagement Model" },
-  { icon: "fas fa-user-gear", label: "Team Size & Expertise" },
-  { icon: "fas fa-clock", label: "Timeline & Delivery Speed" },
-  { icon: "fas fa-puzzle-piece", label: "Plugins & Integrations" },
+  {
+    icon: "fas fa-store",
+    label: "Store Type & Complexity",
+  },
+  {
+    icon: "fas fa-handshake",
+    label: "Selected Engagement Model",
+  },
+  {
+    icon: "fas fa-users",
+    label: "Team Size & Expertise",
+  },
+  {
+    icon: "fas fa-clock",
+    label: "Timeline & Delivery Speed",
+  },
+  {
+    icon: "fas fa-plug",
+    label: "Plugins & Integrations",
+  },
 ];
 
 const estimateSteps = [
   {
     num: "01",
     title: "Requirement Discussion",
-    desc: "We understand your website goals, features, and business requirements in detail.",
+    desc: "We understand your store goals, products, and business requirements in detail.",
   },
   {
     num: "02",
     title: "Technical Assessment",
-    desc: "Our team evaluates complexity, tools, and the best approach for your website.",
+    desc: "Our team evaluates complexity, features, and the right approach for your store.",
   },
   {
     num: "03",
     title: "Effort & Timeline Planning",
-    desc: "We define deliverables, milestones, and realistic timelines for smooth execution.",
+    desc: "We define deliverables, milestones, and realistic timelines for execution.",
   },
   {
     num: "04",
@@ -32,7 +47,7 @@ const estimateSteps = [
   },
 ];
 
-const WordpressPricingSection = () => {
+const WoocommPricingSection = () => {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
@@ -42,10 +57,10 @@ const WordpressPricingSection = () => {
         <div className="prc-header">
           <div className="prc-eyebrow">Transparent Pricing</div>
           {/* h3 tag — sized via var(--h3-font-size) in CSS */}
-          <h3 className="prc-title">WordPress Pricing & Cost Estimation</h3>
+          <h3 className="prc-title">WooCommerce Pricing & Cost Estimation</h3>
           <p className="prc-subtitle">
-            Our WordPress development pricing is flexible, transparent, and
-            tailored to your business needs — no hidden costs.
+            Our WooCommerce development pricing is flexible, transparent, and
+            tailored to your store needs — no hidden costs.
           </p>
         </div>
 
@@ -97,4 +112,4 @@ const WordpressPricingSection = () => {
   );
 };
 
-export default WordpressPricingSection;
+export default WoocommPricingSection;

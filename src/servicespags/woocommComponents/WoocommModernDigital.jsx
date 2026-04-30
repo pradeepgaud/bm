@@ -3,9 +3,9 @@ import React, { useState } from "react";
 const serviceImages = {
   custom:
     "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=520&q=80&auto=format&fit=crop",
-  theme:
+  design:
     "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=520&q=80&auto=format&fit=crop",
-  woocommerce:
+  setup:
     "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?w=520&q=80&auto=format&fit=crop",
   plugin:
     "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=520&q=80&auto=format&fit=crop",
@@ -21,47 +21,47 @@ const serviceImages = {
 const servicesData = [
   {
     id: "custom",
-    title: "Custom WordPress Development",
-    desc: "We build fast, scalable, and fully customized WordPress websites tailored to your business needs and brand identity.",
+    title: "Custom Store Development",
+    desc: "We build fast, scalable, and fully customized WooCommerce stores tailored to your business needs and brand identity.",
   },
   {
-    id: "theme",
-    title: "Theme Customization",
-    desc: "Customize WordPress themes to match your design, improve usability, and deliver a seamless user experience.",
+    id: "design",
+    title: "Store Design",
+    desc: "Design visually appealing store layouts that improve usability and deliver a seamless shopping experience.",
   },
   {
-    id: "woocommerce",
-    title: "WooCommerce Development",
-    desc: "Create powerful online stores with secure payments, smooth checkout, and optimized shopping experience.",
+    id: "setup",
+    title: "WooCommerce Setup",
+    desc: "Set up your online store with products, payments, and shipping for smooth and efficient selling.",
   },
   {
     id: "plugin",
     title: "Plugin Development",
-    desc: "Develop and integrate custom plugins to extend your website’s functionality and automate processes.",
+    desc: "Develop and integrate custom features to extend your store’s functionality and automate processes.",
   },
   {
     id: "optimization",
-    title: "Website Optimization",
-    desc: "Improve website speed, performance, and Core Web Vitals for better user experience and engagement.",
+    title: "Store Optimization",
+    desc: "Improve store speed, performance, and user experience for better engagement and higher conversions.",
   },
   {
     id: "seo",
-    title: "SEO Setup",
-    desc: "Optimize your WordPress website structure to improve rankings, visibility, and organic traffic.",
+    title: "SEO for Store",
+    desc: "Optimize your store structure to improve rankings, visibility, and organic traffic growth.",
   },
   {
     id: "migration",
-    title: "WordPress Migration",
-    desc: "Migrate your website safely to WordPress without data loss, downtime, or performance issues.",
+    title: "Store Migration",
+    desc: "Migrate your existing store to WooCommerce without data loss, downtime, or performance issues.",
   },
   {
     id: "support",
     title: "Maintenance & Support",
-    desc: "Keep your website secure, updated, and running smoothly with ongoing support and improvements.",
+    desc: "Keep your store secure, updated, and running smoothly with continuous support and improvements.",
   },
 ];
 
-const WordpressModernDigital = () => {
+const WoocommModernDigital = () => {
   const [activeTab, setActiveTab] = useState(servicesData[0]);
   const [animKey, setAnimKey] = useState(0);
   const [openAccordion, setOpenAccordion] = useState(servicesData[0].id);
@@ -80,7 +80,7 @@ const WordpressModernDigital = () => {
       <div className="auto-container">
         {/* Heading — h3 tag, style.css vars apply automatically */}
         <h3 className="ret-heading text-center mb-5">
-          WordPress Development Services{" "}
+          WooCommerce Development Services{" "}
         </h3>
 
         {/* ── DESKTOP ── */}
@@ -162,4 +162,4 @@ const WordpressModernDigital = () => {
   );
 };
 
-export default WordpressModernDigital;
+export default WoocommModernDigital;
