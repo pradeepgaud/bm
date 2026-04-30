@@ -148,7 +148,7 @@ const WoocommDetails = () => {
                         <div className="react-build-image-wrapper">
                           <div className="image-glass-card">
                             <img
-                              src="https://res.cloudinary.com/dpdn7kzll/image/upload/v1777530322/Untitled_design_1_so2ju6.png"
+                              src="https://res.cloudinary.com/dpdn7kzll/image/upload/v1777552698/bm_services_image_gbkwer.png"
                               alt="React Development"
                               className="main-react-img"
                             />
