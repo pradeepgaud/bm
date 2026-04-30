@@ -95,7 +95,8 @@ const WoocommDetailsHero = () => {
 
             <div className="rdh-atom-wrap rdh-no-spin">
               <DotLottieReact
-                src="https://lottie.host/232b15b0-b27f-4ad4-8039-9ae2e0f69359/JxfFJeelXA.lottie"
+                // src="https://lottie.host/232b15b0-b27f-4ad4-8039-9ae2e0f69359/JxfFJeelXA.lottie"
+                src="https://lottie.host/d2b54375-9ed9-452d-97a4-eb6c40fb096f/Tt5Wm1xV8U.lottie"
                 autoplay
                 loop
                 style={{
