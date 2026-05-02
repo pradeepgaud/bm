@@ -155,19 +155,19 @@ const MEGA_SERVICES = [
       },
       {
         label: "Google Ads",
-        to: "#",
+        to: "/google-ads",
         icon: "fa-brands fa-google",
         desc: "Targeted Google Ads campaigns that bring high-intent customers.",
       },
       {
         label: "Facebook / Instagram Ads",
-        to: "#",
+        to: "/facebook-instagram-ads",
         icon: "fa-brands fa-meta",
         desc: "Social ads that capture attention and convert at scale.",
       },
       {
         label: "Linkedin Ads",
-        to: "#",
+        to: "/linkedin-ads",
         icon: "fa-brands fa-linkedin",
         desc: "B2B focused LinkedIn campaigns to reach decision makers.",
       },

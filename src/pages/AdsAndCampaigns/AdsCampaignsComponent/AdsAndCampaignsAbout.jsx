@@ -1,26 +1,31 @@
 import React, { useEffect, useRef, useState } from "react";
-// import "./webdev-about.css";
+import { useNavigate } from "react-router-dom";
 
 const NAV = [
   {
     fa: "fa-solid fa-chart-line",
     label: "Performance Marketing",
+    to: "/google-ads",
   },
   {
     fa: "fa-brands fa-google",
     label: "Google Ads",
+    to: "/",
   },
   {
     fa: "fa-brands fa-meta",
     label: "Facebook / Instagram Ads",
+    to: "/",
   },
   {
     fa: "fa-brands fa-linkedin",
     label: "Linkedin Ads",
+    to: "/",
   },
   {
-    fa: "fa-solid fa-question",
+    fa: "fa-solid fa-comments",
     label: "Quora Ads",
+    to: "/",
   },
 ];
 
@@ -87,6 +92,7 @@ const AdsAndCampaignsAbout = () => {
   const [visible, setVisible] = useState(false);
   const [activeNav, setNav] = useState(0);
   const [counts, setCounts] = useState({ p: 0, s: 0, h: 0, e: 0 });
+  const navigate = useNavigate();
 
   useEffect(() => {
     const io = new IntersectionObserver(
@@ -145,7 +151,10 @@ const AdsAndCampaignsAbout = () => {
                   <li
                     key={i}
                     className={activeNav === i ? "active" : ""}
-                    onClick={() => setNav(i)}
+                    onClick={() => {
+                      setNav(i); // active UI
+                      navigate(n.to); // redirect 🔥
+                    }}
                   >
                     <span className="nl">
                       <i className={n.fa} />

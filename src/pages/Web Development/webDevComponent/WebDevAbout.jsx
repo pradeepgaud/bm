@@ -1,13 +1,22 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 // import "./webdev-about.css";
 
 const NAV = [
-  { fa: "fa-solid fa-code", label: "React Development" },
-  { fa: "fa-brands fa-shopify", label: "Shopify Website" },
-  { fa: "fa-brands fa-wordpress", label: "WordPress Website" },
-  { fa: "fa-solid fa-cart-shopping", label: "WooCommerce Website" },
-  { fa: "fa-brands fa-php", label: "PHP Development" },
-  { fa: "fa-solid fa-database", label: "Custom CRM" },
+  { fa: "fa-solid fa-code", label: "React Development", to: "/react" },
+  { fa: "fa-brands fa-shopify", label: "Shopify Website", to: "/shopify" },
+  {
+    fa: "fa-brands fa-wordpress",
+    label: "WordPress Website",
+    to: "/wordpress",
+  },
+  {
+    fa: "fa-solid fa-cart-shopping",
+    label: "WooCommerce Website",
+    to: "/woocommerce",
+  },
+  { fa: "fa-brands fa-php", label: "PHP Development", to: "/php" },
+  { fa: "fa-solid fa-database", label: "Custom CRM", to: "/crm" },
 ];
 
 const REASONS = [
@@ -74,6 +83,7 @@ const WebDevAbout = () => {
   const [visible, setVisible] = useState(false);
   const [activeNav, setNav] = useState(0);
   const [counts, setCounts] = useState({ p: 0, s: 0, h: 0, e: 0 });
+  const navigate = useNavigate();
 
   useEffect(() => {
     const io = new IntersectionObserver(
@@ -132,7 +142,10 @@ const WebDevAbout = () => {
                   <li
                     key={i}
                     className={activeNav === i ? "active" : ""}
-                    onClick={() => setNav(i)}
+                    onClick={() => {
+                      setNav(i);
+                      navigate(n.to);
+                    }}
                   >
                     <span className="nl">
                       <i className={n.fa} />

@@ -12,6 +12,7 @@ import "aos/dist/aos.css";
 // COMPONENTS
 import Preloader from "./components/Preloader/Preloader";
 import Navbar from "./components/Navbar/Navbar";
+import LinkedinAds from "./pages/AdsAndCampaigns/LinkedinAds";
 
 // LAZY COMPONENTS
 const Cursor = lazy(() => import("./components/Cursor/Cursor"));
@@ -22,9 +23,7 @@ const NewFooter = lazy(() => import("./components/Footer/NewFooter"));
 const NewHome = lazy(() => import("./pages/Home/NewHome"));
 const About = lazy(() => import("./pages/About/About"));
 const Services = lazy(() => import("./pages/Services/Services"));
-const WebDevelopment = lazy(
-  () => import("./pages/Web Development/WebDevelopment"),
-);
+
 const WebDevelopmentNew = lazy(
   () => import("./pages/Web Development/WebDevelopmentNew"),
 );
@@ -55,12 +54,16 @@ const ShopifyDetails = lazy(
   () => import("./pages/Web Development/ShopifyDetails"),
 );
 const PerformanceMarketing = lazy(
-  () => import("./pages/performance Marketing/PerformanceMarketing"),
+  () => import("./pages/AdsAndCampaigns/PerformanceMarketing"),
 );
 
 const WoocommDetails = lazy(
   () => import("./pages/Web Development/WoocommDetails"),
 );
+
+// Ads Campaign Management import
+const GoogleAds = lazy(() => import("./pages/AdsAndCampaigns/GoogleAds"));
+const FbInstAds = lazy(() => import("./pages/AdsAndCampaigns/FbInstAds"));
 
 // ✅ ScrollToTop — har route change pe window top pe jaayegi
 function ScrollToTop() {
@@ -111,7 +114,6 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/service-details" element={<ServiceDetails />} />
-            <Route path="/web-development" element={<WebDevelopment />} />
             <Route
               path="/web-development-new"
               element={<WebDevelopmentNew />}
@@ -126,13 +128,19 @@ function App() {
               element={<SocialMediaManagement />}
             />
             <Route path="/react" element={<ReactDetails />} />
+
+            <Route path="/shopify" element={<ShopifyDetails />} />
+            <Route path="/wordpress" element={<WordpressDetails />} />
+            <Route path="/woocommerce" element={<WoocommDetails />} />
+
+            {/* Ads Campaign Management */}
             <Route
               path="/performance-marketing"
               element={<PerformanceMarketing />}
             />
-            <Route path="/shopify" element={<ShopifyDetails />} />
-            <Route path="/wordpress" element={<WordpressDetails />} />
-            <Route path="/woocommerce" element={<WoocommDetails />} />
+            <Route path="/google-ads" element={<GoogleAds />} />
+            <Route path="/facebook-instagram-ads" element={<FbInstAds />} />
+            <Route path="/linkedin-ads" element={<LinkedinAds />} />
           </Routes>
 
           <NewFooter />

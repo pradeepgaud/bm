@@ -1,19 +1,3 @@
-// import React from "react";
-// import WebDevelopmentHero from "../Web Development/webDevComponent/WebDevelopmentHero";
-// import WebDevAbout from "./webDevComponent/WebDevAbout";
-
-// const WebDevelopmentNew = () => {
-//   return (
-//     <div>
-//       <WebDevelopmentHero />
-
-//       <WebDevAbout />
-//     </div>
-//   );
-// };
-
-// export default WebDevelopmentNew;
-
 import React from "react";
 import WebDevelopmentHero from "../Web Development/webDevComponent/WebDevelopmentHero";
 import WebDevAbout from "./webDevComponent/WebDevAbout";
