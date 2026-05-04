@@ -12,7 +12,6 @@ import "aos/dist/aos.css";
 // COMPONENTS
 import Preloader from "./components/Preloader/Preloader";
 import Navbar from "./components/Navbar/Navbar";
-import LinkedinAds from "./pages/AdsAndCampaigns/LinkedinAds";
 
 // LAZY COMPONENTS
 const Cursor = lazy(() => import("./components/Cursor/Cursor"));
@@ -64,6 +63,23 @@ const WoocommDetails = lazy(
 // Ads Campaign Management import
 const GoogleAds = lazy(() => import("./pages/AdsAndCampaigns/GoogleAds"));
 const FbInstAds = lazy(() => import("./pages/AdsAndCampaigns/FbInstAds"));
+const LinkedinAds = lazy(() => import("./pages/AdsAndCampaigns/LinkedinAds"));
+
+// Social Media Management
+const BrandAwareness = lazy(
+  () => import("./pages/SocialMediaManagement/BrandAwareness"),
+);
+const StrategyPlanning = lazy(
+  () => import("./pages/SocialMediaManagement/StrategyPlanning"),
+);
+
+const ContentCreation = lazy(
+  () => import("./pages/SocialMediaManagement/ContentCreation"),
+);
+
+const EngagementGrowth = lazy(
+  () => import("./pages/SocialMediaManagement/EngagementGrowth"),
+);
 
 // ✅ ScrollToTop — har route change pe window top pe jaayegi
 function ScrollToTop() {
@@ -141,6 +157,13 @@ function App() {
             <Route path="/google-ads" element={<GoogleAds />} />
             <Route path="/facebook-instagram-ads" element={<FbInstAds />} />
             <Route path="/linkedin-ads" element={<LinkedinAds />} />
+            <Route path="/brand-awareness" element={<BrandAwareness />} />
+            <Route path="/strategy-planning" element={<StrategyPlanning />} />
+            <Route
+              path="/content-creation-publishing"
+              element={<ContentCreation />}
+            />
+            <Route path="/engagement-growth" element={<EngagementGrowth />} />
           </Routes>
 
           <NewFooter />

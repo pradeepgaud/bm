@@ -181,25 +181,25 @@ const MEGA_SERVICES = [
     items: [
       {
         label: "Brand Awareness",
-        to: "#",
+        to: "/brand-awareness",
         icon: "fa-solid fa-star",
         desc: "Build a recognizable brand that stands out in the market.",
       },
       {
-        label: "Social Media Engagement",
-        to: "#",
+        label: "Strategy & Planning",
+        to: "/strategy-planning",
         icon: "fa-solid fa-heart",
         desc: "Foster meaningful connections with your target audience.",
       },
       {
-        label: "Social Media Posting",
-        to: "#",
+        label: "Content Creation & Publishing",
+        to: "/content-creation-publishing",
         icon: "fa-solid fa-pen-to-square",
         desc: "Consistent, creative content that keeps your feed active.",
       },
       {
-        label: "Social Media Boosting",
-        to: "#",
+        label: "Engagement & Growth",
+        to: "/engagement-growth",
         icon: "fa-solid fa-rocket",
         desc: "Amplify your best content to reach a wider audience fast.",
       },

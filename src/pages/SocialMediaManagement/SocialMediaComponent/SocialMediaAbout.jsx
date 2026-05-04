@@ -1,22 +1,26 @@
 import React, { useEffect, useRef, useState } from "react";
-// import "./webdev-about.css";
+import { useNavigate } from "react-router-dom";
 
 const NAV = [
   {
     fa: "fa-solid fa-bullhorn",
     label: "Brand Awareness",
+    to: "/brand-awareness",
   },
   {
-    fa: "fa-solid fa-heart",
-    label: "Social Media Engagement",
+    fa: "fa-solid fa-lightbulb",
+    label: "Strategy & Planning",
+    to: "/strategy-planning",
   },
   {
-    fa: "fa-solid fa-calendar-days",
-    label: "Social Media Posting",
+    fa: "fa-solid fa-pen-nib",
+    label: "Content Creation & Publishing",
+    to: "/content-creation-publishing",
   },
   {
-    fa: "fa-solid fa-rocket",
-    label: "Social Media Boosting",
+    fa: "fa-solid fa-users",
+    label: "Engagement & Growth",
+    to: "/engagement-growth",
   },
 ];
 
@@ -84,6 +88,7 @@ const SocialMediaAbout = () => {
   const [visible, setVisible] = useState(false);
   const [activeNav, setNav] = useState(0);
   const [counts, setCounts] = useState({ p: 0, s: 0, h: 0, e: 0 });
+  const navigate = useNavigate();
 
   useEffect(() => {
     const io = new IntersectionObserver(
@@ -142,7 +147,10 @@ const SocialMediaAbout = () => {
                   <li
                     key={i}
                     className={activeNav === i ? "active" : ""}
-                    onClick={() => setNav(i)}
+                    onClick={() => {
+                      setNav(i); // active UI
+                      navigate(n.to); // redirect 🔥
+                    }}
                   >
                     <span className="nl">
                       <i className={n.fa} />
