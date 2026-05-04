@@ -8,15 +8,15 @@ import RelatedServices from "../../components/RelatedServices/RelatedServices";
 import PortfolioSlider from "../../components/PortfolioSlider/PortfolioSlider";
 import ReactExpertiseDetails from "../../components/ReactExpertiseDetails/ReactExpertiseDetails";
 import ReactDetailsHero from "../../servicespags/ReactComponents/ReactDetailsHero";
-import FbInstAdsExpertiseDetails from "../../servicespags/FbInstAdsComponents/FbInstAdsExpertiseDetails";
-import FbInstAdsProcessSection from "../../servicespags/FbInstAdsComponents/FbInstAdsProcessSection";
-import FbInstAdsModernDigital from "../../servicespags/FbInstAdsComponents/FbInstAdsModernDigital";
-import FbInstAdsCtaBanner from "../../servicespags/FbInstAdsComponents/FbInstAdsCtaBanner";
-import FbInstAdsPricingPlans from "../../servicespags/FbInstAdsComponents/FbInstAdsPricingPlans";
-import WhyChooseBMFbInstAds from "../../servicespags/FbInstAdsComponents/WhyChooseBMFbInstAds";
-import FbInstAdsEngagementModels from "../../servicespags/FbInstAdsComponents/FbInstAdsEngagementModels";
-import FbInstAdsPricingSection from "../../servicespags/FbInstAdsComponents/FbInstAdsPricingSection";
 import LinkedinHero from "../../servicespags/LinkedinAdsComponent/LinkedinHero";
+import LinkedinExpertiseDetails from "../../servicespags/LinkedinAdsComponent/LinkedinExpertiseDetails";
+import LinkedinProcessSection from "../../servicespags/LinkedinAdsComponent/LinkedinProcessSection";
+import LinkedinModernDigital from "../../servicespags/LinkedinAdsComponent/LinkedinModernDigital";
+import LinkedinCtaBanner from "../../servicespags/LinkedinAdsComponent/LinkedinCtaBanner";
+import LinkedinPricingPlans from "../../servicespags/LinkedinAdsComponent/LinkedinPricingPlans";
+import WhyChooseBMLinkedin from "../../servicespags/LinkedinAdsComponent/WhyChooseBMLinkedin";
+import LinkedinEngagementModels from "../../servicespags/LinkedinAdsComponent/LinkedinEngagementModels";
+import LinkedinPricingSection from "../../servicespags/LinkedinAdsComponent/LinkedinPricingSection";
 
 const THEME = "#ff6b1e";
 
@@ -746,35 +746,35 @@ const LinkedinAds = () => {
                   </div>
 
                   <div className="react-expertise-section">
-                    <FbInstAdsExpertiseDetails />
+                    <LinkedinExpertiseDetails />
                   </div>
 
                   {/* S6 */}
                   <div className="process-section-wrapper">
-                    <FbInstAdsProcessSection />
+                    <LinkedinProcessSection />
                   </div>
 
                   <div className="modern-cta-section">
-                    <FbInstAdsModernDigital />
-                    <FbInstAdsCtaBanner />
+                    <LinkedinModernDigital />
+                    <LinkedinCtaBanner />
                   </div>
 
                   {/* PricingPlans */}
                   <div className="pricing-section">
-                    <FbInstAdsPricingPlans />
+                    <LinkedinPricingPlans />
                   </div>
 
                   <div className="why-brandmingo-section">
-                    <WhyChooseBMFbInstAds />
+                    <WhyChooseBMLinkedin />
                   </div>
 
                   <div className="engagement-section">
                     {/* <EngagementModels /> */}
-                    <FbInstAdsEngagementModels />
+                    <LinkedinEngagementModels />
                   </div>
 
                   <div className="pricing-final-section">
-                    <FbInstAdsPricingSection />
+                    <LinkedinPricingSection />
                   </div>
 
                   {/* FAQ */}

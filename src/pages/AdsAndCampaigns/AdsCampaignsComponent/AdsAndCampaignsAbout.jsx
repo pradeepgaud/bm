@@ -5,22 +5,22 @@ const NAV = [
   {
     fa: "fa-solid fa-chart-line",
     label: "Performance Marketing",
-    to: "/google-ads",
+    to: "/performance-marketing",
   },
   {
     fa: "fa-brands fa-google",
     label: "Google Ads",
-    to: "/",
+    to: "/google-ads",
   },
   {
     fa: "fa-brands fa-meta",
     label: "Facebook / Instagram Ads",
-    to: "/",
+    to: "/facebook-instagram-ads",
   },
   {
     fa: "fa-brands fa-linkedin",
     label: "Linkedin Ads",
-    to: "/",
+    to: "/linkedin-ads",
   },
   {
     fa: "fa-solid fa-comments",

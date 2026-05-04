@@ -289,7 +289,7 @@ const LinkedinHero = () => {
             }}
           >
             <div className="rdh-eyebrow">Premium Solution</div>
-            <h1 className="title">Meta Ads</h1>
+            <h1 className="title">LinkedIn Ads</h1>
             <div className="rdh-liquid-wrap">
               <GradientText text="Marketing" fontFamily={ff} />
             </div>
@@ -298,7 +298,7 @@ const LinkedinHero = () => {
                 <a href="/">Home</a>
               </li>
               <li className="sep">/</li>
-              <li className="active">Meta Ads Marketing</li>
+              <li className="active">LinkedIn Ads Marketing</li>
             </ul>
           </div>
 
@@ -327,10 +327,10 @@ const LinkedinHero = () => {
               <i className="fas fa-chart-line" /> High ROI Campaigns
             </div>
             <div className="rdh-chip rdh-chip-2">
-              <i className="fas fa-bullseye" /> Precision Audience Targeting
+              <i className="fas fa-bullseye" /> Decision-Maker Targeting
             </div>
             <div className="rdh-chip rdh-chip-3">
-              <i className="fas fa-rocket" /> 3X Higher Conversions
+              <i className="fas fa-rocket" /> High-Quality Leads
             </div>
             {/* <span className="rdh-vert-label">
               SEO · PPC · Meta · Google Ads
@@ -340,14 +340,14 @@ const LinkedinHero = () => {
           {/* BLOCK 3 — desc + buttons + badges */}
           <div className="rdh-bottom-block">
             <p className="rdh-desc">
-              Drive real business growth with high-converting Facebook and
-              Instagram ad campaigns. We don’t just run ads — we create
-              data-driven strategies that generate leads, increase sales, and
-              maximize your return on investment.
+              Drive high-quality B2B leads with LinkedIn Ads campaigns built for
+              professionals and decision-makers. We create data-driven
+              strategies that target the right audience, generate qualified
+              leads, and maximize your ROI.
             </p>
             <div className="rdh-btn-row">
               <a href="#contact" className="rdh-btn-primary">
-                Launch Your Ad Campaign
+                Launch Your LinkedIn Campaign
                 <i className="fas fa-arrow-right" />
               </a>
               <a href="#work" className="rdh-btn-ghost">
