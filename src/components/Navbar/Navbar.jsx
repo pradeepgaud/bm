@@ -277,25 +277,25 @@ const MEGA_SERVICES = [
     items: [
       {
         label: "Amazon Management",
-        to: "#",
+        to: "/amazon-management-services",
         icon: "fa-brands fa-amazon",
         desc: "Optimize your Amazon store for maximum visibility and sales.",
       },
       {
         label: "Flipkart Management",
-        to: "#",
+        to: "/flipkart-management-services",
         icon: "fa-solid fa-store",
         desc: "Complete Flipkart store setup, listing, and management.",
       },
       {
         label: "Shopsy Management",
-        to: "#",
+        to: "/shopsy-management-services",
         icon: "fa-solid fa-cart-shopping",
         desc: "Grow your Shopsy presence with expert account management.",
       },
       {
         label: "Snapdeal Management",
-        to: "#",
+        to: "/snapdeal-management-services",
         icon: "fa-solid fa-tags",
         desc: "Boost Snapdeal sales with optimized listings and ads.",
       },

@@ -89,6 +89,23 @@ const EngagementGrowth = lazy(
   () => import("./pages/SocialMediaManagement/EngagementGrowth"),
 );
 
+// Ecommerce Account Management
+
+const AmazonManServices = lazy(
+  () => import("./pages/Ecom Management/AmazonManServices"),
+);
+
+const FlipkartManServices = lazy(
+  () => import("./pages/Ecom Management/FlipkartManServices"),
+);
+
+const ShopsyManServices = lazy(
+  () => import("./pages/Ecom Management/ShopsyManServices"),
+);
+const SnapdealManServices = lazy(
+  () => import("./pages/Ecom Management/SnapdealManServices"),
+);
+
 // UI/UX And Audits  sub serivces
 
 const CustomWebDesign = lazy(() => import("./pages/Uiux/CustomWebDesign"));
@@ -184,7 +201,27 @@ function App() {
             <Route path="/mobile-app-design" element={<MobileAppDesign />} />
             <Route path="/product-design" element={<ProductDesign />} />
             <Route path="/organic-traffic" element={<OrganicTraffic />} />
-            <Route path="/local-search-dominance" element={<LocalSDominance />} />
+            <Route
+              path="/local-search-dominance"
+              element={<LocalSDominance />}
+            />
+            <Route
+              path="/amazon-management-services"
+              element={<AmazonManServices />}
+            />
+            <Route
+              path="/flipkart-management-services"
+              element={<FlipkartManServices />}
+            />
+            <Route
+              path="/shopsy-management-services"
+              element={<ShopsyManServices />}
+            />
+
+            <Route
+              path="/snapdeal-management-services"
+              element={<SnapdealManServices />}
+            />
           </Routes>
 
           <NewFooter />

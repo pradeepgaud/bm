@@ -1,22 +1,26 @@
 import React, { useEffect, useRef, useState } from "react";
-// import "./webdev-about.css";
+import { useNavigate } from "react-router-dom";
 
 const NAV = [
   {
     fa: "fa-brands fa-amazon",
     label: "Amazon Management",
+    to: "/amazon-management-services",
   },
   {
     fa: "fa-solid fa-store",
     label: "Flipkart Management",
+    to: "/flipkart-management-services",
   },
   {
     fa: "fa-solid fa-bag-shopping",
     label: "Shopsy Management",
+    to: "/shopsy-management-services",
   },
   {
     fa: "fa-solid fa-cart-shopping",
     label: "Snapdeal Management",
+    to: "/snapdeal-management-services",
   },
 ];
 
@@ -84,6 +88,7 @@ const EcomManagementAbout = () => {
   const [visible, setVisible] = useState(false);
   const [activeNav, setNav] = useState(0);
   const [counts, setCounts] = useState({ p: 0, s: 0, h: 0, e: 0 });
+  const navigate = useNavigate();
 
   useEffect(() => {
     const io = new IntersectionObserver(
@@ -142,7 +147,10 @@ const EcomManagementAbout = () => {
                   <li
                     key={i}
                     className={activeNav === i ? "active" : ""}
-                    onClick={() => setNav(i)}
+                    onClick={() => {
+                      setNav(i); // active UI
+                      navigate(n.to); // redirect 🔥
+                    }}
                   >
                     <span className="nl">
                       <i className={n.fa} />
