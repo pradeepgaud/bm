@@ -213,25 +213,25 @@ const MEGA_SERVICES = [
     items: [
       {
         label: "Custom Web Design",
-        to: "#",
+        to: "/custom-web-design",
         icon: "fa-solid fa-palette",
         desc: "Unique, on-brand web designs crafted for your business goals.",
       },
       {
         label: "Corporate Branding",
-        to: "#",
+        to: "/corporate-branding",
         icon: "fa-solid fa-building",
         desc: "Cohesive brand identity that communicates professionalism.",
       },
       {
         label: "Mobile App Design",
-        to: "#",
+        to: "/mobile-app-design",
         icon: "fa-solid fa-mobile-screen",
         desc: "Intuitive mobile app interfaces with seamless user flows.",
       },
       {
         label: "Product Design",
-        to: "#",
+        to: "/product-design",
         icon: "fa-solid fa-cube",
         desc: "End-to-end product design from concept to final delivery.",
       },

@@ -1,22 +1,26 @@
 import React, { useEffect, useRef, useState } from "react";
-// import "./webdev-about.css";
+import { useNavigate } from "react-router-dom";
 
 const NAV = [
   {
     fa: "fa-solid fa-palette",
     label: "Custom Web Design",
+    to: "/custom-web-design",
   },
   {
     fa: "fa-solid fa-bullhorn",
     label: "Corporate Branding",
+    to: "/corporate-branding",
   },
   {
     fa: "fa-solid fa-mobile-screen",
     label: "Mobile App Design",
+    to: "/mobile-app-design",
   },
   {
     fa: "fa-solid fa-cube",
     label: "Product Design",
+    to: "/product-design",
   },
 ];
 
@@ -76,6 +80,7 @@ const UiUxAbout = () => {
   const [visible, setVisible] = useState(false);
   const [activeNav, setNav] = useState(0);
   const [counts, setCounts] = useState({ p: 0, s: 0, h: 0, e: 0 });
+  const navigate = useNavigate();
 
   useEffect(() => {
     const io = new IntersectionObserver(
@@ -134,7 +139,10 @@ const UiUxAbout = () => {
                   <li
                     key={i}
                     className={activeNav === i ? "active" : ""}
-                    onClick={() => setNav(i)}
+                    onClick={() => {
+                      setNav(i); // active UI
+                      navigate(n.to); // redirect 🔥
+                    }}
                   >
                     <span className="nl">
                       <i className={n.fa} />

@@ -81,6 +81,13 @@ const EngagementGrowth = lazy(
   () => import("./pages/SocialMediaManagement/EngagementGrowth"),
 );
 
+// UI/UX And Audits  sub serivces
+
+const CustomWebDesign = lazy(() => import("./pages/Uiux/CustomWebDesign"));
+const CorporateBranding = lazy(() => import("./pages/Uiux/CorporateBranding"));
+const MobileAppDesign = lazy(() => import("./pages/Uiux/MobileAppDesign"));
+const ProductDesign = lazy(() => import("./pages/Uiux/ProductDesign"));
+
 // ✅ ScrollToTop — har route change pe window top pe jaayegi
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -164,6 +171,10 @@ function App() {
               element={<ContentCreation />}
             />
             <Route path="/engagement-growth" element={<EngagementGrowth />} />
+            <Route path="/custom-web-design" element={<CustomWebDesign />} />
+            <Route path="/corporate-branding" element={<CorporateBranding />} />
+            <Route path="/mobile-app-design" element={<MobileAppDesign />} />
+            <Route path="/product-design" element={<ProductDesign />} />
           </Routes>
 
           <NewFooter />
