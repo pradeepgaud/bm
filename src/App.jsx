@@ -65,6 +65,14 @@ const GoogleAds = lazy(() => import("./pages/AdsAndCampaigns/GoogleAds"));
 const FbInstAds = lazy(() => import("./pages/AdsAndCampaigns/FbInstAds"));
 const LinkedinAds = lazy(() => import("./pages/AdsAndCampaigns/LinkedinAds"));
 
+// SEO Optimizing pages
+const OrganicTraffic = lazy(
+  () => import("./pages/SEO Optimizing/OrganicTraffic"),
+);
+const LocalSDominance = lazy(
+  () => import("./pages/SEO Optimizing/LocalSDominance"),
+);
+
 // Social Media Management
 const BrandAwareness = lazy(
   () => import("./pages/SocialMediaManagement/BrandAwareness"),
@@ -175,6 +183,8 @@ function App() {
             <Route path="/corporate-branding" element={<CorporateBranding />} />
             <Route path="/mobile-app-design" element={<MobileAppDesign />} />
             <Route path="/product-design" element={<ProductDesign />} />
+            <Route path="/organic-traffic" element={<OrganicTraffic />} />
+            <Route path="/local-search-dominance" element={<LocalSDominance />} />
           </Routes>
 
           <NewFooter />

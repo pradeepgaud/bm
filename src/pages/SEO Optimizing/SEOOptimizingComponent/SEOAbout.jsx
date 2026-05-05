@@ -1,19 +1,20 @@
 import React, { useEffect, useRef, useState } from "react";
-// import "./webdev-about.css";
+import { useNavigate } from "react-router-dom";
 
 const NAV = [
   {
     fa: "fa-solid fa-chart-line",
     label: "Organic Traffic",
+    to: "/organic-traffic",
   },
-  {
-    fa: "fa-solid fa-user-check",
-    label: "Genuine Inquiries",
-  },
-  {
-    fa: "fa-solid fa-mobile-screen",
-    label: "Mobile Search",
-  },
+  // {
+  //   fa: "fa-solid fa-user-check",
+  //   label: "Genuine Inquiries",
+  // },
+  // {
+  //   fa: "fa-solid fa-mobile-screen",
+  //   label: "Mobile Search",
+  // },
   {
     fa: "fa-solid fa-location-dot",
     label: "Local Search Dominance",
@@ -83,6 +84,7 @@ const SEOAbout = () => {
   const [visible, setVisible] = useState(false);
   const [activeNav, setNav] = useState(0);
   const [counts, setCounts] = useState({ p: 0, s: 0, h: 0, e: 0 });
+  const navigate = useNavigate();
 
   useEffect(() => {
     const io = new IntersectionObserver(
@@ -141,7 +143,10 @@ const SEOAbout = () => {
                   <li
                     key={i}
                     className={activeNav === i ? "active" : ""}
-                    onClick={() => setNav(i)}
+                    onClick={() => {
+                      setNav(i); // active UI
+                      navigate(n.to); // redirect 🔥
+                    }}
                   >
                     <span className="nl">
                       <i className={n.fa} />

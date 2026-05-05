@@ -245,25 +245,25 @@ const MEGA_SERVICES = [
     items: [
       {
         label: "Organic Traffic",
-        to: "#",
+        to: "/organic-traffic",
         icon: "fa-solid fa-seedling",
         desc: "Sustainable traffic growth through white-hat SEO techniques.",
       },
-      {
-        label: "Genuine Inquiries",
-        to: "#",
-        icon: "fa-solid fa-envelope-open-text",
-        desc: "Attract quality leads that are ready to convert.",
-      },
-      {
-        label: "Mobile Search",
-        to: "#",
-        icon: "fa-solid fa-mobile-screen-button",
-        desc: "Optimize for mobile-first indexing and local search.",
-      },
+      // {
+      //   label: "Genuine Inquiries",
+      //   to: "#",
+      //   icon: "fa-solid fa-envelope-open-text",
+      //   desc: "Attract quality leads that are ready to convert.",
+      // },
+      // {
+      //   label: "Mobile Search",
+      //   to: "#",
+      //   icon: "fa-solid fa-mobile-screen-button",
+      //   desc: "Optimize for mobile-first indexing and local search.",
+      // },
       {
         label: "Local Search Dominance",
-        to: "#",
+        to: "/local-search-dominance",
         icon: "fa-solid fa-location-dot",
         desc: "Dominate local search results and capture nearby customers.",
       },
