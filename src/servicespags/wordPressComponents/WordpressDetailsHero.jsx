@@ -76,7 +76,7 @@ const WordpressDetailsHero = () => {
             <div className="rdh-eyebrow">Premium Solution</div>
             <h1 className="title">Wordpress</h1>
             <div className="rdh-liquid-wrap">
-              <GradientText text="Marketing" fontFamily={ff} />
+              <GradientText text="Development" fontFamily={ff} />
             </div>
             <ul className="rdh-breadcrumb">
               <li>

@@ -43,7 +43,7 @@ const GradientText = ({ text, fontFamily }) => (
   </>
 );
 
-const WoocommDetailsHero = () => {
+const CRMDetailsHero = () => {
   const [ff, setFf] = React.useState("var(--heading-font-family)");
   const [isMobile, setIsMobile] = useState(false);
 
@@ -74,7 +74,7 @@ const WoocommDetailsHero = () => {
             }}
           >
             <div className="rdh-eyebrow">Premium Solution</div>
-            <h1 className="title">WooCommerce</h1>
+            <h1 className="title">CRM </h1>
             <div className="rdh-liquid-wrap">
               <GradientText text="Development" fontFamily={ff} />
             </div>
@@ -83,7 +83,7 @@ const WoocommDetailsHero = () => {
                 <a href="/">Home</a>
               </li>
               <li className="sep">/</li>
-              <li className="active">WooCommerce Development</li>
+              <li className="active">CRM Development</li>
             </ul>
           </div>
 
@@ -95,8 +95,7 @@ const WoocommDetailsHero = () => {
 
             <div className="rdh-atom-wrap rdh-no-spin">
               <DotLottieReact
-                // src="https://lottie.host/232b15b0-b27f-4ad4-8039-9ae2e0f69359/JxfFJeelXA.lottie"
-                src="https://lottie.host/d2b54375-9ed9-452d-97a4-eb6c40fb096f/Tt5Wm1xV8U.lottie"
+                src="https://lottie.host/126a5829-5e81-4e0f-b1cc-0a9bb917e8fa/9oldHmsD0x.lottie"
                 autoplay
                 loop
                 style={{
@@ -106,13 +105,13 @@ const WoocommDetailsHero = () => {
               />
             </div>
             <div className="rdh-chip rdh-chip-1">
-              <i className="fas fa-chart-line" /> High Performance
+              <i className="fas fa-chart-line" /> Business Automation
             </div>
             <div className="rdh-chip rdh-chip-2">
-              <i className="fas fa-bullseye" /> Tailored WooCommerce
+              <i className="fas fa-bullseye" /> Custom CRM Solutions
             </div>
             <div className="rdh-chip rdh-chip-3">
-              <i className="fas fa-rocket" /> Growth Ready
+              <i className="fas fa-rocket" /> Better Customer Management
             </div>
             {/* <span className="rdh-vert-label">
               SEO · PPC · Meta · Google Ads
@@ -122,13 +121,13 @@ const WoocommDetailsHero = () => {
           {/* BLOCK 3 — desc + buttons + badges */}
           <div className="rdh-bottom-block">
             <p className="rdh-desc">
-              Build powerful WooCommerce stores that are fast, secure, and
-              optimized for conversions. We create scalable e-commerce solutions
-              that help you sell more and grow your business online.
+              Build smart and scalable CRM solutions that streamline customer
+              management and business operations. We create custom CRM systems
+              that improve workflow, automate processes, and boost productivity.
             </p>
             <div className="rdh-btn-row">
               <a href="#contact" className="rdh-btn-primary">
-                Start Your Project
+                Start Your CRM Project
                 <i className="fas fa-arrow-right" />
               </a>
               <a href="#work" className="rdh-btn-ghost">
@@ -178,4 +177,4 @@ const WoocommDetailsHero = () => {
   );
 };
 
-export default WoocommDetailsHero;
+export default CRMDetailsHero;

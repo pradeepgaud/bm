@@ -1,22 +1,26 @@
 import React, { useEffect, useRef, useState } from "react";
-// import "./webdev-about.css";
+import { useNavigate } from "react-router-dom";
 
 const NAV = [
   {
     fa: "fa-solid fa-pen-nib",
     label: "Logo Design",
+    to: "/logo-design",
   },
   {
     fa: "fa-solid fa-bullhorn",
-    label: "Promotional Material Design",
+    label: "Package & Label Designing",
+    to: "/label-designing",
   },
   {
     fa: "fa-solid fa-id-card",
-    label: "Corporate Identity Design",
+    label: "Corporate Identity Designing",
+    to: "/corporate-identity-designing",
   },
   {
     fa: "fa-solid fa-file-powerpoint",
-    label: "Corporate Presentations",
+    label: "Brand Identity Design",
+    to: "/brand-identity-design",
   },
 ];
 
@@ -84,6 +88,7 @@ const BrandIdentityAbout = () => {
   const [visible, setVisible] = useState(false);
   const [activeNav, setNav] = useState(0);
   const [counts, setCounts] = useState({ p: 0, s: 0, h: 0, e: 0 });
+  const navigate = useNavigate();
 
   useEffect(() => {
     const io = new IntersectionObserver(
@@ -142,7 +147,10 @@ const BrandIdentityAbout = () => {
                   <li
                     key={i}
                     className={activeNav === i ? "active" : ""}
-                    onClick={() => setNav(i)}
+                    onClick={() => {
+                      setNav(i); // active UI
+                      navigate(n.to); // redirect 🔥
+                    }}
                   >
                     <span className="nl">
                       <i className={n.fa} />

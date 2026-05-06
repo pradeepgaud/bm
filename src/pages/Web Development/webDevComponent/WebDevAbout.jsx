@@ -16,7 +16,7 @@ const NAV = [
     to: "/woocommerce",
   },
   { fa: "fa-brands fa-php", label: "PHP Development", to: "/php" },
-  { fa: "fa-solid fa-database", label: "Custom CRM", to: "/crm" },
+  { fa: "fa-solid fa-database", label: "Custom CRM", to: "/crm-development" },
 ];
 
 const REASONS = [

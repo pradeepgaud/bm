@@ -52,6 +52,12 @@ const WordpressDetails = lazy(
 const ShopifyDetails = lazy(
   () => import("./pages/Web Development/ShopifyDetails"),
 );
+
+const CRM = lazy(() => import("./pages/Web Development/CRM"));
+
+const PHPDetails = lazy(() => import("./pages/Web Development/PHPDetails"));
+
+// import PHPDetails from "./pages/Web Development/PHPDetails";
 const PerformanceMarketing = lazy(
   () => import("./pages/AdsAndCampaigns/PerformanceMarketing"),
 );
@@ -105,6 +111,25 @@ const ShopsyManServices = lazy(
 const SnapdealManServices = lazy(
   () => import("./pages/Ecom Management/SnapdealManServices"),
 );
+
+const LogoDesign = lazy(() => import("./pages/Brand Identity/LogoDesign"));
+const LabelDesigning = lazy(
+  () => import("./pages/Brand Identity/LabelDesigning"),
+);
+
+const CorporateIdentityDesi = lazy(
+  () => import("./pages/Brand Identity/CorporateIdentityDesi"),
+);
+
+const BrandIdentityDesign = lazy(
+  () => import("./pages/Brand Identity/BrandIdentityDesign"),
+);
+
+// import BrandIdentityDesign from "./pages/Brand Identity/BrandIdentityDesign";
+
+// import CorporateIdentityDesi from "./pages/Brand Identity/CorporateIdentityDesi";
+
+// import LabelDesigning from "./pages/Brand Identity/LabelDesigning";
 
 // UI/UX And Audits  sub serivces
 
@@ -170,7 +195,7 @@ function App() {
             <Route path="/ui-ux-audits" element={<UiUx />} />
             <Route path="/seo-optimizing" element={<SEOOptimizing />} />
             <Route path="/ecommerce-management" element={<EcomManagement />} />
-            <Route path="/brand-identity" element={<BrandIdentity />} />
+            <Route path="/graphic-designing" element={<BrandIdentity />} />
             <Route
               path="/social-media-management"
               element={<SocialMediaManagement />}
@@ -180,6 +205,7 @@ function App() {
             <Route path="/shopify" element={<ShopifyDetails />} />
             <Route path="/wordpress" element={<WordpressDetails />} />
             <Route path="/woocommerce" element={<WoocommDetails />} />
+            <Route path="/php" element={<PHPDetails />} />
 
             {/* Ads Campaign Management */}
             <Route
@@ -222,6 +248,18 @@ function App() {
               path="/snapdeal-management-services"
               element={<SnapdealManServices />}
             />
+
+            <Route path="/logo-design" element={<LogoDesign />} />
+            <Route path="/label-designing" element={<LabelDesigning />} />
+            <Route
+              path="/corporate-identity-designing"
+              element={<CorporateIdentityDesi />}
+            />
+            <Route
+              path="/brand-identity-design"
+              element={<BrandIdentityDesign />}
+            />
+            <Route path="/crm-development" element={<CRM />} />
           </Routes>
 
           <NewFooter />

@@ -1,6 +1,221 @@
 import React, { useEffect, useState } from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
+const PerformanceMarketingSVG = () => (
+  <svg
+    viewBox="0 0 300 300"
+    xmlns="http://www.w3.org/2000/svg"
+    style={{ width: "100%", height: "100%" }}
+  >
+    <defs>
+      <radialGradient id="pm-coreg" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stopColor="#FF5D00" />
+        <stop offset="100%" stopColor="#ff8c42" />
+      </radialGradient>
+      <linearGradient id="pm-bargrad" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0%" stopColor="#FF5D00" stopOpacity="0.3" />
+        <stop offset="100%" stopColor="#FF5D00" stopOpacity="1" />
+      </linearGradient>
+      <filter id="pm-glow">
+        <feGaussianBlur stdDeviation="3" result="blur" />
+        <feMerge>
+          <feMergeNode in="blur" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+      <filter id="pm-softglow">
+        <feGaussianBlur stdDeviation="5" result="blur" />
+        <feMerge>
+          <feMergeNode in="blur" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+    </defs>
+
+    {/* Background circles */}
+    <circle
+      cx="150"
+      cy="150"
+      r="130"
+      fill="none"
+      stroke="rgba(255,93,0,0.08)"
+      strokeWidth="1"
+    />
+    <circle
+      cx="150"
+      cy="150"
+      r="100"
+      fill="none"
+      stroke="rgba(255,93,0,0.05)"
+      strokeWidth="1"
+      strokeDasharray="4 6"
+    />
+
+    {/* Grid lines */}
+    <line
+      x1="50"
+      y1="220"
+      x2="260"
+      y2="220"
+      stroke="rgba(255,255,255,0.08)"
+      strokeWidth="1"
+    />
+    <line
+      x1="50"
+      y1="185"
+      x2="260"
+      y2="185"
+      stroke="rgba(255,255,255,0.05)"
+      strokeWidth="1"
+    />
+    <line
+      x1="50"
+      y1="150"
+      x2="260"
+      y2="150"
+      stroke="rgba(255,255,255,0.05)"
+      strokeWidth="1"
+    />
+    <line
+      x1="50"
+      y1="115"
+      x2="260"
+      y2="115"
+      stroke="rgba(255,255,255,0.05)"
+      strokeWidth="1"
+    />
+
+    {/* Bars */}
+    <rect
+      x="62"
+      y="190"
+      width="26"
+      height="30"
+      rx="5"
+      fill="url(#pm-bargrad)"
+      opacity="0.7"
+    />
+    <rect
+      x="100"
+      y="168"
+      width="26"
+      height="52"
+      rx="5"
+      fill="url(#pm-bargrad)"
+      opacity="0.8"
+    />
+    <rect
+      x="138"
+      y="145"
+      width="26"
+      height="75"
+      rx="5"
+      fill="url(#pm-bargrad)"
+      opacity="0.9"
+    />
+    <rect
+      x="176"
+      y="118"
+      width="26"
+      height="102"
+      rx="5"
+      fill="url(#pm-bargrad)"
+    />
+    <rect
+      x="214"
+      y="88"
+      width="26"
+      height="132"
+      rx="5"
+      fill="url(#pm-bargrad)"
+      filter="url(#pm-glow)"
+    />
+
+    {/* Growth line */}
+    <polyline
+      points="75,195 113,172 151,150 189,122 227,90"
+      fill="none"
+      stroke="#FF5D00"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      filter="url(#pm-glow)"
+    />
+
+    {/* Dots on line */}
+    <circle cx="75" cy="195" r="4" fill="#FF5D00" filter="url(#pm-glow)" />
+    <circle cx="113" cy="172" r="4" fill="#FF5D00" filter="url(#pm-glow)" />
+    <circle cx="151" cy="150" r="4" fill="#FF5D00" filter="url(#pm-glow)" />
+    <circle cx="189" cy="122" r="4" fill="#FF5D00" filter="url(#pm-glow)" />
+
+    {/* Top highlighted dot */}
+    <circle
+      cx="227"
+      cy="90"
+      r="10"
+      fill="url(#pm-coreg)"
+      filter="url(#pm-softglow)"
+    />
+    <circle cx="227" cy="90" r="5" fill="#fff" opacity="0.9" />
+
+    {/* Arrow up */}
+    <g filter="url(#pm-glow)" opacity="0.9">
+      <line
+        x1="240"
+        y1="72"
+        x2="240"
+        y2="58"
+        stroke="#FF5D00"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <polyline
+        points="234,65 240,58 246,65"
+        fill="none"
+        stroke="#FF5D00"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </g>
+
+    {/* ROI badge */}
+    <rect
+      x="44"
+      y="56"
+      width="76"
+      height="34"
+      rx="8"
+      fill="rgba(255,93,0,0.12)"
+      stroke="rgba(255,93,0,0.3)"
+      strokeWidth="1"
+    />
+    <text
+      x="82"
+      y="70"
+      textAnchor="middle"
+      fill="#FF5D00"
+      fontSize="9"
+      fontWeight="700"
+      letterSpacing="1"
+      fontFamily="sans-serif"
+    >
+      ROI
+    </text>
+    <text
+      x="82"
+      y="83"
+      textAnchor="middle"
+      fill="#ffffff"
+      fontSize="11"
+      fontWeight="700"
+      fontFamily="sans-serif"
+    >
+      +320%
+    </text>
+  </svg>
+);
+
 const GradientText = ({ text, fontFamily }) => (
   <>
     <style>{`
@@ -43,7 +258,7 @@ const GradientText = ({ text, fontFamily }) => (
   </>
 );
 
-const WoocommDetailsHero = () => {
+const LogoDesignHero = () => {
   const [ff, setFf] = React.useState("var(--heading-font-family)");
   const [isMobile, setIsMobile] = useState(false);
 
@@ -74,16 +289,16 @@ const WoocommDetailsHero = () => {
             }}
           >
             <div className="rdh-eyebrow">Premium Solution</div>
-            <h1 className="title">WooCommerce</h1>
+            <h1 className="title">Logo </h1>
             <div className="rdh-liquid-wrap">
-              <GradientText text="Development" fontFamily={ff} />
+              <GradientText text="Design" fontFamily={ff} />
             </div>
             <ul className="rdh-breadcrumb">
               <li>
                 <a href="/">Home</a>
               </li>
               <li className="sep">/</li>
-              <li className="active">WooCommerce Development</li>
+              <li className="active">Logo Design</li>
             </ul>
           </div>
 
@@ -92,11 +307,14 @@ const WoocommDetailsHero = () => {
             <div className="rdh-ring-1" />
             <div className="rdh-ring-2" />
             <div className="rdh-img-glow" />
+            {/* no-spin class prevents CSS atom spin from applying */}
+            {/* <div className="rdh-atom-wrap rdh-no-spin">
+              <PerformanceMarketingSVG />
+            </div> */}
 
             <div className="rdh-atom-wrap rdh-no-spin">
               <DotLottieReact
-                // src="https://lottie.host/232b15b0-b27f-4ad4-8039-9ae2e0f69359/JxfFJeelXA.lottie"
-                src="https://lottie.host/d2b54375-9ed9-452d-97a4-eb6c40fb096f/Tt5Wm1xV8U.lottie"
+                src="https://lottie.host/8a3c7185-582b-4dc0-8e01-fd7e9bc698ca/I3SbyUgSqs.lottie"
                 autoplay
                 loop
                 style={{
@@ -106,13 +324,14 @@ const WoocommDetailsHero = () => {
               />
             </div>
             <div className="rdh-chip rdh-chip-1">
-              <i className="fas fa-chart-line" /> High Performance
+              <i className="fas fa-chart-line" />
+              Unique Branding
             </div>
             <div className="rdh-chip rdh-chip-2">
-              <i className="fas fa-bullseye" /> Tailored WooCommerce
+              <i className="fas fa-bullseye" /> Creative Concepts
             </div>
             <div className="rdh-chip rdh-chip-3">
-              <i className="fas fa-rocket" /> Growth Ready
+              <i className="fas fa-rocket" /> Memorable Design
             </div>
             {/* <span className="rdh-vert-label">
               SEO · PPC · Meta · Google Ads
@@ -122,13 +341,14 @@ const WoocommDetailsHero = () => {
           {/* BLOCK 3 — desc + buttons + badges */}
           <div className="rdh-bottom-block">
             <p className="rdh-desc">
-              Build powerful WooCommerce stores that are fast, secure, and
-              optimized for conversions. We create scalable e-commerce solutions
-              that help you sell more and grow your business online.
+              Create a powerful brand identity with a unique and memorable logo
+              design. We don’t just design visuals — we craft logos that
+              represent your brand, build trust, and leave a lasting impression
+              across all platforms.
             </p>
             <div className="rdh-btn-row">
               <a href="#contact" className="rdh-btn-primary">
-                Start Your Project
+                Start Your Logo Design
                 <i className="fas fa-arrow-right" />
               </a>
               <a href="#work" className="rdh-btn-ghost">
@@ -178,4 +398,4 @@ const WoocommDetailsHero = () => {
   );
 };
 
-export default WoocommDetailsHero;
+export default LogoDesignHero;
