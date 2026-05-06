@@ -139,6 +139,18 @@ const MEGA_SERVICES = [
         icon: "fa-brands fa-react",
         desc: "Scalable and dynamic web applications using the latest React technologies.",
       },
+      {
+        label: "PHP Development",
+        to: "/php",
+        icon: "fa-brands fa-react",
+        desc: "Scalable and dynamic web applications using the latest React technologies.",
+      },
+      {
+        label: "CRM Development",
+        to: "/crm-development",
+        icon: "fa-brands fa-react",
+        desc: "Scalable and dynamic web applications using the latest React technologies.",
+      },
     ],
   },
   {
