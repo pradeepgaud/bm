@@ -517,7 +517,10 @@ export default function Navbar() {
                             </div>
 
                             {/* 2×2 sub-item cards */}
-                            <div className="mega-panel-cards">
+                            {/* <div className="mega-panel-cards"> */}
+                            <div
+                              className={`mega-panel-cards${MEGA_SERVICES[activeCategory].items.length <= 2 ? " mega-panel-cards--few" : ""}`}
+                            >
                               {MEGA_SERVICES[activeCategory].items.map(
                                 (item, j) => (
                                   <Link

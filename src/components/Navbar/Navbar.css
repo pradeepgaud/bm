@@ -1115,3 +1115,14 @@ body.mobile-menu-visible {
 }
 
 /*  */
+.mega-panel-cards--few {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  align-items: start;
+  max-width: 640px;
+}
+
+.mega-panel-cards--few .mega-sub-card {
+  height: auto;
+  align-self: start;
+}
