@@ -608,8 +608,8 @@ export default function Navbar() {
                     </li>
 
                     {/* Contact */}
-                    <li className={isActive("/contact")}>
-                      <Link to="/contact" onClick={closeMobileMenu}>
+                    <li className={isActive("/contact-us")}>
+                      <Link to="/contact-us" onClick={closeMobileMenu}>
                         Contact
                       </Link>
                     </li>
@@ -727,8 +727,8 @@ export default function Navbar() {
               </li>
 
               {/* Contact */}
-              <li className={isActive("/contact")}>
-                <Link to="/contact" onClick={closeMobileMenu}>
+              <li className={isActive("/contact-us")}>
+                <Link to="/contact-us" onClick={closeMobileMenu}>
                   Contact
                 </Link>
               </li>
@@ -821,8 +821,8 @@ export default function Navbar() {
                       <li className="dropdown">
                         <Link to="/blogs">Blogs</Link>
                       </li>
-                      <li className={isActive("/contact")}>
-                        <Link to="/contact">Contact</Link>
+                      <li className={isActive("/contact-us")}>
+                        <Link to="/contact-us">Contact</Link>
                       </li>
                     </ul>
                   </div>
