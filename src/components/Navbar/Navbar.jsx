@@ -414,28 +414,6 @@ export default function Navbar() {
                     {/* Home Dropdown */}
                     <li className={`dropdown ${isActive("/")}`}>
                       <Link to="/">Home</Link>
-                      {/* <ul>
-                        <li>
-                          <Link to="/" onClick={closeMobileMenu}>
-                            Digital Agency
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="/index-2" onClick={closeMobileMenu}>
-                            SEO Agency
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="/index-3" onClick={closeMobileMenu}>
-                            IT Company
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="/index-4" onClick={closeMobileMenu}>
-                            Freelancer
-                          </Link>
-                        </li>
-                      </ul> */}
                     </li>
 
                     {/* About */}
