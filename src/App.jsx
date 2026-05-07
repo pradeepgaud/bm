@@ -25,6 +25,9 @@ const About = lazy(() => import("./pages/About/About"));
 const Blogs = lazy(() => import("./pages/Blogs/Blogs"));
 const Services = lazy(() => import("./pages/Services/Services"));
 const ContactUs = lazy(() => import("./pages/Contact/ContactUs"));
+const EnquiryPopup = lazy(
+  () => import("./components/EnquiryPopup/EnquiryPopup"),
+);
 
 const WebDevelopmentNew = lazy(
   () => import("./pages/Web Development/WebDevelopmentNew"),
@@ -152,6 +155,15 @@ function ScrollToTop() {
 
 function App() {
   const [showLoader, setShowLoader] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const openPopup = () => {
+    setIsPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
 
   useEffect(() => {
     AOS.init({
@@ -183,7 +195,7 @@ function App() {
 
         {showLoader && <Preloader />}
 
-        <Navbar />
+        <Navbar openPopup={openPopup} />
 
         <Suspense fallback={<></>}>
           <Cursor />
@@ -273,6 +285,7 @@ function App() {
           <NewFooter />
           <BackToTop />
           <FloatingContact />
+          <EnquiryPopup isOpen={isPopupOpen} onClose={closePopup} />
         </Suspense>
       </BrowserRouter>
     </>

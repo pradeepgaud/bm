@@ -347,7 +347,7 @@ const MEGA_SERVICES = [
   },
 ];
 
-export default function Navbar() {
+export default function Navbar({ openPopup }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [openDropdowns, setOpenDropdowns] = useState({});
@@ -596,13 +596,22 @@ export default function Navbar() {
                 <div className="outer-box">
                   <div className="ui-btn-outer">
                     <div className="ui-btn-search">
-                      <Link
+                      {/* <Link
                         to="/contact"
                         className="contact-btn"
                         onClick={closeMobileMenu}
                       >
                         Let's Talk
-                      </Link>
+                      </Link> */}
+                      <button
+                        className="contact-btn"
+                        onClick={() => {
+                          openPopup();
+                          closeMobileMenu();
+                        }}
+                      >
+                        Let's Talk
+                      </button>
                     </div>
                   </div>
                   <div
