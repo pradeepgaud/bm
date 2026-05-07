@@ -1114,7 +1114,7 @@ body.mobile-menu-visible {
   overflow: hidden;
 }
 
-/*  */
+/* navbar mega menu update sep  */
 .mega-panel-cards--few {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;

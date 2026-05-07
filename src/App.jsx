@@ -12,6 +12,7 @@ import "aos/dist/aos.css";
 // COMPONENTS
 import Preloader from "./components/Preloader/Preloader";
 import Navbar from "./components/Navbar/Navbar";
+import FloatingContact from "./components/FloatingPopup/FloatingContact";
 
 // LAZY COMPONENTS
 const Cursor = lazy(() => import("./components/Cursor/Cursor"));
@@ -21,6 +22,7 @@ const NewFooter = lazy(() => import("./components/Footer/NewFooter"));
 // PAGES
 const NewHome = lazy(() => import("./pages/Home/NewHome"));
 const About = lazy(() => import("./pages/About/About"));
+const Blogs = lazy(() => import("./pages/Blogs/Blogs"));
 const Services = lazy(() => import("./pages/Services/Services"));
 
 const WebDevelopmentNew = lazy(
@@ -163,10 +165,13 @@ function App() {
     if (!hasLoaded) {
       setShowLoader(true);
 
-      window.addEventListener("load", () => {
+      const handleLoad = () => {
         setShowLoader(false);
         sessionStorage.setItem("hasLoaded", "true");
-      });
+      };
+
+      window.addEventListener("load", handleLoad);
+      return () => window.removeEventListener("load", handleLoad);
     }
   }, []);
 
@@ -185,6 +190,7 @@ function App() {
           <Routes>
             <Route path="/" element={<NewHome />} />
             <Route path="/about" element={<About />} />
+            <Route path="/blogs" element={<Blogs />} />
             <Route path="/services" element={<Services />} />
             <Route path="/service-details" element={<ServiceDetails />} />
             <Route
@@ -264,6 +270,7 @@ function App() {
 
           <NewFooter />
           <BackToTop />
+          <FloatingContact />
         </Suspense>
       </BrowserRouter>
     </>

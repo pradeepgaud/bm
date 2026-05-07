@@ -355,9 +355,11 @@ export default function Navbar() {
   const [activeCategory, setActiveCategory] = useState(0);
   const location = useLocation();
 
+  // ✅ AFTER — bas 2 lines add karo
   const toggleMobileMenu = () => {
     const next = !mobileMenuOpen;
     setMobileMenuOpen(next);
+    document.body.dataset.navOpen = next ? "true" : "false"; // ✅ ADD
     if (next) document.body.classList.add("mobile-menu-visible");
     else {
       document.body.classList.remove("mobile-menu-visible");
@@ -367,10 +369,10 @@ export default function Navbar() {
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
+    document.body.dataset.navOpen = "false"; // ✅ ADD
     document.body.classList.remove("mobile-menu-visible");
     setOpenDropdowns({});
   };
-
   const handleMegaClose = () => setIsMegaOpen(false);
 
   const toggleDropdown = (key) =>
@@ -582,7 +584,7 @@ export default function Navbar() {
                     </li>
 
                     {/* News Dropdown */}
-                    <li className="dropdown">
+                    {/* <li className="dropdown">
                       <Link to="#">News</Link>
                       <ul>
                         <li>
@@ -596,6 +598,13 @@ export default function Navbar() {
                           </Link>
                         </li>
                       </ul>
+                    </li> */}
+
+                    {/* Blog */}
+                    <li className={isActive("/blogs")}>
+                      <Link to="/blogs" onClick={closeMobileMenu}>
+                        Blogs
+                      </Link>
                     </li>
 
                     {/* Contact */}
@@ -712,8 +721,8 @@ export default function Navbar() {
 
               {/* News — no dropdown arrow on mobile */}
               <li>
-                <Link to="/news" onClick={closeMobileMenu}>
-                  News
+                <Link to="/blogs" onClick={closeMobileMenu}>
+                  Blogs
                 </Link>
               </li>
 
@@ -810,7 +819,7 @@ export default function Navbar() {
                         <Link to="/services">Services</Link>
                       </li>
                       <li className="dropdown">
-                        <Link to="#">News</Link>
+                        <Link to="/blogs">Blogs</Link>
                       </li>
                       <li className={isActive("/contact")}>
                         <Link to="/contact">Contact</Link>
