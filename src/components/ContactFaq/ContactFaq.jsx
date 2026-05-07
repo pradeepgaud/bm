@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback, memo } from "react";
-import "./ContactFaq.css";
+import "./Contactfaq.css";
 
 /* ─────────────────────────────────────────
    ✏️  YOUR LOTTIE URL — swap this

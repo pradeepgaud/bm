@@ -2,7 +2,7 @@ import React from "react";
 import ContactHero from "../../components/ContactpagesHero/ContactHero";
 import ClientForm from "../../components/contactfrom/ClientForm";
 import ContactInfo from "../../components/ContactInfo/ContactInfo";
-import ContactFaq from "../../components/ContactFaq/ContactFaq";
+import ContactFaq from "../../components/ContactFaq/Contactfaq";
 
 const ContactUs = () => {
   return (
