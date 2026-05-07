@@ -166,6 +166,7 @@ const FloatingContact = memo((props) => {
       </div>
 
       {/* ── Trigger Pill ── */}
+
       <button
         className="pfc-trigger"
         onClick={() => setIsOpen((v) => !v)}
@@ -179,9 +180,8 @@ const FloatingContact = memo((props) => {
             <i className="fa-solid fa-xmark pfc-icon-xmark" />
           ) : (
             <>
-              <span className="pfc-bar" />
-              <i className="fa-solid fa-ellipsis-vertical pfc-icon-dots" />
-              <span className="pfc-bar" />
+              <i className="fa-solid fa-headset pfc-icon-dots" />
+              <span className="pfc-trigger-label">Contact</span>
             </>
           )}
         </span>

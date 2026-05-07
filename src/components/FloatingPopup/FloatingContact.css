@@ -91,33 +91,67 @@
 /* ══════════════════════════════════════════
    TRIGGER PILL
 ══════════════════════════════════════════ */
+/* ── Trigger — Premium Tab Style ── */
 .pfc-trigger {
-  width: 36px;
-  height: 72px;
-  background: #ff6b1e;
+  width: 32px;
+  height: auto;
+  min-height: 110px;
+  background: linear-gradient(180deg, #ff6b1e 0%, #e8520d 100%);
   border: none;
-  border-radius: 40px 0 0 40px; /* flush against right edge */
+  border-radius: 12px 0 0 12px;
   cursor: pointer;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   outline: none;
   -webkit-tap-highlight-color: transparent;
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
-  animation: pfcGlowPulse 2.8s ease-in-out infinite;
+  padding: 14px 0;
+  box-shadow:
+    -4px 0 20px rgba(255, 107, 30, 0.4),
+    -2px 0 8px rgba(0, 0, 0, 0.3);
   transition:
-    background 0.3s ease,
-    width 0.3s ease,
-    height 0.3s ease,
-    border-radius 0.3s ease,
-    box-shadow 0.3s ease;
+    width 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s;
 }
 
 .pfc-trigger:hover {
-  background: #ff7c35;
-  width: 40px;
+  width: 36px;
+  background: linear-gradient(180deg, #ff7c35 0%, #ff6b1e 100%);
+  box-shadow:
+    -6px 0 28px rgba(255, 107, 30, 0.55),
+    -2px 0 8px rgba(0, 0, 0, 0.3);
+}
+
+/* add new  */
+.pfc-trigger-label {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  line-height: 1;
+  font-family: "Poppins", sans-serif;
+}
+
+/* icon size update */
+.pfc-icon-dots {
+  font-size: 16px;
+  color: #fff;
+  line-height: 1;
+}
+
+/* bars remove — ab zarurat nahi */
+.pfc-bar {
+  display: none;
 }
 
 /* Open state → small circle */
