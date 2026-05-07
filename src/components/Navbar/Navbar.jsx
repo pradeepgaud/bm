@@ -415,7 +415,6 @@ export default function Navbar() {
                     <li className={`dropdown ${isActive("/")}`}>
                       <Link to="/">Home</Link>
                     </li>
-
                     {/* About */}
                     <li className={isActive("/about")}>
                       <Link to="/about" onClick={closeMobileMenu}>
