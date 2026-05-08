@@ -131,13 +131,7 @@ const BrandIdentityDesign = lazy(
   () => import("./pages/Brand Identity/BrandIdentityDesign"),
 );
 
-// import BrandIdentityDesign from "./pages/Brand Identity/BrandIdentityDesign";
 
-// import CorporateIdentityDesi from "./pages/Brand Identity/CorporateIdentityDesi";
-
-// import LabelDesigning from "./pages/Brand Identity/LabelDesigning";
-
-// UI/UX And Audits  sub serivces
 
 const CustomWebDesign = lazy(() => import("./pages/Uiux/CustomWebDesign"));
 const CorporateBranding = lazy(() => import("./pages/Uiux/CorporateBranding"));
@@ -202,7 +196,7 @@ function App() {
 
           <Routes>
             <Route path="/" element={<NewHome />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/about"  element={<About openPopup={openPopup} />}/>
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/services" element={<Services />} />
             <Route path="/service-details" element={<ServiceDetails />} />

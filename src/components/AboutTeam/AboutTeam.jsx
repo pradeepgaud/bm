@@ -12,7 +12,7 @@ const TEAM_AVATARS = [
 const TEAM_IMAGE =
   "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80";
 
-const AboutTeam = () => {
+const AboutTeam = ({ openPopup }) => {
   const sectionRef = useRef(null);
   const [visible, setVisible] = useState(false);
 
@@ -170,11 +170,7 @@ const AboutTeam = () => {
             </div>
 
             {/* Right — Button */}
-            <a
-              href="#contact"
-              className="at-cta-btn"
-              aria-label="Let's talk about your project"
-            >
+            <button className="at-cta-btn" onClick={openPopup}>
               Let's Talk
               <svg
                 width="16"
@@ -185,12 +181,11 @@ const AboutTeam = () => {
                 strokeWidth="2.2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                aria-hidden="true"
               >
                 <line x1="5" y1="12" x2="19" y2="12" />
                 <polyline points="12,5 19,12 12,19" />
               </svg>
-            </a>
+            </button>
           </div>
         </div>
       </section>

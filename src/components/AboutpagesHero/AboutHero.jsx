@@ -146,7 +146,7 @@ const AboutHero = () => {
 
             {/* CTA */}
             <div className="ah-cta-row">
-              <a href="/our-story" className="ah-btn-primary">
+              <a href="/contact-us" className="ah-btn-primary">
                 <svg
                   width="18"
                   height="18"

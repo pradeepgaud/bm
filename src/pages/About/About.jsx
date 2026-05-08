@@ -7,7 +7,7 @@ import AboutMission from "../../components/AboutMission/AboutMission";
 import AboutProcess from "../../components/AboutProcess/AboutProcess";
 import AboutTeam from "../../components/AboutTeam/AboutTeam";
 
-const About = () => {
+const About = ({ openPopup }) => {
   return (
     <>
       {/* <AboutPageHero /> */}
@@ -29,7 +29,7 @@ const About = () => {
       </div>
 
       <div className="about-team">
-        <AboutTeam />
+        <AboutTeam openPopup={openPopup} />
       </div>
     </>
   );

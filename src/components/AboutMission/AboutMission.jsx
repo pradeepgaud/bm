@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./AboutMission.css";
+import { Link } from "react-router-dom";
 
 const FEATURES = [
   {
@@ -123,8 +124,8 @@ const AboutMission = () => {
               success.
             </p>
 
-            <a
-              href="#contact"
+            <Link
+              to="/services"
               className="am-btn"
               aria-label="Get in touch with Brandmingo"
             >
@@ -143,7 +144,7 @@ const AboutMission = () => {
                 <line x1="5" y1="12" x2="19" y2="12" />
                 <polyline points="12,5 19,12 12,19" />
               </svg>
-            </a>
+            </Link>
           </div>
 
           {/* ══ RIGHT — Feature cards ══ */}
