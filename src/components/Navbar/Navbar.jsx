@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
-/* ── Inline SVG icons — no font dependency ── */
+/* ── Inline SVG icons ── */
 const IconPhone = () => (
   <svg
     viewBox="0 0 24 24"
@@ -30,21 +30,6 @@ const IconEnvelope = () => (
   >
     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
     <polyline points="22,6 12,13 2,6" />
-  </svg>
-);
-const IconClock = () => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    width="20"
-    height="20"
-  >
-    <circle cx="12" cy="12" r="10" />
-    <polyline points="12,6 12,12 16,14" />
   </svg>
 );
 const IconTwitter = () => (
@@ -142,13 +127,13 @@ const MEGA_SERVICES = [
       {
         label: "PHP Development",
         to: "/php",
-        icon: "fa-brands fa-react",
+        icon: "fa-brands fa-php",
         desc: "Scalable and dynamic web applications using the latest React technologies.",
       },
       {
         label: "CRM Development",
         to: "/crm-development",
-        icon: "fa-brands fa-react",
+        icon: "fa-solid fa-database",
         desc: "Scalable and dynamic web applications using the latest React technologies.",
       },
     ],
@@ -261,18 +246,6 @@ const MEGA_SERVICES = [
         icon: "fa-solid fa-seedling",
         desc: "Sustainable traffic growth through white-hat SEO techniques.",
       },
-      // {
-      //   label: "Genuine Inquiries",
-      //   to: "#",
-      //   icon: "fa-solid fa-envelope-open-text",
-      //   desc: "Attract quality leads that are ready to convert.",
-      // },
-      // {
-      //   label: "Mobile Search",
-      //   to: "#",
-      //   icon: "fa-solid fa-mobile-screen-button",
-      //   desc: "Optimize for mobile-first indexing and local search.",
-      // },
       {
         label: "Local Search Dominance",
         to: "/local-search-dominance",
@@ -355,11 +328,10 @@ export default function Navbar({ openPopup }) {
   const [activeCategory, setActiveCategory] = useState(0);
   const location = useLocation();
 
-  // ✅ AFTER — bas 2 lines add karo
   const toggleMobileMenu = () => {
     const next = !mobileMenuOpen;
     setMobileMenuOpen(next);
-    document.body.dataset.navOpen = next ? "true" : "false"; // ✅ ADD
+    document.body.dataset.navOpen = next ? "true" : "false";
     if (next) document.body.classList.add("mobile-menu-visible");
     else {
       document.body.classList.remove("mobile-menu-visible");
@@ -369,10 +341,11 @@ export default function Navbar({ openPopup }) {
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
-    document.body.dataset.navOpen = "false"; // ✅ ADD
+    document.body.dataset.navOpen = "false";
     document.body.classList.remove("mobile-menu-visible");
     setOpenDropdowns({});
   };
+
   const handleMegaClose = () => setIsMegaOpen(false);
 
   const toggleDropdown = (key) =>
@@ -393,7 +366,9 @@ export default function Navbar({ openPopup }) {
 
   return (
     <>
-      <header className="main-header header-style-one header-1">
+      <header
+        className={`main-header header-style-one header-1${isSticky ? " scrolled" : ""}`}
+      >
         <div className="container">
           <div className="header-lower">
             <div className="main-box">
@@ -407,22 +382,21 @@ export default function Navbar({ openPopup }) {
                 </Link>
               </div>
 
-              {/* Nav Box */}
+              {/* Nav */}
               <div className="nav-outer">
                 <nav className="nav main-menu">
                   <ul className="navigation">
-                    {/* Home Dropdown */}
                     <li className={`dropdown ${isActive("/")}`}>
                       <Link to="/">Home</Link>
                     </li>
-                    {/* About */}
+
                     <li className={isActive("/about")}>
                       <Link to="/about" onClick={closeMobileMenu}>
                         About
                       </Link>
                     </li>
 
-                    {/* ══ PREMIUM MEGA MENU ══ */}
+                    {/* ══ MEGA MENU ══ */}
                     <li
                       className={`dropdown has-mega ${isMegaOpen ? "active" : ""}`}
                       onMouseEnter={() => setIsMegaOpen(true)}
@@ -437,7 +411,7 @@ export default function Navbar({ openPopup }) {
 
                       <div className={`mega-menu${isMegaOpen ? " show" : ""}`}>
                         <div className="mega-inner">
-                          {/* LEFT — category sidebar */}
+                          {/* LEFT sidebar */}
                           <div className="mega-sidebar">
                             <p className="mega-sidebar-label">Our Services</p>
                             {MEGA_SERVICES.map((s, i) => (
@@ -469,9 +443,8 @@ export default function Navbar({ openPopup }) {
                             ))}
                           </div>
 
-                          {/* RIGHT — sub-items panel */}
+                          {/* RIGHT panel */}
                           <div className="mega-panel">
-                            {/* Panel header: big icon + title + desc */}
                             <div className="mega-panel-header">
                               <div className="mega-panel-hrow">
                                 <div className="mega-panel-hicon">
@@ -495,8 +468,6 @@ export default function Navbar({ openPopup }) {
                               <div className="mega-panel-divider" />
                             </div>
 
-                            {/* 2×2 sub-item cards */}
-                            {/* <div className="mega-panel-cards"> */}
                             <div
                               className={`mega-panel-cards${MEGA_SERVICES[activeCategory].items.length <= 2 ? " mega-panel-cards--few" : ""}`}
                             >
@@ -535,7 +506,6 @@ export default function Navbar({ openPopup }) {
                               )}
                             </div>
 
-                            {/* CTA bottom */}
                             <div className="mega-panel-cta">
                               <Link
                                 to="/contact"
@@ -560,31 +530,12 @@ export default function Navbar({ openPopup }) {
                       </div>
                     </li>
 
-                    {/* News Dropdown */}
-                    {/* <li className="dropdown">
-                      <Link to="#">News</Link>
-                      <ul>
-                        <li>
-                          <Link to="/news" onClick={closeMobileMenu}>
-                            News Grid
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="/news-details" onClick={closeMobileMenu}>
-                            News Details
-                          </Link>
-                        </li>
-                      </ul>
-                    </li> */}
-
-                    {/* Blog */}
                     <li className={isActive("/blogs")}>
                       <Link to="/blogs" onClick={closeMobileMenu}>
                         Blogs
                       </Link>
                     </li>
 
-                    {/* Contact */}
                     <li className={isActive("/contact-us")}>
                       <Link to="/contact-us" onClick={closeMobileMenu}>
                         Contact
@@ -596,13 +547,6 @@ export default function Navbar({ openPopup }) {
                 <div className="outer-box">
                   <div className="ui-btn-outer">
                     <div className="ui-btn-search">
-                      {/* <Link
-                        to="/contact"
-                        className="contact-btn"
-                        onClick={closeMobileMenu}
-                      >
-                        Let's Talk
-                      </Link> */}
                       <button
                         className="contact-btn"
                         onClick={() => {
@@ -634,7 +578,6 @@ export default function Navbar({ openPopup }) {
         >
           <div className="menu-backdrop" onClick={closeMobileMenu}></div>
           <nav className="menu-box">
-            {/* Header */}
             <div className="upper-box">
               <div className="nav-logo">
                 <Link to="/" onClick={closeMobileMenu}>
@@ -649,23 +592,18 @@ export default function Navbar({ openPopup }) {
               </div>
             </div>
 
-            {/* Navigation */}
             <ul className="navigation clearfix">
-              {/* Home — no dropdown arrow on mobile */}
               <li className={isActive("/")}>
                 <Link to="/" onClick={closeMobileMenu}>
                   Home
                 </Link>
               </li>
-
-              {/* About */}
               <li className={isActive("/about")}>
                 <Link to="/about" onClick={closeMobileMenu}>
                   About
                 </Link>
               </li>
 
-              {/* ── Services mobile — arrow toggle → 7 parent links only ── */}
               <li className="dropdown">
                 <div className="mob-nav-row">
                   <Link to="/services" onClick={closeMobileMenu}>
@@ -705,14 +643,11 @@ export default function Navbar({ openPopup }) {
                 )}
               </li>
 
-              {/* News — no dropdown arrow on mobile */}
               <li>
                 <Link to="/blogs" onClick={closeMobileMenu}>
                   Blogs
                 </Link>
               </li>
-
-              {/* Contact */}
               <li className={isActive("/contact-us")}>
                 <Link to="/contact-us" onClick={closeMobileMenu}>
                   Contact
@@ -720,7 +655,6 @@ export default function Navbar({ openPopup }) {
               </li>
             </ul>
 
-            {/* Contact Info */}
             <ul className="contact-list-one">
               <li>
                 <div className="contact-info-box">
@@ -742,7 +676,6 @@ export default function Navbar({ openPopup }) {
               </li>
             </ul>
 
-            {/* Social Links */}
             <ul className="social-links">
               <li>
                 <a href="https://x.com/brandmingo" aria-label="Twitter">
@@ -777,53 +710,6 @@ export default function Navbar({ openPopup }) {
               </li>
             </ul>
           </nav>
-        </div>
-
-        {/* ══ STICKY HEADER ══ */}
-        <div className={`sticky-header${isSticky ? " fixed-header" : ""}`}>
-          <div className="auto-container">
-            <div className="inner-container">
-              <div className="logo">
-                <Link to="/">
-                  <img
-                    src="https://res.cloudinary.com/dpdn7kzll/image/upload/v1774440484/Group-19-2-1024x199_pnnsp8.png"
-                    alt="Logo"
-                  />
-                </Link>
-              </div>
-              <div className="nav-outer">
-                <nav className="main-menu">
-                  <div className="navbar-collapse show collapse clearfix">
-                    <ul className="navigation clearfix">
-                      <li className={`dropdown ${isActive("/")}`}>
-                        <Link to="/">Home</Link>
-                      </li>
-                      <li className={isActive("/about")}>
-                        <Link to="/about">About</Link>
-                      </li>
-                      <li className="dropdown">
-                        <Link to="/services">Services</Link>
-                      </li>
-                      <li className="dropdown">
-                        <Link to="/blogs">Blogs</Link>
-                      </li>
-                      <li className={isActive("/contact-us")}>
-                        <Link to="/contact-us">Contact</Link>
-                      </li>
-                    </ul>
-                  </div>
-                </nav>
-                <div
-                  className={`mobile-nav-toggler${mobileMenuOpen ? " active" : ""}`}
-                  onClick={toggleMobileMenu}
-                >
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </header>
     </>

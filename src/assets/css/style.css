@@ -28543,3 +28543,51 @@ body {
     margin-top: -40px;
   }
 }
+
+/* about us page hero and state spacing reduse  */
+.about-stats-wrap {
+  margin-top: -70px;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .about-stats-wrap {
+    margin-top: 10px;
+  }
+}
+
+/* about us page Mission section spacing   */
+.about-mission {
+  margin-top: -60px;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .about-mission {
+    margin-top: 10px;
+  }
+}
+
+/* about us page Process section spacing   */
+.about-process {
+  margin-top: -60px;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .about-process {
+    margin-top: 10px;
+  }
+}
+
+/* about us page team section spacing   */
+.about-team {
+  margin-top: -50px;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .about-team {
+    margin-top: -20px;
+  }
+}
