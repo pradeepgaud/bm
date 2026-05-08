@@ -28564,7 +28564,7 @@ body {
 /* Mobile */
 @media (max-width: 767px) {
   .about-mission {
-    margin-top: 10px;
+    margin-top: -10px;
   }
 }
 
@@ -28576,7 +28576,7 @@ body {
 /* Mobile */
 @media (max-width: 767px) {
   .about-process {
-    margin-top: 10px;
+    margin-top: -20px;
   }
 }
 
@@ -28588,6 +28588,18 @@ body {
 /* Mobile */
 @media (max-width: 767px) {
   .about-team {
-    margin-top: -20px;
+    margin-top: -40px;
+  }
+}
+
+/* about us page team section spacing   */
+.about-awardSection {
+  margin-top: -80px;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .about-awardSection {
+    margin-top: -40px;
   }
 }

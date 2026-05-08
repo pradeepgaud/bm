@@ -1,7 +1,5 @@
 import React from "react";
-// import AboutPageHero from "../../components/AboutpagesHero/AboutPageHero";
 import AboutSection from "../../components/AboutSection/AboutSection";
-import ServicesSection from "../../components/ServicesSection/ServicesSection";
 import AboutAwardSection from "../../components/AboutAwardSection/AboutAwardSection";
 import AboutHero from "../../components/AboutpagesHero/AboutHero";
 import AboutStats from "../../components/AboutStats/AboutStats";
@@ -26,12 +24,13 @@ const About = () => {
         <AboutProcess />
       </div>
 
+      <div className="about-awardSection">
+        <AboutAwardSection />
+      </div>
+
       <div className="about-team">
         <AboutTeam />
       </div>
-      {/* <AboutSection /> */}
-      <ServicesSection />
-      <AboutAwardSection />
     </>
   );
 };
