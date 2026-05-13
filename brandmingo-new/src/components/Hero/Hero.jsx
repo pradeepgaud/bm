@@ -361,7 +361,7 @@ const Hero = () => {
             <motion.span className="hn-line3" variants={fadeUp(0.15)}>
               <div className="hn-floating-lottie">
                 <DotLottieReact
-                  src="https://lottie.host/73de9c60-eb63-4afb-8474-f9fefd27ed30/PJxGlIli05.lottie"
+                  src="https://lottie.host/dac61196-1f96-4120-9721-96c932ad2a6b/myZbBqQzGS.lottie"
                   loop
                   autoplay
                 />
