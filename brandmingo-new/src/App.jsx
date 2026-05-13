@@ -151,7 +151,8 @@ function AppContent({ showLoader, isPopupOpen, openPopup, closePopup }) {
       <ScrollToTop />
 
       {/* LOADER */}
-      {showLoader && <Preloader />}
+      {/* {showLoader && <Preloader />}/ */}
+      {showLoader && !isAdminRoute && <Preloader />}
 
       {/* NAVBAR */}
       {!isAdminRoute && <Navbar openPopup={openPopup} />}
