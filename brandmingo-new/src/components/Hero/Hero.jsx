@@ -61,6 +61,7 @@
 import { useEffect, useState } from "react";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import "./Hero.css";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 /* ─────────────────────────────────────────
    CLIENT LOGOS
@@ -358,7 +359,14 @@ const Hero = () => {
             {/* Line 3 — cursor + "for Your Business"
                 FIX: flex-wrap + margin-top so it clears line2 */}
             <motion.span className="hn-line3" variants={fadeUp(0.15)}>
-              <CursorBadge />
+              <div className="hn-floating-lottie">
+                <DotLottieReact
+                  src="https://lottie.host/73de9c60-eb63-4afb-8474-f9fefd27ed30/PJxGlIli05.lottie"
+                  loop
+                  autoplay
+                />
+              </div>
+
               <span className="hn-line3-text">
                 for Your <em className="hn-accent">Business</em>
               </span>
