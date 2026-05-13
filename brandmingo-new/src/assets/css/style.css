@@ -11047,6 +11047,7 @@ li {
   ====================================================================
 
   ***/
+
 .marquee-area2 {
   margin-bottom: 150px;
   position: relative;
@@ -11154,14 +11155,19 @@ li {
 .marquee-section {
   position: relative;
   background-color: var(--theme-color2);
-  padding: 40px 0;
+  padding: 14px 0;
   z-index: 9;
 }
 .marquee-section.style-2 {
-  -webkit-transform: rotate(7.174deg);
-  transform: rotate(7.174deg);
+  transform: rotate(4deg);
+
   background-color: var(--theme-color1);
-  margin-bottom: -135px;
+
+  margin-bottom: -42px;
+
+  padding: 10px 0;
+
+  z-index: 20;
 }
 @media (max-width: 991.98px) {
   .marquee-section.style-2 {
@@ -11175,8 +11181,8 @@ li {
   animation: scroll2 var(--duration) linear infinite;
 }
 .marquee-section.style-2 .text {
-  font-size: 30px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 600;
   color: #fff;
 }
 .marquee-section.style-four {
@@ -11188,6 +11194,9 @@ li {
 .marquee-section.style-four .text {
   font-size: 40px;
   font-weight: 500;
+}
+.marquee-section.style-3 {
+  padding: 10px 0;
 }
 .marquee-section.style-3 {
   -webkit-transform: rotate(-5deg);
@@ -11235,12 +11244,27 @@ li {
   -webkit-animation: scroll var(--duration) linear infinite;
   animation: scroll var(--duration) linear infinite;
 }
+
+/* ORANGE STRIP ICON SIZE */
+.marquee-section.style-2 .text img {
+  width: 14px;
+  height: 14px;
+}
+
+/* BLACK STRIP ICON SIZE */
+.marquee-section.style-3 .text img {
+  width: 14px;
+  height: 14px;
+
+  object-fit: contain;
+}
+
 .marquee-two .text {
-  font-size: 30px;
+  font-size: 16px;
   line-height: 1.2;
   color: #fff;
   font-weight: 500;
-  margin: 0 40px;
+  margin: 0 10px;
   position: relative;
   font-family: var(--heading-font-family);
   display: -webkit-box;
@@ -11249,7 +11273,7 @@ li {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  gap: 30px;
+  gap: 12px;
 }
 @media (prefers-reduced-motion: reduce) {
   .marquee-two .marquee-group {

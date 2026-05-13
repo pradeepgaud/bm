@@ -1,12 +1,24 @@
 import star1 from "../../assets/images/icons/star1-2.svg";
 import star2 from "../../assets/images/icons/star1-1.svg";
 
-const texts = [
-  "Digital Agency",
-  "Smart & Efficient",
-  "Powerful Performance",
-  "Digital Excellence",
-  "Growth Platform",
+const ROW1 = [
+  "Web Development",
+  "Mobile App",
+  "Animation",
+  "Branding",
+  "UI/UX Design",
+  "Digital Marketing",
+  "SEO",
+];
+
+const ROW2 = [
+  "Branding",
+  "UI/UX Design",
+  "Digital Marketing",
+  "SEO",
+  "Web Development",
+  "Mobile App",
+  "Animation",
 ];
 
 const MarqueeSection = () => {
@@ -17,7 +29,7 @@ const MarqueeSection = () => {
         <div className="marquee-two">
           {[...Array(5)].map((_, i) => (
             <div className="marquee-group" key={i}>
-              {texts.map((text, index) => (
+              {ROW1.map((text, index) => (
                 <div className="text" key={index}>
                   <img src={star1} alt="" />
                   {text}
@@ -33,7 +45,7 @@ const MarqueeSection = () => {
         <div className="marquee-two">
           {[...Array(5)].map((_, i) => (
             <div className="marquee-group" key={i}>
-              {texts.map((text, index) => (
+              {ROW2.map((text, index) => (
                 <div className="text" key={index}>
                   <img src={star2} alt="" />
                   {text}

@@ -23,11 +23,11 @@ const NewHome = ({ openPopup }) => {
     <>
       {/* <HeroSection /> */}
       <Hero openPopup={openPopup} />
+      <MarqueeSection />
       <Feature />
       <AboutSection />
       <ServicesSection />
       <ProjectSection />
-      <MarqueeSection />
       <WorkProcess />
       <VideoSection />
       <ChooseUs />
