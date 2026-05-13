@@ -223,7 +223,7 @@
 .hn-eyebrow {
   font-family: var(--heading-font-family, "Poppins", sans-serif);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 3.5px;
   text-transform: uppercase;
   color: var(--theme-color1);
@@ -245,8 +245,8 @@
   align-items: center;
   gap: 14px;
   font-family: var(--heading-font-family, "Poppins", sans-serif);
-  font-size: clamp(24px, 3.4vw, 50px);
-  font-weight: 600;
+  font-size: clamp(28px, 4vw, 58px);
+  font-weight: 500;
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.2;
   letter-spacing: -0.5px;
@@ -287,14 +287,12 @@
 .hn-line2 {
   display: block;
   font-family: var(--heading-font-family, "Poppins", sans-serif);
-  font-size: clamp(50px, 9vw, 124px);
-  font-weight: 900;
+  font-size: clamp(58px, 11vw, 140px);
+  font-weight: 600;
   color: #fff;
-  /* Tighter line-height so it doesn't eat into line 3 */
   line-height: 1;
   letter-spacing: clamp(-3px, -0.4vw, -5px);
   text-transform: lowercase;
-  /* Explicit bottom margin so line3 has clear gap */
   margin-bottom: 12px;
 }
 
@@ -348,22 +346,18 @@
   left: calc(0.82em - 0.4em - 0.05em);
 }
 
-/* ── LINE 3 — "[cursor] for Your Business"
-   FIX: Use block-level row so cursor sits beside text
-   and never overlaps the "gr" of line 2              ── */
+/* ── LINE 3 — "[cursor] for Your Business" ── */
 .hn-line3 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   font-family: var(--heading-font-family, "Poppins", sans-serif);
-  font-size: clamp(20px, 2.8vw, 42px);
-  font-weight: 700;
+  font-size: clamp(22px, 3.2vw, 48px);
+  font-weight: 500;
   color: rgba(255, 255, 255, 0.88);
-  /* Clear any residual overlap from the giant line2 */
   line-height: 1.2;
   letter-spacing: -0.4px;
-  /* Prevent cursor badge from going above line2 boundary */
   position: relative;
   z-index: 1;
 }
@@ -373,19 +367,26 @@
   white-space: nowrap;
 }
 
+/* Cursor badge — orange circle, smaller */
 .hn-cursor-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  /* Size relative to line3 font */
-  width: 1em;
-  height: 1em;
-  filter: drop-shadow(0 0 12px rgba(var(--theme-color1-rgb), 0.7));
+  /* Smaller fixed size — not too big */
+  width: clamp(18px, 1.8vw, 26px);
+  height: clamp(18px, 1.8vw, 26px);
+  border-radius: 50%;
+  background: var(--theme-color1);
+  box-shadow:
+    0 0 0 0 rgba(var(--theme-color1-rgb), 0.4),
+    0 8px 24px rgba(var(--theme-color1-rgb), 0.45);
+  animation: hn-badge-pulse 2.8s ease-in-out infinite;
+  filter: none;
 }
 .hn-cursor-badge svg {
-  width: 100%;
-  height: 100%;
+  width: 55%;
+  height: 55%;
   display: block;
 }
 
@@ -394,14 +395,16 @@
   font-style: normal;
 }
 
-/* ══ SUBTEXT ══════════════════════════════ */
+/* ══ SUBTEXT ══════════════════════════════
+   FIX 2: Reduced top/bottom margin for tighter spacing */
 .hn-sub {
   font-family: var(--body-font-family, "Poppins", sans-serif);
   font-size: clamp(13px, 1.1vw, 15.5px);
   color: rgba(255, 255, 255, 0.38);
   line-height: 1.9;
   max-width: 480px;
-  margin: 0 0 30px;
+  /* FIX 2: Reduced from 0 0 30px to 0 0 16px to tighten top/bottom spacing */
+  margin: 0 0 16px;
   letter-spacing: 0.1px;
 }
 
@@ -472,12 +475,11 @@
   max-width: 800px;
 }
 
-/* ── Logo: default black & white, orange on hover ── */
+/* FIX 4: Increased logo size — default black & white, orange on hover */
 .hn-logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Black & white by default */
   filter: grayscale(1) brightness(0) invert(1);
   opacity: 0.5;
   transition:
@@ -487,16 +489,15 @@
   cursor: default;
 }
 .hn-logo:hover {
-  /* Full colour on hover */
   filter: grayscale(0) brightness(1) invert(0);
   opacity: 1;
   transform: scale(1.08);
 }
 .hn-logo img {
-  /* Bigger logos */
-  height: 44px;
+  /* FIX 4: Increased from 44px to 54px */
+  height: 54px;
   width: auto;
-  max-width: 150px;
+  max-width: 170px;
   object-fit: contain;
   display: block;
   vertical-align: middle;
@@ -554,8 +555,8 @@
     padding: 130px 0 70px;
   }
   .hn-logo img {
-    height: 52px;
-    max-width: 170px;
+    height: 62px;
+    max-width: 190px;
   }
   .hn-logos-row {
     gap: 52px;
@@ -575,7 +576,7 @@
     padding: 104px 0 44px;
   }
   .hn-sub {
-    margin-bottom: 24px;
+    margin-bottom: 14px;
   }
   .hn-cta-wrap {
     margin-bottom: 36px;
@@ -598,8 +599,8 @@
     gap: 28px;
   }
   .hn-logo img {
-    height: 40px;
-    max-width: 130px;
+    height: 48px;
+    max-width: 145px;
   }
 }
 
@@ -617,8 +618,8 @@
     gap: 24px;
   }
   .hn-logo img {
-    height: 36px;
-    max-width: 120px;
+    height: 44px;
+    max-width: 135px;
   }
 }
 
@@ -635,12 +636,20 @@
     letter-spacing: -2px;
     margin-bottom: 8px;
   }
+  /* Cursor badge smaller on mobile — prevent overlap with growth */
+  .hn-cursor-badge {
+    width: 20px;
+    height: 20px;
+    /* Disable upward bounce animation — prevents overlap with 'g' */
+    animation: hn-badge-pulse 2.8s ease-in-out infinite !important;
+    transform: none !important;
+  }
   .hn-logos-label {
     font-size: 9px;
   }
   .hn-logo img {
-    height: 32px;
-    max-width: 110px;
+    height: 38px;
+    max-width: 125px;
   }
   .hn-logos-row {
     gap: 20px;
@@ -674,14 +683,21 @@
   }
   .hn-line2 {
     letter-spacing: -1.5px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
   }
   .hn-line3 {
-    gap: 7px;
+    gap: 6px;
+  }
+  /* Cursor badge very small on small mobile — no overlap with g */
+  .hn-cursor-badge {
+    width: 18px;
+    height: 18px;
+    animation: hn-badge-pulse 2.8s ease-in-out infinite !important;
+    transform: none !important;
   }
   .hn-logo img {
-    height: 28px;
-    max-width: 95px;
+    height: 34px;
+    max-width: 110px;
   }
   .hn-logos-row {
     gap: 16px;
@@ -695,8 +711,8 @@
 /* 480 */
 @media (max-width: 480px) {
   .hn-logo img {
-    height: 26px;
-    max-width: 88px;
+    height: 30px;
+    max-width: 100px;
   }
   .hn-logos-row {
     gap: 14px;
@@ -716,7 +732,7 @@
     gap: 12px;
   }
   .hn-logo img {
-    height: 22px;
-    max-width: 75px;
+    height: 26px;
+    max-width: 85px;
   }
 }

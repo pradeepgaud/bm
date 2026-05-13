@@ -83,7 +83,7 @@ const CLIENT_LOGOS = [
     alt: "Client 4",
   },
   {
-    url: "https://res.cloudinary.com/dpdn7kzll/image/upload/v1778658879/5_oet7uv.png",
+    url: "https://res.cloudinary.com/dpdn7kzll/image/upload/v1778661854/Untitled_design_itjmma.png",
     alt: "Client 5",
   },
 ];
