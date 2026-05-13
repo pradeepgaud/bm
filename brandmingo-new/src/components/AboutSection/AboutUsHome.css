@@ -1,0 +1,676 @@
+/* ============================================================
+   AboutUsHome.css  –  Premium Dark Agency Section (Improved)
+   ============================================================ */
+
+/* ── Section wrapper ──────────────────────────────────────── */
+.au-section {
+  position: relative;
+  background: var(--body-bg, #0a0a0a);
+  padding: 110px 0 0;
+  overflow: hidden;
+  font-family: var(--body-font-family, "Mont", sans-serif);
+}
+
+/* ── Dot grid overlay ─────────────────────────────────────── */
+.au-dot-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.045) 1px,
+    transparent 1px
+  );
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+/* ── Ambient blobs ────────────────────────────────────────── */
+.au-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  pointer-events: none;
+  z-index: 0;
+}
+.au-blob-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 107, 30, 0.1) 0%,
+    transparent 70%
+  );
+  top: -160px;
+  left: -200px;
+}
+.au-blob-2 {
+  width: 460px;
+  height: 460px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 107, 30, 0.07) 0%,
+    transparent 70%
+  );
+  bottom: 60px;
+  right: -120px;
+}
+.au-blob-3 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 150, 60, 0.06) 0%,
+    transparent 70%
+  );
+  top: 40%;
+  left: 45%;
+}
+
+/* ── Container ────────────────────────────────────────────── */
+.au-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* ── ABOUT US badge ──────────────────────────────────────── */
+.au-section-badge {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 56px;
+}
+.au-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 107, 30, 0.1);
+  border: 1px solid rgba(255, 107, 30, 0.3);
+  border-radius: 40px;
+  padding: 8px 22px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: var(--theme-color1, #ff6b1e);
+  text-transform: uppercase;
+  font-family: var(--heading-font-family, "Poppins", sans-serif);
+  width: fit-content;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 20px rgba(255, 107, 30, 0.08);
+}
+.au-badge-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--theme-color1, #ff6b1e);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--theme-color1, #ff6b1e);
+}
+
+/* ══════════════════════════════════════════════════════════
+   TOP GRID — Left (images) | Right (content)
+   The rotating badge is INSIDE .au-images-wrap, absolutely
+   positioned to overlap the right edge between the two cards.
+══════════════════════════════════════════════════════════ */
+.au-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+/* ══════════════════════════════════════════════════════════
+   LEFT COLUMN
+══════════════════════════════════════════════════════════ */
+.au-left {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Heading */
+.au-heading {
+  font-family: var(--heading-font-family, "Poppins", sans-serif);
+  font-size: clamp(30px, 3.8vw, 52px);
+  font-weight: 600;
+  color: var(--headings-color, #ffffff);
+  line-height: 1.15;
+  letter-spacing: -1px;
+  margin: 0;
+}
+.au-heading-highlight {
+  color: var(--theme-color1, #ff6b1e);
+  position: relative;
+}
+
+.au-heading-line {
+  width: 52px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--theme-color1, #ff6b1e), transparent);
+  border-radius: 4px;
+  box-shadow: 0 0 14px rgba(255, 107, 30, 0.45);
+  margin-top: -14px;
+}
+
+/* ── Image stack ────────────────────────────────────────── */
+.au-images-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  /* right padding gives the rotating badge space without overflow */
+  padding-right: 170px;
+}
+
+.au-img-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: visible;
+  cursor: pointer;
+  width: 100%;
+  height: 210px;
+}
+
+.au-img-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(30%) brightness(0.75);
+  transition: filter 0.45s ease;
+  overflow: hidden;
+}
+.au-img-card:hover .au-img-inner {
+  filter: grayscale(0%) brightness(0.9);
+}
+
+/* Image backgrounds with real photos */
+.au-img-1 {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(15, 15, 15, 0.45) 0%,
+      rgba(30, 30, 30, 0.3) 100%
+    ),
+    url("https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80")
+      center/cover no-repeat;
+}
+.au-img-2 {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(15, 15, 15, 0.45) 0%,
+      rgba(30, 30, 30, 0.3) 100%
+    ),
+    url("https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80")
+      center/cover no-repeat;
+}
+
+/* Orange corner accents */
+.au-img-corner {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  z-index: 3;
+  pointer-events: none;
+}
+.au-img-corner--tl {
+  top: 10px;
+  left: 10px;
+  border-top: 2px solid var(--theme-color1, #ff6b1e);
+  border-left: 2px solid var(--theme-color1, #ff6b1e);
+  border-radius: 4px 0 0 0;
+  opacity: 0.7;
+}
+.au-img-corner--br {
+  bottom: 10px;
+  right: 10px;
+  border-bottom: 2px solid var(--theme-color1, #ff6b1e);
+  border-right: 2px solid var(--theme-color1, #ff6b1e);
+  border-radius: 0 0 4px 0;
+  opacity: 0.7;
+}
+
+/* Reset stacking overrides */
+.au-img-card--top,
+.au-img-card--bot {
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+.au-img-card--top {
+  transform-origin: top left;
+}
+.au-img-card--bot {
+  transform-origin: bottom left;
+}
+
+/* ── Floating icon badges ────────────────────────────────── */
+.au-float-badge {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--theme-color1, #ff6b1e), #ff9340);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #fff;
+  box-shadow:
+    0 8px 28px rgba(255, 107, 30, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  z-index: 4;
+}
+.au-float-badge--tl {
+  top: -14px;
+  left: -14px;
+}
+.au-float-badge--br {
+  bottom: -14px;
+  right: -14px;
+}
+
+/* ── Rotating badge — right edge, centered between both images ── */
+.au-rotating-badge-wrap {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 160px;
+  height: 160px;
+  z-index: 5;
+}
+
+/* Decorative outer rings */
+.au-ring-outer {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 107, 30, 0.12);
+}
+.au-ring-dashed {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 107, 30, 0.2);
+}
+
+.au-rotating-ring {
+  position: absolute;
+  inset: 0;
+}
+.au-ring-svg {
+  width: 100%;
+  height: 100%;
+}
+.au-ring-text {
+  fill: rgba(255, 255, 255, 0.6);
+  font-size: 20px;
+  font-family: var(--body-font-family, "Mont", sans-serif);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.au-badge-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    circle,
+    rgba(255, 107, 30, 0.18) 0%,
+    rgba(255, 107, 30, 0.06) 100%
+  );
+  border-radius: 50%;
+  margin: 28px;
+  border: 1px solid rgba(255, 107, 30, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 0 30px rgba(255, 107, 30, 0.15),
+    inset 0 0 20px rgba(255, 107, 30, 0.05);
+}
+.au-badge-icon {
+  font-size: 30px;
+  filter: drop-shadow(0 4px 12px rgba(255, 100, 0, 0.5));
+}
+
+/* ══════════════════════════════════════════════════════════
+   RIGHT COLUMN
+══════════════════════════════════════════════════════════ */
+.au-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Intro block */
+.au-intro-block {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: rgba(255, 107, 30, 0.04);
+  border: 1px solid rgba(255, 107, 30, 0.12);
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+.au-intro-icon-wrap {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 30, 0.2),
+    rgba(255, 107, 30, 0.08)
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  border: 1px solid rgba(255, 107, 30, 0.2);
+}
+.au-intro-icon {
+  color: var(--theme-color1, #ff6b1e);
+  font-size: 18px;
+}
+.au-intro-tagline {
+  font-family: var(--body-font-family, "Mont", sans-serif);
+  font-size: 14.5px;
+  color: rgba(255, 255, 255, 0.58);
+  line-height: 1.7;
+  margin: 0;
+}
+.au-intro-tagline strong {
+  color: var(--headings-color, #ffffff);
+  font-weight: 600;
+}
+.au-orange {
+  color: var(--theme-color1, #ff6b1e);
+  font-weight: 600;
+}
+
+/* Body text */
+.au-body-text {
+  font-family: var(--body-font-family, "Mont", sans-serif);
+  font-size: 14.5px;
+  color: rgba(255, 255, 255, 0.46);
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* Subtle divider */
+.au-right-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 107, 30, 0.3),
+    rgba(255, 255, 255, 0.04),
+    transparent
+  );
+  border-radius: 2px;
+}
+
+/* ── Skills / Progress bars ──────────────────────────────── */
+.au-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.au-skill-row {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 15px 18px;
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+.au-skill-row:hover {
+  background: rgba(255, 107, 30, 0.04);
+  border-color: rgba(255, 107, 30, 0.18);
+}
+.au-skill-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.au-skill-icon {
+  color: var(--theme-color1, #ff6b1e);
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.au-skill-label {
+  flex: 1;
+  font-family: var(--body-font-family, "Mont", sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--headings-color, #ffffff);
+  letter-spacing: 0.3px;
+}
+.au-skill-pct {
+  font-family: var(--heading-font-family, "Poppins", sans-serif);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--theme-color1, #ff6b1e);
+}
+
+.au-bar-track {
+  position: relative;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  overflow: visible;
+}
+.au-bar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--theme-color1, #ff6b1e) 0%,
+    #ff9340 100%
+  );
+  border-radius: 20px;
+  z-index: 2;
+}
+.au-bar-glow {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  height: 11px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 107, 30, 0.45) 0%,
+    transparent 100%
+  );
+  border-radius: 20px;
+  filter: blur(6px);
+  z-index: 1;
+}
+
+/* ── CTA Button ─────────────────────────────────────────── */
+.au-right .btn-style-one {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  align-self: flex-start;
+}
+
+/* ══════════════════════════════════════════════════════════
+   STATS BAR
+══════════════════════════════════════════════════════════ */
+.au-stats-bar {
+  display: flex;
+  align-items: stretch;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow:
+    0 -4px 40px rgba(0, 0, 0, 0.22),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.au-stat-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 34px 16px;
+  cursor: default;
+  transition: background 0.3s ease;
+  position: relative;
+}
+.au-stat-card:hover {
+  background: rgba(255, 107, 30, 0.04);
+}
+
+.au-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  background: linear-gradient(135deg, var(--theme-color1, #ff6b1e), #ff9340);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 19px;
+  box-shadow: 0 6px 20px rgba(255, 107, 30, 0.32);
+  margin-bottom: 4px;
+}
+
+.au-stat-number {
+  font-family: var(--heading-font-family, "Poppins", sans-serif);
+  font-size: clamp(22px, 2.4vw, 32px);
+  font-weight: 700;
+  color: #111111;
+  line-height: 1;
+  letter-spacing: -0.8px;
+}
+
+.au-stat-label {
+  font-family: var(--body-font-family, "Mont", sans-serif);
+  font-size: 12px;
+  color: #888888;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.2px;
+}
+
+.au-stats-divider {
+  width: 1px;
+  background: rgba(0, 0, 0, 0.08);
+  align-self: stretch;
+}
+
+/* ══════════════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════════════ */
+
+@media (max-width: 1280px) {
+  .au-grid {
+    gap: 56px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .au-section {
+    padding: 80px 0 0;
+  }
+  .au-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .au-images-wrap {
+    max-width: 540px;
+  }
+  .au-rotating-badge-wrap {
+    right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .au-section {
+    padding: 60px 0 0;
+  }
+  .au-heading {
+    font-size: clamp(28px, 7vw, 46px);
+  }
+  .au-img-card {
+    height: 180px;
+  }
+  .au-stats-bar {
+    flex-wrap: wrap;
+    border-radius: 16px;
+  }
+  .au-stat-card {
+    flex: 1 1 48%;
+    padding: 26px 14px;
+  }
+  .au-stats-divider {
+    display: none;
+  }
+  .au-stat-card:nth-child(1),
+  .au-stat-card:nth-child(3) {
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  .au-stat-card:nth-child(1),
+  .au-stat-card:nth-child(2) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+}
+
+@media (max-width: 560px) {
+  .au-section {
+    padding: 48px 0 0;
+  }
+  .au-container {
+    padding: 0 18px;
+  }
+  .au-grid {
+    gap: 44px;
+    margin-bottom: 48px;
+  }
+  .au-heading {
+    font-size: clamp(26px, 8vw, 38px);
+    letter-spacing: -0.8px;
+  }
+  .au-img-card {
+    height: 160px;
+  }
+  .au-rotating-badge-wrap {
+    width: 120px;
+    height: 120px;
+    right: 0;
+  }
+  .au-float-badge {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+  .au-stat-card {
+    flex: 1 1 100%;
+  }
+  .au-stat-card:nth-child(1),
+  .au-stat-card:nth-child(3) {
+    border-right: none;
+  }
+  .au-stat-card:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  .au-intro-block {
+    flex-direction: column;
+  }
+  .au-images-wrap {
+    padding-right: 130px;
+  }
+}

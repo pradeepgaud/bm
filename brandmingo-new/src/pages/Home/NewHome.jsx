@@ -16,6 +16,7 @@ import BrandSection from "../../components/BrandSection/BrandSection";
 // import ContactSection from "../../components/ContactSection/ContactSection";
 import NewsSection from "../../components/NewsSection/NewsSection";
 import ClientForm from "../../components/contactfrom/ClientForm";
+import AboutUsHome from "../../components/AboutSection/AboutUsHome";
 // import HeroSection from "../../components/HeroSection/HeroSection";
 
 const NewHome = ({ openPopup }) => {
@@ -25,6 +26,7 @@ const NewHome = ({ openPopup }) => {
       <Hero openPopup={openPopup} />
       <MarqueeSection />
       <Feature />
+      <AboutUsHome />
       <AboutSection />
       <ServicesSection />
       <ProjectSection />
