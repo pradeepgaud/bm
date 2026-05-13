@@ -359,14 +359,21 @@ const Hero = () => {
             {/* Line 3 — cursor + "for Your Business"
                 FIX: flex-wrap + margin-top so it clears line2 */}
             <motion.span className="hn-line3" variants={fadeUp(0.15)}>
-              <div className="hn-floating-lottie">
+              <motion.div
+                className="hn-floating-lottie"
+                animate={{ y: [0, -6, 0], rotate: [-3, 3, -3] }}
+                transition={{
+                  duration: 3.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
                 <DotLottieReact
-                  src="https://lottie.host/dac61196-1f96-4120-9721-96c932ad2a6b/myZbBqQzGS.lottie"
+                  src="https://lottie.host/11c4931e-f8e2-4064-8263-64b3011a5a01/aZtSibBLe6.lottie"
                   loop
                   autoplay
                 />
-              </div>
-
+              </motion.div>
               <span className="hn-line3-text">
                 for Your <em className="hn-accent">Business</em>
               </span>

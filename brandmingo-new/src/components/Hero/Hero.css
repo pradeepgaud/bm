@@ -291,8 +291,7 @@
   font-weight: 600;
   color: #fff;
   line-height: 1;
-  letter-spacing: clamp(-1px, -0.1vw, -2px);
-  /* letter-spacing: clamp(-3px, -0.4vw, -5px); */
+  letter-spacing: clamp(-3px, -0.4vw, -5px);
   text-transform: lowercase;
   margin-bottom: 12px;
 }
@@ -315,8 +314,7 @@
 }
 .hn-toggle-track {
   display: block;
-  /* width: 0.82em; */
-  width: 1em;
+  width: 0.82em;
   height: 0.5em;
   border-radius: 100px;
   background: #1a0800;
@@ -345,39 +343,10 @@
   transition: left 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .hn-toggle--on .hn-toggle-thumb {
-  left: calc(100% - 0.45em);
+  left: calc(0.82em - 0.4em - 0.05em);
 }
 
-/* ICONS */
-.hn-floating-lottie {
-  width: 100px;
-  height: 100px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  flex-shrink: 0;
-
-  position: relative;
-
-  top: 2px;
-
-  margin-right: -4px;
-
-  overflow: hidden;
-}
-
-/* LOTTIE */
-.hn-floating-lottie canvas,
-.hn-floating-lottie svg {
-  width: 100% !important;
-  height: 100% !important;
-
-  object-fit: contain;
-}
-
-/* ── LINE 3 — "[cursor] for Your Business" ── */
+/* ── LINE 3 — "[lottie] for Your Business" ── */
 .hn-line3 {
   display: inline-flex;
   align-items: center;
@@ -398,15 +367,57 @@
   white-space: nowrap;
 }
 
-/* Cursor badge — orange circle, smaller */
+/* Lottie icon */
+.hn-floating-lottie {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  position: relative;
+
+  top: -1px;
+
+  /* spacing between icon & text */
+  margin-right: 10px;
+
+  overflow: visible;
+}
+
+/* Sharp render */
+.hn-floating-lottie canvas,
+.hn-floating-lottie svg {
+  width: 100% !important;
+  height: 100% !important;
+
+  object-fit: contain;
+}
+
+/* Lottie render */
+.hn-floating-lottie canvas,
+.hn-floating-lottie svg {
+  width: 140% !important;
+  height: 140% !important;
+
+  object-fit: contain;
+
+  position: relative;
+
+  top: 0;
+}
+
+/* Keep cursor badge styles intact (used if lottie fails) */
 .hn-cursor-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  /* Smaller fixed size — not too big */
-  width: clamp(18px, 1.8vw, 26px);
-  height: clamp(18px, 1.8vw, 26px);
+  width: clamp(22px, 2.2vw, 32px);
+  height: clamp(22px, 2.2vw, 32px);
   border-radius: 50%;
   background: var(--theme-color1);
   box-shadow:
@@ -432,7 +443,7 @@
   font-family: var(--body-font-family, "Poppins", sans-serif);
   font-size: clamp(13px, 1.1vw, 15.5px);
   color: rgba(255, 255, 255, 0.38);
-  line-height: 1.9;
+  line-height: 1.5;
   max-width: 480px;
   /* FIX 2: Reduced from 0 0 30px to 0 0 16px to tighten top/bottom spacing */
   margin: 0 0 16px;
@@ -667,12 +678,26 @@
     letter-spacing: -2px;
     margin-bottom: 8px;
   }
-  /* Cursor badge smaller on mobile — prevent overlap with growth */
-  .hn-cursor-badge {
-    width: 20px;
-    height: 20px;
-    /* Disable upward bounce animation — prevents overlap with 'g' */
-    animation: hn-badge-pulse 2.8s ease-in-out infinite !important;
+  /* Lottie on mobile — small container, animation disabled */
+  /* MOBILE LOTTIE FIX */
+  .hn-floating-lottie {
+    width: 44px !important;
+    height: 44px !important;
+
+    overflow: visible !important;
+
+    margin-right: 4px;
+
+    top: -1px;
+  }
+
+  .hn-floating-lottie canvas,
+  .hn-floating-lottie svg {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: contain;
+
     transform: none !important;
   }
   .hn-logos-label {
@@ -702,40 +727,86 @@
 
 /* 575 */
 @media (max-width: 575px) {
+  /* HERO SECTION */
   .hn-section {
-    padding: 80px 0 90px;
+    padding: 90px 0 70px;
+    min-height: auto;
   }
+
+  /* TOP TEXT */
   .hn-eyebrow {
-    font-size: 9px;
-    letter-spacing: 2.2px;
+    font-size: 8px;
+    letter-spacing: 2px;
   }
-  .hn-eyebrow-wrap {
-    margin-bottom: 18px;
-  }
-  .hn-line2 {
-    letter-spacing: -1.5px;
+
+  /* WE BUILD */
+  .hn-line1 {
+    font-size: 34px;
+    gap: 10px;
     margin-bottom: 8px;
   }
+
+  /* GROWTH */
+  .hn-line2 {
+    font-size: 92px;
+    line-height: 0.9;
+    letter-spacing: -3px;
+
+    margin-bottom: 14px;
+  }
+
+  /* TOGGLE */
+  .hn-toggle-track {
+    width: 0.78em;
+    height: 0.46em;
+  }
+
+  .hn-toggle-thumb {
+    width: 0.36em;
+    height: 0.36em;
+  }
+
+  /* FOR YOUR BUSINESS */
   .hn-line3 {
-    gap: 6px;
+    font-size: 24px;
+    gap: 2px;
+
+    line-height: 1;
+
+    margin-bottom: 18px;
   }
-  /* Cursor badge very small on small mobile — no overlap with g */
-  .hn-cursor-badge {
-    width: 18px;
-    height: 18px;
-    animation: hn-badge-pulse 2.8s ease-in-out infinite !important;
-    transform: none !important;
-  }
-  .hn-logo img {
+
+  /* ICON */
+  .hn-floating-lottie {
+    width: 34px;
     height: 34px;
-    max-width: 110px;
+
+    margin-right: 1px;
+
+    top: -1px;
   }
-  .hn-logos-row {
-    gap: 16px;
-    max-width: 100%;
+
+  .hn-floating-lottie canvas,
+  .hn-floating-lottie svg {
+    width: 100% !important;
+    height: 100% !important;
   }
+
+  /* SUBTEXT */
   .hn-sub {
-    max-width: 94%;
+    font-size: 12px;
+    line-height: 1.6;
+
+    max-width: 92%;
+
+    margin-bottom: 22px;
+  }
+
+  /* BUTTON */
+  .hn-primary-btn {
+    height: 52px;
+    padding: 0 22px;
+    font-size: 14px;
   }
 }
 
