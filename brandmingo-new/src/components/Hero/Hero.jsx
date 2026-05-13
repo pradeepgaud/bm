@@ -1,67 +1,10 @@
-// import heroBg from "../../assets/images/banner/hero-bg-1-1.jpg";
-// import obj1 from "../../assets/images/icons/hero-object-1-1.png";
-// import obj2 from "../../assets/images/icons/hero-object-1-2.png";
-// import circle from "../../assets/images/banner/circle1-1.png";
-// import arrow from "../../assets/images/icons/right-arrow-1-1.png";
-// import btnArrow from "../../assets/images/icons/right-arrow-1-2.png";
-
-// const Hero = () => {
-//   return (
-//     <section
-//       className="hero-section hero-1 bg-cover"
-//       style={{ backgroundImage: `url(${heroBg})` }}
-//     >
-//       <div className="hero-oboject-1">
-//         <img src={obj1} alt="" />
-//       </div>
-
-//       <div className="hero-oboject-2">
-//         <img src={obj2} alt="" />
-//       </div>
-
-//       <div className="container">
-//         <div className="hero-content">
-//           <h1 className="hero-title" data-aos="fade-up">
-//             <span>We Build Digital</span> Experiences That Grow Your Business
-//           </h1>
-
-//           <div className="content-items">
-//             <div className="circle-box" data-aos="fade-up">
-//               <img className="ani-circle" src={circle} alt="" />
-//               <a href="#" className="arrow-icon">
-//                 <img src={arrow} alt="" />
-//               </a>
-//             </div>
-
-//             <div className="content" data-aos="fade-up">
-//               <div className="hero-text">
-//                 From startups to established companies, we create high-impact
-//                 digital solutions that attract, engage, and convert customers.
-//               </div>
-
-//               <a href="#" className="btn-style-one">
-//                 <span className="btn-arrow-left">
-//                   <img src={btnArrow} alt="" />
-//                 </span>
-//                 <span className="btn-title">Discover More</span>
-//                 <span className="btn-arrow-right">
-//                   <img src={btnArrow} alt="" />
-//                 </span>
-//               </a>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Hero;
-
 import { useEffect, useState } from "react";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import "./Hero.css";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { Link } from "react-router-dom";
+
+const MotionLink = motion(Link);
 
 /* ─────────────────────────────────────────
    CLIENT LOGOS
@@ -203,8 +146,8 @@ const DotGrid = () => (
 /* ─────────────────────────────────────────
    ROTATING CIRCLE BADGE
 ───────────────────────────────────────── */
-const CircleBadge = () => (
-  <div className="hn-circle-badge" aria-hidden="true">
+const CircleBadge = ({ openPopup }) => (
+  <div className="hn-circle-badge" aria-hidden="true" onClick={openPopup}>
     <motion.svg
       className="hn-circle-svg"
       viewBox="0 0 200 200"
@@ -290,7 +233,7 @@ const GridLines = () => (
 /* ═══════════════════════════════════════════
    MAIN HERO
 ═══════════════════════════════════════════ */
-const Hero = () => {
+const Hero = ({ openPopup }) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const springX = useSpring(mouseX, { stiffness: 40, damping: 22 });
@@ -389,8 +332,8 @@ const Hero = () => {
 
           {/* CTA */}
           <motion.div className="hn-cta-wrap" variants={fadeUp(0.3)}>
-            <motion.a
-              href="/contact-us"
+            <MotionLink
+              to="/services"
               className="btn-style-one"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
@@ -426,15 +369,15 @@ const Hero = () => {
                   <polyline points="7,7 17,7 17,17" />
                 </svg>
               </span>
-            </motion.a>
+            </MotionLink>
 
-            <motion.a
-              href="/about"
+            <MotionLink
+              to="/about"
               className="hn-ghost-btn"
               whileHover={{ color: "#fff" }}
             >
               More About Us
-            </motion.a>
+            </MotionLink>
           </motion.div>
 
           {/* Logos */}
@@ -442,7 +385,7 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      <CircleBadge />
+      <CircleBadge openPopup={openPopup} />
     </section>
   );
 };

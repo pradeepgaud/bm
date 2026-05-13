@@ -18,11 +18,11 @@ import NewsSection from "../../components/NewsSection/NewsSection";
 import ClientForm from "../../components/contactfrom/ClientForm";
 // import HeroSection from "../../components/HeroSection/HeroSection";
 
-const NewHome = () => {
+const NewHome = ({ openPopup }) => {
   return (
     <>
       {/* <HeroSection /> */}
-      <Hero />
+      <Hero openPopup={openPopup} />
       <Feature />
       <AboutSection />
       <ServicesSection />

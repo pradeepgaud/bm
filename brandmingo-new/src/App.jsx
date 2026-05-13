@@ -172,7 +172,7 @@ function AppContent({ showLoader, isPopupOpen, openPopup, closePopup }) {
           </Route>
 
           {/* WEBSITE */}
-          <Route path="/" element={<NewHome />} />
+          <Route path="/" element={<NewHome openPopup={openPopup} />} />
 
           <Route path="/about" element={<About openPopup={openPopup} />} />
 
