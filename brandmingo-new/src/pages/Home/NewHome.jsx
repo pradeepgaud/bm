@@ -17,6 +17,9 @@ import BrandSection from "../../components/BrandSection/BrandSection";
 import NewsSection from "../../components/NewsSection/NewsSection";
 import ClientForm from "../../components/contactfrom/ClientForm";
 import AboutUsHome from "../../components/AboutSection/AboutUsHome";
+import WhyChooseUs from "../../components/WhyChooseUs/WhyChooseUs";
+import ServicesSectionHome from "../../components/ServicesSection/ServicesSectionHome";
+import Client from "../../components/Testimonial/Client";
 // import HeroSection from "../../components/HeroSection/HeroSection";
 
 const NewHome = ({ openPopup }) => {
@@ -27,12 +30,15 @@ const NewHome = ({ openPopup }) => {
       <MarqueeSection />
       <Feature />
       <AboutUsHome />
+      <WhyChooseUs />
       <AboutSection />
+      <ServicesSectionHome />
       <ServicesSection />
       <ProjectSection />
       <WorkProcess />
       <VideoSection />
       <ChooseUs />
+      <Client />
       <Testimonial />
       <FaqSection />
       {/* <FeatureSection /> */}

@@ -1,0 +1,563 @@
+/* ============================================================
+   Client.css — Dark Clients Section — Fully Responsive
+   ============================================================ */
+
+/* ── Design tokens ───────────────────────────────────────────── */
+:root {
+  --cl-bg: #050505;
+  --cl-orange: #ff6b00;
+  --cl-white: #ffffff;
+  --cl-gray: #888888;
+  --cl-gray-light: #bbbbbb;
+
+  /* card */
+  --cl-avatar-size: 80px;
+  --cl-avatar-font: 28px;
+  --cl-card-width: 130px;
+  --cl-card-gap: 24px;
+  --cl-track-height: 220px;
+  --cl-name-size: 13px;
+  --cl-svc-size: 11.5px;
+
+  /* stats bubble */
+  --cl-stats-w: 150px;
+  --cl-stats-h: 160px;
+  --cl-stats-num: 30px;
+  --cl-stats-lbl: 12px;
+  --cl-stats-icon: 40px;
+  --cl-stats-icon-fs: 18px;
+  --cl-stats-br: 24px;
+
+  /* half-track: leaves room for center bubble (half of stats-w + padding) */
+  --cl-center-gap: 90px;
+}
+
+/* ── Section ─────────────────────────────────────────────────── */
+.cl-section {
+  position: relative;
+  background: var(--cl-bg);
+  padding: 120px 0 100px;
+  overflow: hidden;
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+/* ── Ambient glows ───────────────────────────────────────────── */
+.cl-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(120px);
+  z-index: 0;
+}
+.cl-glow--left {
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 107, 0, 0.12) 0%,
+    transparent 70%
+  );
+  top: 8%;
+  left: -110px;
+}
+.cl-glow--right {
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 107, 0, 0.1) 0%,
+    transparent 70%
+  );
+  top: 8%;
+  right: -110px;
+}
+.cl-glow--center {
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(
+    ellipse,
+    rgba(255, 107, 0, 0.08) 0%,
+    transparent 70%
+  );
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ── Dot grid ────────────────────────────────────────────────── */
+.cl-dot-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 1px
+  );
+  background-size: 30px 30px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Layout container ────────────────────────────────────────── */
+.cl-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+/* ── Header ──────────────────────────────────────────────────── */
+.cl-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.cl-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 107, 0, 0.08);
+  border: 1px solid rgba(255, 107, 0, 0.25);
+  border-radius: 40px;
+  padding: 8px 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--cl-orange);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.cl-badge-star {
+  font-size: 11px;
+  color: var(--cl-orange);
+}
+
+.cl-heading {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(32px, 5vw, 72px);
+  font-weight: 700;
+  color: var(--cl-white);
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin: 0 0 24px;
+}
+.cl-heading-orange {
+  color: var(--cl-orange);
+  display: block;
+}
+
+.cl-subtext {
+  font-size: 15px;
+  color: var(--cl-gray);
+  line-height: 1.8;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ── Slider wrapper ──────────────────────────────────────────── */
+.cl-slider-section {
+  position: relative;
+  height: var(--cl-track-height);
+  display: flex;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+/* outer left/right fade — hides cards at the screen edge */
+.cl-fade-left,
+.cl-fade-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 180px;
+  z-index: 10;
+  pointer-events: none;
+}
+.cl-fade-left {
+  left: 0;
+  background: linear-gradient(to right, #050505 0%, transparent 100%);
+}
+.cl-fade-right {
+  right: 0;
+  background: linear-gradient(to left, #050505 0%, transparent 100%);
+}
+
+/* ── Half-track wrappers ─────────────────────────────────────── */
+/*
+  Each wrapper is exactly half the slider minus space for the center bubble.
+  overflow:hidden clips the marquee so cards ONLY exist inside their half.
+  Left wrapper → flush left wall, cards move rightward → fade into center.
+  Right wrapper → flush right wall, cards move leftward → fade into center.
+*/
+.cl-track-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: calc(50% - var(--cl-center-gap));
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.cl-track-wrapper--left {
+  left: 0;
+  justify-content: flex-start;
+}
+.cl-track-wrapper--right {
+  right: 0;
+  justify-content: flex-end;
+}
+
+/* inner fade — cards disappear as they approach the center bubble */
+.cl-inner-fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 160px;
+  pointer-events: none;
+  z-index: 5;
+}
+.cl-inner-fade--right {
+  right: 0;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(5, 5, 5, 0.65) 55%,
+    rgba(5, 5, 5, 0.97) 100%
+  );
+}
+.cl-inner-fade--left {
+  left: 0;
+  background: linear-gradient(
+    to left,
+    transparent 0%,
+    rgba(5, 5, 5, 0.65) 55%,
+    rgba(5, 5, 5, 0.97) 100%
+  );
+}
+
+/* ── Marquee track ───────────────────────────────────────────── */
+.cl-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: var(--cl-card-gap);
+  will-change: transform;
+  width: max-content;
+  flex-shrink: 0;
+}
+
+/* ── Client card ─────────────────────────────────────────────── */
+.cl-card {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: var(--cl-card-width);
+  text-align: center;
+  cursor: default;
+  transition: transform 0.3s ease;
+}
+.cl-card:hover {
+  transform: translateY(-4px);
+}
+
+.cl-avatar {
+  width: var(--cl-avatar-size);
+  height: var(--cl-avatar-size);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 107, 0, 0.3);
+  box-shadow:
+    0 0 0 4px rgba(255, 107, 0, 0.08),
+    0 8px 32px rgba(255, 107, 0, 0.2);
+  transition:
+    box-shadow 0.3s,
+    transform 0.3s;
+  flex-shrink: 0;
+}
+.cl-card:hover .cl-avatar {
+  box-shadow:
+    0 0 0 5px rgba(255, 107, 0, 0.15),
+    0 12px 40px rgba(255, 107, 0, 0.35);
+  transform: scale(1.06);
+}
+.cl-avatar-letter {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--cl-avatar-font);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+.cl-name {
+  font-size: var(--cl-name-size);
+  font-weight: 600;
+  color: var(--cl-white);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(var(--cl-card-width) - 10px);
+}
+.cl-service {
+  font-size: var(--cl-svc-size);
+  color: var(--cl-gray);
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* ── Center stats bubble ─────────────────────────────────────── */
+.cl-stats-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+}
+.cl-stats-card {
+  position: relative;
+  width: var(--cl-stats-w);
+  height: var(--cl-stats-h);
+  background: rgba(18, 10, 4, 0.92);
+  border: 1px solid rgba(255, 107, 0, 0.35);
+  border-radius: var(--cl-stats-br);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow:
+    0 0 0 1px rgba(255, 107, 0, 0.12),
+    0 0 40px rgba(255, 107, 0, 0.25),
+    0 20px 60px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+  cursor: default;
+}
+.cl-stats-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 107, 0, 0.12);
+  pointer-events: none;
+}
+.cl-stats-ring--1 {
+  width: 230px;
+  height: 230px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.cl-stats-ring--2 {
+  width: 310px;
+  height: 310px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-color: rgba(255, 107, 0, 0.06);
+}
+
+.cl-stats-icon {
+  width: var(--cl-stats-icon);
+  height: var(--cl-stats-icon);
+  background: rgba(255, 107, 0, 0.15);
+  border: 1px solid rgba(255, 107, 0, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cl-orange);
+  font-size: var(--cl-stats-icon-fs);
+  margin-bottom: 4px;
+}
+.cl-stats-number {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--cl-stats-num);
+  font-weight: 700;
+  color: var(--cl-white);
+  letter-spacing: -1px;
+  line-height: 1;
+  margin: 0;
+}
+.cl-stats-label {
+  font-size: var(--cl-stats-lbl);
+  color: var(--cl-gray-light);
+  font-weight: 500;
+  margin: 0;
+}
+.cl-stats-bar {
+  width: 40px;
+  height: 3px;
+  background: var(--cl-orange);
+  border-radius: 4px;
+  margin-top: 4px;
+  box-shadow: 0 0 12px var(--cl-orange);
+}
+
+/* ── Dot indicators ──────────────────────────────────────────── */
+.cl-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.cl-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  display: inline-block;
+  transition: background 0.3s;
+}
+.cl-dot--active {
+  background: rgba(255, 255, 255, 0.5);
+}
+.cl-dot--orange {
+  background: var(--cl-orange);
+  box-shadow: 0 0 8px var(--cl-orange);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1280px) {
+  .cl-container {
+    padding: 0 36px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cl-section {
+    padding: 90px 0 80px;
+  }
+  .cl-header {
+    margin-bottom: 56px;
+  }
+  .cl-fade-left,
+  .cl-fade-right {
+    width: 120px;
+  }
+  .cl-inner-fade {
+    width: 130px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --cl-avatar-size: 68px;
+    --cl-avatar-font: 24px;
+    --cl-card-width: 112px;
+    --cl-card-gap: 18px;
+    --cl-track-height: 200px;
+    --cl-center-gap: 76px;
+    --cl-name-size: 12px;
+    --cl-svc-size: 11px;
+    --cl-stats-w: 132px;
+    --cl-stats-h: 148px;
+    --cl-stats-num: 26px;
+    --cl-stats-lbl: 11px;
+    --cl-stats-icon: 36px;
+    --cl-stats-icon-fs: 16px;
+    --cl-stats-br: 20px;
+  }
+  .cl-section {
+    padding: 72px 0 64px;
+  }
+  .cl-container {
+    padding: 0 20px;
+  }
+  .cl-heading {
+    letter-spacing: -1px;
+  }
+  .cl-subtext br {
+    display: none;
+  }
+  .cl-fade-left,
+  .cl-fade-right {
+    width: 72px;
+  }
+  .cl-inner-fade {
+    width: 100px;
+  }
+}
+
+@media (max-width: 560px) {
+  :root {
+    --cl-avatar-size: 58px;
+    --cl-avatar-font: 21px;
+    --cl-card-width: 94px;
+    --cl-card-gap: 14px;
+    --cl-track-height: 178px;
+    --cl-center-gap: 64px;
+    --cl-name-size: 11px;
+    --cl-svc-size: 10px;
+    --cl-stats-w: 118px;
+    --cl-stats-h: 134px;
+    --cl-stats-num: 22px;
+    --cl-stats-lbl: 10.5px;
+    --cl-stats-icon: 33px;
+    --cl-stats-icon-fs: 14px;
+    --cl-stats-br: 18px;
+  }
+  .cl-section {
+    padding: 56px 0 52px;
+  }
+  .cl-container {
+    padding: 0 14px;
+  }
+  .cl-header {
+    margin-bottom: 40px;
+  }
+  .cl-subtext {
+    font-size: 13.5px;
+  }
+  .cl-fade-left,
+  .cl-fade-right {
+    width: 44px;
+  }
+  .cl-inner-fade {
+    width: 76px;
+  }
+}
+
+@media (max-width: 400px) {
+  :root {
+    --cl-avatar-size: 48px;
+    --cl-avatar-font: 18px;
+    --cl-card-width: 78px;
+    --cl-card-gap: 12px;
+    --cl-track-height: 158px;
+    --cl-center-gap: 56px;
+    --cl-name-size: 9.5px;
+    --cl-svc-size: 9px;
+    --cl-stats-w: 102px;
+    --cl-stats-h: 120px;
+    --cl-stats-num: 18px;
+    --cl-stats-lbl: 9.5px;
+    --cl-stats-icon: 28px;
+    --cl-stats-icon-fs: 12px;
+    --cl-stats-br: 16px;
+  }
+  .cl-section {
+    padding: 44px 0 40px;
+  }
+  .cl-container {
+    padding: 0 10px;
+  }
+  .cl-badge {
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding: 6px 12px;
+  }
+  .cl-header {
+    margin-bottom: 32px;
+  }
+  .cl-fade-left,
+  .cl-fade-right {
+    width: 30px;
+  }
+  .cl-inner-fade {
+    width: 56px;
+  }
+}

@@ -187,6 +187,7 @@ function AppContent({ showLoader, isPopupOpen, openPopup, closePopup }) {
           <Route path="/web-development-new" element={<WebDevelopmentNew />} />
 
           <Route path="/ads-and-campaigns" element={<AdsAndCampaigns />} />
+          <Route path="/social-media-management" element={<SocialMediaManagement />} />
 
           <Route path="/ui-ux-audits" element={<UiUx />} />
 

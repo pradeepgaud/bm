@@ -1,620 +1,547 @@
 /* ============================================================
-   AboutUsHome.css  –  Premium Dark Agency Section (Improved)
-   ============================================================ */
+    AboutUsHome.css  –  Premium Dark Agency Section
+    Refined to match reference UI quality
+    ============================================================ */
+
+/* ── CSS Variables ─────────────────────────────────────────── */
+:root {
+  --au-bg: #0a0a0a;
+  --au-orange: #ff6b00;
+  --au-orange-dim: rgba(255, 107, 0, 0.12);
+  --au-orange-glow: rgba(255, 107, 0, 0.28);
+  --au-white: #ffffff;
+  --au-gray: #8a8a8a;
+  --au-gray-light: #b0b0b0;
+  --au-card-bg: rgba(255, 255, 255, 0.035);
+  --au-card-bg-hover: rgba(255, 255, 255, 0.055);
+  --au-card-border: rgba(255, 255, 255, 0.08);
+  --au-radius: 16px;
+  --au-radius-sm: 10px;
+  --au-font-heading: "Poppins", sans-serif;
+  --au-font-body: "Inter", "Segoe UI", sans-serif;
+  --au-stats-bg: rgba(22, 22, 22, 0.98);
+}
 
 /* ── Section wrapper ──────────────────────────────────────── */
 .au-section {
   position: relative;
-  background: var(--body-bg, #0a0a0a);
-  padding: 110px 0 0;
+  background: var(--au-bg);
+  padding: 120px 0 0;
   overflow: hidden;
-  font-family: var(--body-font-family, "Mont", sans-serif);
+  font-family: var(--au-font-body);
 }
 
-/* ── Dot grid overlay ─────────────────────────────────────── */
+/* ── Dot grid – hidden ───────────────────── */
 .au-dot-grid {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background-image: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.045) 1px,
-    transparent 1px
-  );
-  background-size: 32px 32px;
-  pointer-events: none;
-}
-
-/* ── Ambient blobs ────────────────────────────────────────── */
-.au-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(110px);
-  pointer-events: none;
-  z-index: 0;
-}
-.au-blob-1 {
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(
-    circle,
-    rgba(255, 107, 30, 0.1) 0%,
-    transparent 70%
-  );
-  top: -160px;
-  left: -200px;
-}
-.au-blob-2 {
-  width: 460px;
-  height: 460px;
-  background: radial-gradient(
-    circle,
-    rgba(255, 107, 30, 0.07) 0%,
-    transparent 70%
-  );
-  bottom: 60px;
-  right: -120px;
-}
-.au-blob-3 {
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(
-    circle,
-    rgba(255, 150, 60, 0.06) 0%,
-    transparent 70%
-  );
-  top: 40%;
-  left: 45%;
+  display: none;
 }
 
 /* ── Container ────────────────────────────────────────────── */
 .au-container {
   position: relative;
   z-index: 1;
-  max-width: 1340px;
+  max-width: 1380px;
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 48px;
 }
 
-/* ── ABOUT US badge ──────────────────────────────────────── */
-.au-section-badge {
+/* ── ABOUT US badge – centered ────────────────────────────── */
+.au-badge-center-wrap {
   display: flex;
   justify-content: center;
-  margin-bottom: 56px;
+  margin-bottom: 60px;
 }
+
 .au-badge-pill {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  background: rgba(255, 107, 30, 0.1);
-  border: 1px solid rgba(255, 107, 30, 0.3);
+  gap: 12px;
+  background: rgba(255, 107, 0, 0.08);
+  border: 1px solid rgba(255, 107, 0, 0.3);
   border-radius: 40px;
-  padding: 8px 22px;
+  padding: 9px 22px;
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 2.5px;
-  color: var(--theme-color1, #ff6b1e);
+  letter-spacing: 3px;
+  color: var(--au-orange);
   text-transform: uppercase;
-  font-family: var(--heading-font-family, "Poppins", sans-serif);
   width: fit-content;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 0 20px rgba(255, 107, 30, 0.08);
-}
-.au-badge-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--theme-color1, #ff6b1e);
-  border-radius: 50%;
-  box-shadow: 0 0 8px var(--theme-color1, #ff6b1e);
+  backdrop-filter: blur(8px);
 }
 
-/* ══════════════════════════════════════════════════════════
-   TOP GRID — Left (images) | Right (content)
-   The rotating badge is INSIDE .au-images-wrap, absolutely
-   positioned to overlap the right edge between the two cards.
-══════════════════════════════════════════════════════════ */
+.au-badge-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--au-orange);
+  border-radius: 50%;
+}
+
+/* ── Top grid ─────────────────────────────────────────────── */
 .au-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
-  align-items: center;
-  margin-bottom: 80px;
+  align-items: start;
+  margin-bottom: 60px;
 }
 
 /* ══════════════════════════════════════════════════════════
-   LEFT COLUMN
-══════════════════════════════════════════════════════════ */
+    LEFT COLUMN
+  ══════════════════════════════════════════════════════════ */
 .au-left {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 32px;
 }
 
-/* Heading */
 .au-heading {
-  font-family: var(--heading-font-family, "Poppins", sans-serif);
-  font-size: clamp(30px, 3.8vw, 52px);
-  font-weight: 600;
-  color: var(--headings-color, #ffffff);
-  line-height: 1.15;
-  letter-spacing: -1px;
+  font-family: var(--au-font-heading);
+  font-size: clamp(30px, 3.5vw, 56px);
+  font-weight: 400;
+  color: var(--au-white);
+  line-height: 1.08;
+  letter-spacing: -2px;
   margin: 0;
 }
+
 .au-heading-highlight {
-  color: var(--theme-color1, #ff6b1e);
-  position: relative;
+  color: var(--au-orange);
+  font-size: 1.1em;
+  font-weight: 500;
 }
 
 .au-heading-line {
-  width: 52px;
+  width: 48px;
   height: 3px;
-  background: linear-gradient(90deg, var(--theme-color1, #ff6b1e), transparent);
+  background: var(--au-orange);
   border-radius: 4px;
-  box-shadow: 0 0 14px rgba(255, 107, 30, 0.45);
-  margin-top: -14px;
+  margin-top: -8px;
 }
 
-/* ── Image stack ────────────────────────────────────────── */
+/* ── Image stack ──────────────────────────────────────────── */
 .au-images-wrap {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  /* right padding gives the rotating badge space without overflow */
-  padding-right: 170px;
+  height: 360px;
 }
 
 .au-img-card {
-  position: relative;
-  border-radius: 20px;
+  position: absolute;
+  border-radius: var(--au-radius);
   overflow: visible;
   cursor: pointer;
-  width: 100%;
-  height: 210px;
 }
 
 .au-img-inner {
   width: 100%;
   height: 100%;
-  border-radius: 20px;
+  border-radius: var(--au-radius);
   background-size: cover;
   background-position: center;
-  filter: grayscale(30%) brightness(0.75);
-  transition: filter 0.45s ease;
-  overflow: hidden;
-}
-.au-img-card:hover .au-img-inner {
-  filter: grayscale(0%) brightness(0.9);
+  filter: grayscale(100%) brightness(0.75);
+  transition:
+    filter 0.45s ease,
+    transform 0.45s ease;
 }
 
-/* Image backgrounds with real photos */
+.au-img-card:hover .au-img-inner {
+  filter: grayscale(60%) brightness(0.88);
+  transform: scale(1.02);
+}
+
 .au-img-1 {
   background:
-    linear-gradient(
-      135deg,
-      rgba(15, 15, 15, 0.45) 0%,
-      rgba(30, 30, 30, 0.3) 100%
-    ),
-    url("https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80")
-      center/cover no-repeat;
+    linear-gradient(135deg, #1c1c1c 0%, #2a2a2a 100%),
+    url("https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80")
+      center/cover;
+  background-blend-mode: overlay;
 }
 .au-img-2 {
   background:
-    linear-gradient(
-      135deg,
-      rgba(15, 15, 15, 0.45) 0%,
-      rgba(30, 30, 30, 0.3) 100%
-    ),
-    url("https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80")
-      center/cover no-repeat;
+    linear-gradient(135deg, #1c1c1c 0%, #2a2a2a 100%),
+    url("https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=900&q=80")
+      center/cover;
+  background-blend-mode: overlay;
 }
 
-/* Orange corner accents */
-.au-img-corner {
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  z-index: 3;
-  pointer-events: none;
-}
-.au-img-corner--tl {
-  top: 10px;
-  left: 10px;
-  border-top: 2px solid var(--theme-color1, #ff6b1e);
-  border-left: 2px solid var(--theme-color1, #ff6b1e);
-  border-radius: 4px 0 0 0;
-  opacity: 0.7;
-}
-.au-img-corner--br {
-  bottom: 10px;
-  right: 10px;
-  border-bottom: 2px solid var(--theme-color1, #ff6b1e);
-  border-right: 2px solid var(--theme-color1, #ff6b1e);
-  border-radius: 0 0 4px 0;
-  opacity: 0.7;
-}
-
-/* Reset stacking overrides */
-.au-img-card--top,
-.au-img-card--bot {
-  box-shadow:
-    0 28px 70px rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(255, 255, 255, 0.04);
-}
 .au-img-card--top {
-  transform-origin: top left;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 48%;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 1px var(--au-card-border);
 }
+
 .au-img-card--bot {
-  transform-origin: bottom left;
+  bottom: 0;
+  left: 0;
+  width: 70%;
+  height: 48%;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 1px var(--au-card-border);
 }
 
 /* ── Floating icon badges ────────────────────────────────── */
 .au-float-badge {
   position: absolute;
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, var(--theme-color1, #ff6b1e), #ff9340);
-  border-radius: 12px;
+  width: 58px;
+  height: 58px;
+  background: var(--au-orange);
+  border-radius: var(--au-radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 24px;
   color: #fff;
-  box-shadow:
-    0 8px 28px rgba(255, 107, 30, 0.45),
-    0 0 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 28px rgba(255, 107, 0, 0.35);
   z-index: 4;
 }
+
 .au-float-badge--tl {
-  top: -14px;
-  left: -14px;
-}
-.au-float-badge--br {
-  bottom: -14px;
-  right: -14px;
+  top: -16px;
+  left: -16px;
 }
 
-/* ── Rotating badge — right edge, centered between both images ── */
+.au-float-badge--br {
+  bottom: -16px;
+  right: -16px;
+}
+
+/* ── Rotating badge ── */
 .au-rotating-badge-wrap {
   position: absolute;
-  right: 0;
-  top: 50%;
+  right: -20px;
+  top: 44%;
   transform: translateY(-50%);
-  width: 160px;
-  height: 160px;
+  width: 150px;
+  height: 150px;
   z-index: 5;
-}
-
-/* Decorative outer rings */
-.au-ring-outer {
-  position: absolute;
-  inset: -8px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 107, 30, 0.12);
-}
-.au-ring-dashed {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  border: 1px dashed rgba(255, 107, 30, 0.2);
 }
 
 .au-rotating-ring {
   position: absolute;
   inset: 0;
 }
+
 .au-ring-svg {
   width: 100%;
   height: 100%;
 }
+
 .au-ring-text {
-  fill: rgba(255, 255, 255, 0.6);
-  font-size: 20px;
-  font-family: var(--body-font-family, "Mont", sans-serif);
-  letter-spacing: 2px;
+  fill: rgba(255, 255, 255, 0.55);
+  font-size: 19px;
+  font-family: var(--au-font-body);
+  letter-spacing: 2.5px;
   text-transform: uppercase;
+  font-weight: 500;
 }
-.au-badge-center {
+
+.au-badge-inner {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(
-    circle,
-    rgba(255, 107, 30, 0.18) 0%,
-    rgba(255, 107, 30, 0.06) 100%
-  );
+  background: rgba(30, 20, 10, 0.85);
   border-radius: 50%;
-  margin: 28px;
-  border: 1px solid rgba(255, 107, 30, 0.3);
+  margin: 30px;
+  border: 1px solid rgba(255, 107, 0, 0.2);
   backdrop-filter: blur(10px);
-  box-shadow:
-    0 0 30px rgba(255, 107, 30, 0.15),
-    inset 0 0 20px rgba(255, 107, 30, 0.05);
 }
-.au-badge-icon {
+
+.au-badge-emoji {
   font-size: 30px;
-  filter: drop-shadow(0 4px 12px rgba(255, 100, 0, 0.5));
 }
 
 /* ══════════════════════════════════════════════════════════
-   RIGHT COLUMN
-══════════════════════════════════════════════════════════ */
+    RIGHT COLUMN
+  ══════════════════════════════════════════════════════════ */
 .au-right {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 28px;
+  padding-top: 8px;
 }
 
-/* Intro block */
 .au-intro-block {
   display: flex;
-  gap: 16px;
+  gap: 18px;
   align-items: flex-start;
-  background: rgba(255, 107, 30, 0.04);
-  border: 1px solid rgba(255, 107, 30, 0.12);
-  border-radius: 14px;
-  padding: 18px 20px;
 }
+
 .au-intro-icon-wrap {
   flex-shrink: 0;
-  width: 42px;
-  height: 42px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 107, 30, 0.2),
-    rgba(255, 107, 30, 0.08)
-  );
+  width: 52px;
+  height: 52px;
+  background: rgba(255, 107, 0, 0.1);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 2px;
-  border: 1px solid rgba(255, 107, 30, 0.2);
+  border: 1px solid rgba(255, 107, 0, 0.2);
 }
+
 .au-intro-icon {
-  color: var(--theme-color1, #ff6b1e);
-  font-size: 18px;
+  color: var(--au-orange);
+  font-size: 22px;
 }
+
 .au-intro-tagline {
-  font-family: var(--body-font-family, "Mont", sans-serif);
-  font-size: 14.5px;
-  color: rgba(255, 255, 255, 0.58);
+  font-size: 16px;
+  color: var(--au-gray-light);
   line-height: 1.7;
   margin: 0;
 }
+
 .au-intro-tagline strong {
-  color: var(--headings-color, #ffffff);
+  color: var(--au-white);
   font-weight: 600;
+  font-size: 17px;
 }
+
 .au-orange {
-  color: var(--theme-color1, #ff6b1e);
-  font-weight: 600;
+  color: var(--au-orange);
 }
 
-/* Body text */
 .au-body-text {
-  font-family: var(--body-font-family, "Mont", sans-serif);
-  font-size: 14.5px;
-  color: rgba(255, 255, 255, 0.46);
+  font-size: 15px;
+  color: var(--au-gray);
   line-height: 1.85;
-  margin: 0;
+  max-width: 520px;
 }
 
-/* Subtle divider */
-.au-right-divider {
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 107, 30, 0.3),
-    rgba(255, 255, 255, 0.04),
-    transparent
-  );
-  border-radius: 2px;
+.au-right .btn-style-one {
+  display: inline-flex;
+  width: auto;
+  align-self: flex-start;
 }
 
-/* ── Skills / Progress bars ──────────────────────────────── */
+/* ── Skills / Progress bars ─────── */
 .au-skills {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
 
 .au-skill-row {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 12px;
-  padding: 15px 18px;
-  transition:
-    border-color 0.3s ease,
-    background 0.3s ease;
+  background: var(--au-card-bg);
+  border: 1px solid var(--au-card-border);
+  border-radius: var(--au-radius-sm);
+  padding: 18px 22px;
+  transition: background 0.25s ease;
 }
+
 .au-skill-row:hover {
-  background: rgba(255, 107, 30, 0.04);
-  border-color: rgba(255, 107, 30, 0.18);
+  background: var(--au-card-bg-hover);
 }
+
 .au-skill-header {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
+  gap: 12px;
+  margin-bottom: 14px;
 }
-.au-skill-icon {
-  color: var(--theme-color1, #ff6b1e);
-  font-size: 16px;
+
+.au-skill-icon-wrap {
   flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 107, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 16px;
+  border: 1px solid rgba(255, 107, 0, 0.15);
 }
+
 .au-skill-label {
   flex: 1;
-  font-family: var(--body-font-family, "Mont", sans-serif);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
-  color: var(--headings-color, #ffffff);
-  letter-spacing: 0.3px;
+  color: var(--au-white);
+  letter-spacing: 0.2px;
 }
+
 .au-skill-pct {
-  font-family: var(--heading-font-family, "Poppins", sans-serif);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
-  color: var(--theme-color1, #ff6b1e);
+  color: var(--au-orange);
+  min-width: 38px;
+  text-align: right;
 }
 
 .au-bar-track {
   position: relative;
-  height: 5px;
-  background: rgba(255, 255, 255, 0.07);
+  height: 4px;
+  background: rgba(255, 255, 255, 0.06);
   border-radius: 20px;
-  overflow: visible;
+  overflow: hidden;
 }
+
 .au-bar-fill {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    var(--theme-color1, #ff6b1e) 0%,
-    #ff9340 100%
-  );
+  background: linear-gradient(90deg, #ff6b00 0%, #ff9340 100%);
   border-radius: 20px;
-  z-index: 2;
-}
-.au-bar-glow {
-  position: absolute;
-  top: -3px;
-  left: 0;
-  height: 11px;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 107, 30, 0.45) 0%,
-    transparent 100%
-  );
-  border-radius: 20px;
-  filter: blur(6px);
-  z-index: 1;
-}
-
-/* ── CTA Button ─────────────────────────────────────────── */
-.au-right .btn-style-one {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  width: fit-content;
-  align-self: flex-start;
 }
 
 /* ══════════════════════════════════════════════════════════
-   STATS BAR
-══════════════════════════════════════════════════════════ */
+    STATS BAR — white bg
+  ══════════════════════════════════════════════════════════ */
 .au-stats-bar {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow:
-    0 -4px 40px rgba(0, 0, 0, 0.22),
-    0 0 0 1px rgba(255, 255, 255, 0.04);
 }
 
 .au-stat-card {
   flex: 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 34px 16px;
+  gap: 20px;
+  padding: 44px 36px;
   cursor: default;
-  transition: background 0.3s ease;
-  position: relative;
+  transition: background 0.25s ease;
 }
+
 .au-stat-card:hover {
-  background: rgba(255, 107, 30, 0.04);
+  background: rgba(255, 107, 0, 0.03);
 }
 
 .au-stat-icon {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 46px;
-  height: 46px;
-  background: linear-gradient(135deg, var(--theme-color1, #ff6b1e), #ff9340);
+  width: 56px;
+  height: 56px;
+  background: var(--au-orange);
   border-radius: 50%;
   color: #fff;
-  font-size: 19px;
-  box-shadow: 0 6px 20px rgba(255, 107, 30, 0.32);
-  margin-bottom: 4px;
+  font-size: 24px;
+  box-shadow: 0 6px 20px rgba(255, 107, 0, 0.3);
+}
+
+.au-stat-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .au-stat-number {
-  font-family: var(--heading-font-family, "Poppins", sans-serif);
-  font-size: clamp(22px, 2.4vw, 32px);
+  font-family: var(--au-font-heading);
+  font-size: clamp(28px, 3vw, 46px);
   font-weight: 700;
   color: #111111;
   line-height: 1;
-  letter-spacing: -0.8px;
+  letter-spacing: -1.5px;
 }
 
 .au-stat-label {
-  font-family: var(--body-font-family, "Mont", sans-serif);
-  font-size: 12px;
+  font-size: 13px;
   color: #888888;
   font-weight: 500;
-  text-align: center;
   letter-spacing: 0.2px;
+  white-space: nowrap;
 }
 
 .au-stats-divider {
   width: 1px;
+  height: 60px;
   background: rgba(0, 0, 0, 0.08);
-  align-self: stretch;
+  flex-shrink: 0;
 }
 
 /* ══════════════════════════════════════════════════════════
-   RESPONSIVE
-══════════════════════════════════════════════════════════ */
+    RESPONSIVE
+  ══════════════════════════════════════════════════════════ */
+
+@media (min-width: 1600px) {
+  .au-heading {
+    font-size: 72px;
+  }
+  .au-images-wrap {
+    height: 460px;
+  }
+}
 
 @media (max-width: 1280px) {
+  .au-container {
+    padding: 0 36px;
+  }
   .au-grid {
     gap: 56px;
+  }
+  .au-images-wrap {
+    height: 380px;
+  }
+  .au-stat-card {
+    padding: 40px 24px;
+    gap: 14px;
   }
 }
 
 @media (max-width: 1024px) {
   .au-section {
-    padding: 80px 0 0;
+    padding: 120px 0 0;
   }
   .au-grid {
     grid-template-columns: 1fr;
     gap: 60px;
   }
   .au-images-wrap {
-    max-width: 540px;
+    height: 360px;
+    max-width: 560px;
   }
   .au-rotating-badge-wrap {
     right: 20px;
+  }
+  .au-body-text {
+    max-width: 100%;
   }
 }
 
 @media (max-width: 768px) {
   .au-section {
-    padding: 60px 0 0;
+    padding: 70px 0 0;
   }
-  .au-heading {
-    font-size: clamp(28px, 7vw, 46px);
+  .au-container {
+    padding: 0 24px;
   }
-  .au-img-card {
-    height: 180px;
+  .au-badge-center-wrap {
+    margin-bottom: 44px;
   }
+  .au-grid {
+    margin-bottom: 56px;
+  }
+  .au-images-wrap {
+    height: 320px;
+  }
+  .au-rotating-badge-wrap {
+    width: 120px;
+    height: 120px;
+    right: 0;
+  }
+  /* STATS — 2x2 grid */
   .au-stats-bar {
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     border-radius: 16px;
   }
   .au-stat-card {
-    flex: 1 1 48%;
-    padding: 26px 14px;
+    flex: unset;
+    padding: 28px 20px;
   }
   .au-stats-divider {
     display: none;
@@ -631,46 +558,112 @@
 
 @media (max-width: 560px) {
   .au-section {
-    padding: 48px 0 0;
+    padding: 56px 0 0;
   }
+
   .au-container {
-    padding: 0 18px;
+    padding: 0 20px;
   }
+
   .au-grid {
-    gap: 44px;
-    margin-bottom: 48px;
+    gap: 48px;
+    margin-bottom: -25px;
   }
+
   .au-heading {
-    font-size: clamp(26px, 8vw, 38px);
-    letter-spacing: -0.8px;
+    font-size: clamp(28px, 9vw, 44px);
+    letter-spacing: -1px;
   }
-  .au-img-card {
-    height: 160px;
+
+  .au-images-wrap {
+    height: 260px;
   }
+
   .au-rotating-badge-wrap {
-    width: 120px;
-    height: 120px;
-    right: 0;
+    width: 100px;
+    height: 100px;
+    right: -4px;
+    top: 46%;
   }
+
+  .au-badge-inner {
+    margin: 20px;
+  }
+
+  .au-badge-emoji {
+    font-size: 22px;
+  }
+
   .au-float-badge {
-    width: 38px;
-    height: 38px;
-    font-size: 16px;
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
   }
-  .au-stat-card {
-    flex: 1 1 100%;
+
+  .au-float-badge--tl {
+    top: -12px;
+    left: -12px;
   }
-  .au-stat-card:nth-child(1),
-  .au-stat-card:nth-child(3) {
-    border-right: none;
+
+  .au-float-badge--br {
+    bottom: -12px;
+    right: -12px;
   }
-  .au-stat-card:not(:last-child) {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  }
+
   .au-intro-block {
     flex-direction: column;
+    gap: 14px;
+  }
+
+  .au-skill-row {
+    padding: 14px 16px;
+  }
+
+  /* STATS mobile — keep 2x2 */
+  .au-stats-bar {
+    grid-template-columns: 1fr 1fr;
+    border-radius: 14px;
+  }
+
+  .au-stat-card {
+    padding: 22px 16px;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    gap: 10px;
+  }
+
+  .au-stat-text {
+    align-items: center;
+  }
+
+  .au-stat-label {
+    white-space: normal;
+  }
+
+  .au-stat-number {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 380px) {
+  .au-heading {
+    font-size: 26px;
   }
   .au-images-wrap {
-    padding-right: 130px;
+    height: 220px;
+  }
+  .au-stat-card {
+    padding: 18px 12px;
+    gap: 10px;
+  }
+  .au-stat-number {
+    font-size: 26px;
   }
 }
