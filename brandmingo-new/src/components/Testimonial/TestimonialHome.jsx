@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import "./TestimonialHome.css";
 
@@ -54,6 +54,13 @@ const TESTIMONIALS = [
   },
 ];
 
+const STATS = [
+  { value: "500+", label: "Projects Delivered" },
+  { value: "98%", label: "Client Satisfaction" },
+  { value: "16K+", label: "Happy Clients" },
+  { value: "7+", label: "Years of Excellence" },
+];
+
 /* ── Avatar ── */
 const Avatar = ({ name }) => (
   <div className="th-avatar">
@@ -61,66 +68,52 @@ const Avatar = ({ name }) => (
   </div>
 );
 
+/* ── Quote Icon ── */
+const QuoteIcon = () => (
+  <svg
+    className="th-quote-icon"
+    width="28"
+    height="22"
+    viewBox="0 0 28 22"
+    fill="none"
+    aria-hidden="true"
+  >
+    <path
+      d="M0 22V13.3333C0 5.77778 4.08889 1.38889 12.2667 0L13.3333 2.13333C9.42222 3.02222 7.02222 5.37778 6.13333 9.2H11.5556V22H0ZM16.4444 22V13.3333C16.4444 5.77778 20.5333 1.38889 28.7111 0L29.7778 2.13333C25.8667 3.02222 23.4667 5.37778 22.5778 9.2H28V22H16.4444Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
 /* ── Testimonial Card ── */
 const TestimonialCard = ({ name, service, review }) => (
   <div className="th-card">
+    <div className="th-card-shine" aria-hidden="true" />
+    <QuoteIcon />
+    <p className="th-card-review">{review}</p>
+    <div className="th-card-divider" aria-hidden="true" />
     <div className="th-card-top">
       <Avatar name={name} />
       <div className="th-card-info">
         <h4 className="th-card-name">{name}</h4>
         <span className="th-card-service">{service}</span>
       </div>
+      <div className="th-stars" aria-label="5 stars">
+        {[...Array(5)].map((_, i) => (
+          <svg
+            key={i}
+            width="11"
+            height="11"
+            viewBox="0 0 24 24"
+            fill="var(--theme-color1,#ff6b1e)"
+            aria-hidden="true"
+          >
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+          </svg>
+        ))}
+      </div>
     </div>
-
-    {/* Stars */}
-    <div className="th-stars" aria-label="5 stars">
-      {[...Array(5)].map((_, i) => (
-        <svg
-          key={i}
-          width="13"
-          height="13"
-          viewBox="0 0 24 24"
-          fill="var(--theme-color1,#ff6b1e)"
-          aria-hidden="true"
-        >
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-        </svg>
-      ))}
-    </div>
-
-    <p className="th-card-review">"{review}"</p>
     <div className="th-card-accent" aria-hidden="true" />
-  </div>
-);
-
-/* ── Center Featured Card ── */
-const FeaturedCard = () => (
-  <div className="th-featured">
-    <div className="th-featured-glow" aria-hidden="true" />
-    <div className="th-featured-icon" aria-hidden="true">
-      <svg
-        width="28"
-        height="28"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="#fff"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-      </svg>
-    </div>
-    <div className="th-featured-number">16.3K+</div>
-    <div className="th-featured-label">Happy Clients</div>
-    <div className="th-featured-dots" aria-hidden="true">
-      <span />
-      <span className="active" />
-      <span />
-    </div>
   </div>
 );
 
@@ -128,7 +121,6 @@ const FeaturedCard = () => (
    INFINITE SCROLL TRACK
 ══════════════════════════════════════════ */
 const InfiniteTrack = ({ items, direction = "left", speed = 40 }) => {
-  const trackRef = useRef(null);
   const [isPaused, setIsPaused] = useState(false);
   const doubled = [...items, ...items];
 
@@ -140,7 +132,6 @@ const InfiniteTrack = ({ items, direction = "left", speed = 40 }) => {
     >
       <div
         className={`th-track th-track--${direction}${isPaused ? " th-track--paused" : ""}`}
-        ref={trackRef}
         style={{ "--speed": `${speed}s` }}
       >
         {doubled.map((item, i) => (
@@ -152,13 +143,46 @@ const InfiniteTrack = ({ items, direction = "left", speed = 40 }) => {
 };
 
 /* ══════════════════════════════════════════
+   STATS BAR
+══════════════════════════════════════════ */
+const StatsBar = ({ isInView }) => {
+  const fadeUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (delay = 0) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay },
+    }),
+  };
+
+  return (
+    <motion.div
+      className="th-stats-bar"
+      variants={fadeUp}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      custom={0.55}
+    >
+      {STATS.map((stat, i) => (
+        <div className="th-stat-item" key={i}>
+          <span className="th-stat-value">{stat.value}</span>
+          <span className="th-stat-label">{stat.label}</span>
+          {i < STATS.length - 1 && (
+            <div className="th-stat-sep" aria-hidden="true" />
+          )}
+        </div>
+      ))}
+    </motion.div>
+  );
+};
+
+/* ══════════════════════════════════════════
    MAIN COMPONENT
 ══════════════════════════════════════════ */
 const TestimonialHome = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
 
-  /* Split into two rows */
   const row1 = TESTIMONIALS.slice(0, Math.ceil(TESTIMONIALS.length / 2));
   const row2 = TESTIMONIALS.slice(Math.ceil(TESTIMONIALS.length / 2));
 
@@ -175,6 +199,7 @@ const TestimonialHome = () => {
     <section className="th-section" ref={sectionRef}>
       {/* Background */}
       <div className="th-bg" aria-hidden="true">
+        <div className="th-bg-grid" />
         <div className="th-bg-orb th-bg-orb--left" />
         <div className="th-bg-orb th-bg-orb--right" />
         <div className="th-bg-orb th-bg-orb--center" />
@@ -190,15 +215,24 @@ const TestimonialHome = () => {
           custom={0}
         >
           <svg
-            width="12"
-            height="12"
+            width="10"
+            height="10"
             viewBox="0 0 24 24"
             fill="var(--theme-color1,#ff6b1e)"
             aria-hidden="true"
           >
             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
           </svg>
-          OUR CLIENTS
+          CLIENT STORIES
+          <svg
+            width="10"
+            height="10"
+            viewBox="0 0 24 24"
+            fill="var(--theme-color1,#ff6b1e)"
+            aria-hidden="true"
+          >
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+          </svg>
         </motion.div>
 
         <motion.h2
@@ -233,27 +267,15 @@ const TestimonialHome = () => {
         animate={isInView ? "visible" : "hidden"}
         custom={0.36}
       >
-        {/* Left fade overlay */}
         <div className="th-fade th-fade--left" aria-hidden="true" />
         <div className="th-fade th-fade--right" aria-hidden="true" />
 
-        {/* Row 1 — scroll left */}
         <InfiniteTrack items={row1} direction="left" speed={38} />
-
-        {/* Row 2 — scroll right */}
         <InfiniteTrack items={row2} direction="right" speed={42} />
       </motion.div>
 
-      {/* ── Featured card — centered below slider ── */}
-      <motion.div
-        className="th-featured-wrap"
-        variants={fadeUp}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-        custom={0.48}
-      >
-        <FeaturedCard />
-      </motion.div>
+      {/* ── Stats Bar ── */}
+      <StatsBar isInView={isInView} />
     </section>
   );
 };

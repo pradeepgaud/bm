@@ -14,6 +14,7 @@ import "aos/dist/aos.css";
 // COMPONENTS
 import Preloader from "./components/Preloader/Preloader";
 import Navbar from "./components/Navbar/Navbar";
+
 // import BlogDetails from "./pages/Blogs/BlogDetails/BlogDetails";
 
 // LAZY COMPONENTS
@@ -77,6 +78,71 @@ const EcomManagement = lazy(
 
 const BrandIdentity = lazy(
   () => import("./pages/Brand Identity/BrandIdentity"),
+);
+
+// sub-services pages
+
+const WordpressDetails = lazy(
+  () => import("./pages/Web Development/WordpressDetails"),
+);
+const WoocommDetails = lazy(
+  () => import("./pages/Web Development/WoocommDetails"),
+);
+const ShopifyDetails = lazy(
+  () => import("./pages/Web Development/ShopifyDetails"),
+);
+const ReactDetails = lazy(() => import("./pages/Web Development/ReactDetails"));
+const PHPDetails = lazy(() => import("./pages/Web Development/PHPDetails"));
+const CRM = lazy(() => import("./pages/Web Development/CRM"));
+const PerformanceMarketing = lazy(
+  () => import("./pages/AdsAndCampaigns/PerformanceMarketing"),
+);
+const GoogleAds = lazy(() => import("./pages/AdsAndCampaigns/GoogleAds"));
+const FbInstAds = lazy(() => import("./pages/AdsAndCampaigns/FbInstAds"));
+const LinkedinAds = lazy(() => import("./pages/AdsAndCampaigns/LinkedinAds"));
+const BrandAwareness = lazy(
+  () => import("./pages/SocialMediaManagement/BrandAwareness"),
+);
+const StrategyPlanning = lazy(
+  () => import("./pages/SocialMediaManagement/StrategyPlanning"),
+);
+const ContentCreation = lazy(
+  () => import("./pages/SocialMediaManagement/ContentCreation"),
+);
+const EngagementGrowth = lazy(
+  () => import("./pages/SocialMediaManagement/EngagementGrowth"),
+);
+const CustomWebDesign = lazy(() => import("./pages/Uiux/CustomWebDesign"));
+const CorporateBranding = lazy(() => import("./pages/Uiux/CorporateBranding"));
+const MobileAppDesign = lazy(() => import("./pages/Uiux/MobileAppDesign"));
+const ProductDesign = lazy(() => import("./pages/Uiux/ProductDesign"));
+const OrganicTraffic = lazy(
+  () => import("./pages/SEO Optimizing/SEOOptimizing"),
+);
+const LocalSDominance = lazy(
+  () => import("./pages/SEO Optimizing/LocalSDominance"),
+);
+const AmazonManServices = lazy(
+  () => import("./pages/Ecom Management/AmazonManServices"),
+);
+const FlipkartManServices = lazy(
+  () => import("./pages/Ecom Management/FlipkartManServices"),
+);
+const ShopsyManServices = lazy(
+  () => import("./pages/Ecom Management/ShopsyManServices"),
+);
+const SnapdealManServices = lazy(
+  () => import("./pages/Ecom Management/SnapdealManServices"),
+);
+const LogoDesign = lazy(() => import("./pages/Brand Identity/LogoDesign"));
+const LabelDesigning = lazy(
+  () => import("./pages/Brand Identity/LabelDesigning"),
+);
+const CorporateIdentityDesi = lazy(
+  () => import("./pages/Brand Identity/CorporateIdentityDesi"),
+);
+const BrandIdentityDesign = lazy(
+  () => import("./pages/Brand Identity/BrandIdentityDesign"),
 );
 
 // SCROLL TO TOP
@@ -187,7 +253,10 @@ function AppContent({ showLoader, isPopupOpen, openPopup, closePopup }) {
           <Route path="/web-development-new" element={<WebDevelopmentNew />} />
 
           <Route path="/ads-and-campaigns" element={<AdsAndCampaigns />} />
-          <Route path="/social-media-management" element={<SocialMediaManagement />} />
+          <Route
+            path="/social-media-management"
+            element={<SocialMediaManagement />}
+          />
 
           <Route path="/ui-ux-audits" element={<UiUx />} />
 
@@ -196,6 +265,67 @@ function AppContent({ showLoader, isPopupOpen, openPopup, closePopup }) {
           <Route path="/ecommerce-management" element={<EcomManagement />} />
 
           <Route path="/graphic-designing" element={<BrandIdentity />} />
+
+          {/* SUB-SERVICES PAGE */}
+          {/* Web dev */}
+          <Route path="/wordpress" element={<WordpressDetails />} />
+          <Route path="/woocommerce" element={<WoocommDetails />} />
+          <Route path="/shopify" element={<ShopifyDetails />} />
+          <Route path="/react" element={<ReactDetails />} />
+          <Route path="/php" element={<PHPDetails />} />
+          <Route path="/crm-development" element={<CRM />} />
+
+          {/* ADS and campaigns */}
+          <Route
+            path="/performance-marketing"
+            element={<PerformanceMarketing />}
+          />
+          <Route path="/google-ads" element={<GoogleAds />} />
+          <Route path="/facebook-instagram-ads" element={<FbInstAds />} />
+          <Route path="/linkedin-ads" element={<LinkedinAds />} />
+
+          <Route path="/brand-awareness" element={<BrandAwareness />} />
+          <Route path="/strategy-planning" element={<StrategyPlanning />} />
+          <Route
+            path="/content-creation-publishing"
+            element={<ContentCreation />}
+          />
+          <Route path="/engagement-growth" element={<EngagementGrowth />} />
+
+          <Route path="/custom-web-design" element={<CustomWebDesign />} />
+          <Route path="/corporate-branding" element={<CorporateBranding />} />
+          <Route path="/mobile-app-design" element={<MobileAppDesign />} />
+          <Route path="/product-design" element={<ProductDesign />} />
+
+          <Route path="/organic-traffic" element={<OrganicTraffic />} />
+          <Route path="/local-search-dominance" element={<LocalSDominance />} />
+          <Route
+            path="/flipkart-management-services"
+            element={<FlipkartManServices />}
+          />
+
+          <Route
+            path="/amazon-management-services"
+            element={<AmazonManServices />}
+          />
+          <Route
+            path="/shopsy-management-services"
+            element={<ShopsyManServices />}
+          />
+          <Route
+            path="/snapdeal-management-services"
+            element={<SnapdealManServices />}
+          />
+          <Route path="/logo-design" element={<LogoDesign />} />
+          <Route path="/label-designing" element={<LabelDesigning />} />
+          <Route
+            path="/corporate-identity-designing"
+            element={<CorporateIdentityDesi />}
+          />
+          <Route
+            path="/brand-identity-design"
+            element={<BrandIdentityDesign />}
+          />
         </Routes>
 
         {/* FOOTER */}

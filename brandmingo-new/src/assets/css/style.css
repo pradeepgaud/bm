@@ -28639,3 +28639,87 @@ body {
     margin-top: -40px;
   }
 }
+
+/* Home new page section spacing issue fix  */
+
+.marqueeSection {
+  margin-top: -50px;
+}
+
+@media (max-width: 768px) {
+  .marqueeSection {
+    margin-top: -20px;
+  }
+}
+
+/* 2 section  */
+.aboutUsHome {
+  margin-top: -50px;
+}
+
+@media (max-width: 768px) {
+  .aboutUsHome {
+    margin-top: -20px;
+  }
+}
+
+/* 4 section  */
+.servicesSectionHome {
+  margin-top: -50px;
+}
+
+@media (max-width: 768px) {
+  .servicesSectionHome {
+    margin-top: -20px;
+  }
+}
+/* 5 section  */
+.project-Section-home {
+  margin-top: -60px;
+}
+
+@media (max-width: 768px) {
+  .project-Section-home {
+    margin-top: -20px;
+  }
+}
+/* 5 section  */
+.client-home {
+  margin-top: -90px;
+}
+
+@media (max-width: 768px) {
+  .client-home {
+    margin-top: -20px;
+  }
+}
+/* 5 section  */
+.faqSection-home {
+  margin-top: -140px;
+}
+
+@media (max-width: 768px) {
+  .faqSection-home {
+    margin-top: -100px;
+  }
+}
+/* 5 section  */
+.newsSection-home {
+  margin-top: -100px;
+}
+
+@media (max-width: 768px) {
+  .newsSection-home {
+    margin-top: -100px;
+  }
+}
+/* 5 section  */
+.clientForm-home {
+  margin-top: -110px;
+}
+
+@media (max-width: 768px) {
+  .clientForm-home {
+    margin-top: -100px;
+  }
+}

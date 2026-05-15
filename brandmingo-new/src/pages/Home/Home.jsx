@@ -33,6 +33,8 @@ const Home = () => {
       <VideoSection />
       <ChooseUs />
       <Testimonial />
+
+      <TestimonialHome/>
       <FaqSection />
       <FeatureSection />
       <BrandSection />

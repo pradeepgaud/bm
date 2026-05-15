@@ -4,12 +4,6 @@ import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
 
-import brand1 from "../../assets/images/icons/brand1-1.png";
-import brand2 from "../../assets/images/icons/brand1-2.png";
-import brand3 from "../../assets/images/icons/brand1-3.png";
-import brand4 from "../../assets/images/icons/brand1-4.png";
-import brand5 from "../../assets/images/icons/brand1-5.png";
-
 const BrandSection = () => {
   useEffect(() => {
     const swiper = new Swiper(".brand-slider", {
@@ -37,7 +31,13 @@ const BrandSection = () => {
     return () => swiper.destroy(true, true);
   }, []);
 
-  const brands = [brand1, brand2, brand3, brand4, brand5];
+  const brands = [
+    "https://res.cloudinary.com/dpdn7kzll/image/upload/v1778851749/3_j0cc7o.png",
+    "https://res.cloudinary.com/dpdn7kzll/image/upload/v1778851749/5_x20zrw.png",
+    "https://res.cloudinary.com/dpdn7kzll/image/upload/v1778851749/4_dvfo9r.png",
+    "https://res.cloudinary.com/dpdn7kzll/image/upload/v1778851749/2_xng6vk.png",
+    "https://res.cloudinary.com/dpdn7kzll/image/upload/v1778851874/Untitled_design_1_hxmxur.png",
+  ];
 
   return (
     <div className="brand-section">

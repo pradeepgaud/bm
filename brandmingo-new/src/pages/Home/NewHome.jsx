@@ -1,14 +1,14 @@
 import React from "react";
 import Hero from "../../components/Hero/Hero";
-import Feature from "../../components/Feature/Feature";
-import AboutSection from "../../components/AboutSection/AboutSection";
-import ServicesSection from "../../components/ServicesSection/ServicesSection";
-import ProjectSection from "../../components/ProjectSection/ProjectSection";
+// import Feature from "../../components/Feature/Feature";
+// import AboutSection from "../../components/AboutSection/AboutSection";
+// import ServicesSection from "../../components/ServicesSection/ServicesSection";
 import MarqueeSection from "../../components/MarqueeSection/MarqueeSection";
 import WorkProcess from "../../components/WorkProcess/WorkProcess";
 import VideoSection from "../../components/VideoSection/VideoSection";
-import ChooseUs from "../../components/ChooseUs/ChooseUs";
+// import ChooseUs from "../../components/ChooseUs/ChooseUs";
 import Testimonial from "../../components/Testimonial/Testimonial";
+import TestimonialHome from "../../components/Testimonial/TestimonialHome";
 import FaqSection from "../../components/FaqSection/FaqSection";
 // import FeatureSection from "../../components/FeatureSection/FeatureSection";
 import BrandSection from "../../components/BrandSection/BrandSection";
@@ -20,6 +20,7 @@ import AboutUsHome from "../../components/AboutSection/AboutUsHome";
 import WhyChooseUs from "../../components/WhyChooseUs/WhyChooseUs";
 import ServicesSectionHome from "../../components/ServicesSection/ServicesSectionHome";
 import Client from "../../components/Testimonial/Client";
+import ProjectSection from "../../components/ProjectSection/ProjectSection";
 // import HeroSection from "../../components/HeroSection/HeroSection";
 
 const NewHome = ({ openPopup }) => {
@@ -27,26 +28,51 @@ const NewHome = ({ openPopup }) => {
     <>
       {/* <HeroSection /> */}
       <Hero openPopup={openPopup} />
-      <MarqueeSection />
-      <Feature />
-      <AboutUsHome />
+      <div className="marqueeSection">
+        <MarqueeSection />
+      </div>
+      {/* <Feature /> */}
+
+      <div className="aboutUsHome">
+        <AboutUsHome />
+      </div>
       <WhyChooseUs />
-      <AboutSection />
-      <ServicesSectionHome />
-      <ServicesSection />
-      <ProjectSection />
+      {/* <AboutSection /> */}
+
+      <div className="servicesSectionHome">
+        <ServicesSectionHome />
+      </div>
+      {/* <ServicesSection /> */}
+      <div className="project-Section-home">
+        <ProjectSection />
+      </div>
+
       <WorkProcess />
       <VideoSection />
-      <ChooseUs />
-      <Client />
-      <Testimonial />
-      <FaqSection />
+      {/* <ChooseUs /> */}
+
+      <div className="client-home">
+        <Client />
+      </div>
+
+      <div className="faqSection-home">
+        <FaqSection />
+      </div>
+
       {/* <FeatureSection /> */}
+
       <BrandSection />
+
+      <TestimonialHome />
       {/* <AwardSection /> */}
       {/* <ContactSection /> */}
-      <NewsSection />
-      <ClientForm />
+      <div className="newsSection-home">
+        <NewsSection />
+      </div>
+
+      <div className="clientForm-home">
+        <ClientForm />
+      </div>
     </>
   );
 };
