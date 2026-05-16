@@ -11163,9 +11163,9 @@ li {
 
   background-color: var(--theme-color1);
 
-  margin-bottom: -42px;
+  margin-bottom: -52px;
 
-  padding: 10px 0;
+  padding: 22px 0;
 
   z-index: 20;
 }
@@ -11181,7 +11181,7 @@ li {
   animation: scroll2 var(--duration) linear infinite;
 }
 .marquee-section.style-2 .text {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 600;
   color: #fff;
 }
@@ -11196,7 +11196,8 @@ li {
   font-weight: 500;
 }
 .marquee-section.style-3 {
-  padding: 10px 0;
+  /* padding: 10px 0; */
+  padding: 22px 0;
 }
 .marquee-section.style-3 {
   -webkit-transform: rotate(-5deg);
@@ -11247,20 +11248,20 @@ li {
 
 /* ORANGE STRIP ICON SIZE */
 .marquee-section.style-2 .text img {
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
 }
 
 /* BLACK STRIP ICON SIZE */
 .marquee-section.style-3 .text img {
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
 
   object-fit: contain;
 }
 
 .marquee-two .text {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.2;
   color: #fff;
   font-weight: 500;
@@ -28648,7 +28649,7 @@ body {
 
 @media (max-width: 768px) {
   .marqueeSection {
-    margin-top: -20px;
+    margin-top: -5px;
   }
 }
 

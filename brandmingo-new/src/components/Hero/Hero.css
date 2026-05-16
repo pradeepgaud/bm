@@ -185,6 +185,11 @@
   }
 }
 
+@media (max-width: 767px) {
+  .hn-circle-badge {
+    display: none !important;
+  }
+}
 /* ══ BOTTOM FADE ══════════════════════════ */
 .hn-bottom-fade {
   position: absolute;
