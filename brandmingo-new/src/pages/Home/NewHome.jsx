@@ -14,13 +14,14 @@ import FaqSection from "../../components/FaqSection/FaqSection";
 import BrandSection from "../../components/BrandSection/BrandSection";
 // import AwardSection from "../../components/AwardSection/AwardSection";
 // import ContactSection from "../../components/ContactSection/ContactSection";
-import NewsSection from "../../components/NewsSection/NewsSection";
+// import NewsSection from "../../components/NewsSection/NewsSection";
 import ClientForm from "../../components/contactfrom/ClientForm";
 import AboutUsHome from "../../components/AboutSection/AboutUsHome";
 import WhyChooseUs from "../../components/WhyChooseUs/WhyChooseUs";
 import ServicesSectionHome from "../../components/ServicesSection/ServicesSectionHome";
 import Client from "../../components/Testimonial/Client";
 import ProjectSection from "../../components/ProjectSection/ProjectSection";
+import BlogHome from "../../components/BlogHome/BlogHome";
 // import HeroSection from "../../components/HeroSection/HeroSection";
 
 const NewHome = ({ openPopup }) => {
@@ -67,7 +68,8 @@ const NewHome = ({ openPopup }) => {
       {/* <AwardSection /> */}
       {/* <ContactSection /> */}
       <div className="newsSection-home">
-        <NewsSection />
+        {/* <NewsSection /> */}
+        <BlogHome />
       </div>
 
       <div className="clientForm-home">

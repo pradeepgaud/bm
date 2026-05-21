@@ -28724,3 +28724,26 @@ body {
     margin-top: -100px;
   }
 }
+
+/* 5 section  */
+.newsSection-home {
+  margin-top: -30px;
+}
+
+@media (max-width: 768px) {
+  .newsSection-home {
+    margin-top: -10px;
+  }
+}
+
+
+/* 7 section  */
+.clientForm-home {
+  margin-top: -30px;
+}
+
+@media (max-width: 768px) {
+  .newsSection-home {
+    margin-top: -10px;
+  }
+}
