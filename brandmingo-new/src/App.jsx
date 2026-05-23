@@ -1,5 +1,11 @@
 import { useEffect, useState, lazy, Suspense } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+  Navigate,
+} from "react-router-dom";
 
 import AOS from "aos";
 
@@ -15,7 +21,8 @@ import "aos/dist/aos.css";
 import Preloader from "./components/Preloader/Preloader";
 import Navbar from "./components/Navbar/Navbar";
 
-// import BlogDetails from "./pages/Blogs/BlogDetails/BlogDetails";
+// admin
+import ProtectedRoute from "./admin/ProtectedRoute.jsx";
 
 // LAZY COMPONENTS
 const Cursor = lazy(() => import("./components/Cursor/Cursor"));
@@ -47,6 +54,8 @@ const NewHome = lazy(() => import("./pages/Home/NewHome"));
 const BlogDetails = lazy(() => import("./pages/Blogs/BlogDetails/BlogDetails"));
 
 const About = lazy(() => import("./pages/About/About"));
+
+const Portfolio = lazy(() => import("./pages/portfolio/portfolio.jsx"));
 
 const Blogs = lazy(() => import("./pages/Blogs/Blogs"));
 
@@ -230,17 +239,53 @@ function AppContent({ showLoader, isPopupOpen, openPopup, closePopup }) {
           {/* ADMIN */}
           <Route path="/admin/login" element={<Login />} />
 
-          <Route path="/admin" element={<AdminLayout />}>
+          {/* <Route
+            path="/admin"
+            element={
+              <ProtectedRoute>
+                <AdminLayout />
+              </ProtectedRoute>
+            }
+          >
+            <Route path="dashboard" element={<Dashboard />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="blogs" element={<BlogsAdmin />} />
             <Route path="blogs/create" element={<AddBlog />} />
             <Route path="/admin/blogs/edit/:id" element={<EditBlog />} />
+          </Route> */}
+
+          <Route path="/admin/login" element={<Login />} />
+
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute>
+                <AdminLayout />
+              </ProtectedRoute>
+            }
+          >
+            {/* DEFAULT */}
+            <Route index element={<Navigate to="dashboard" replace />} />
+
+            {/* DASHBOARD */}
+            <Route path="dashboard" element={<Dashboard />} />
+
+            {/* BLOGS */}
+            <Route path="blogs" element={<BlogsAdmin />} />
+
+            {/* CREATE BLOG */}
+            <Route path="blogs/create" element={<AddBlog />} />
+
+            {/* EDIT BLOG */}
+            <Route path="blogs/edit/:id" element={<EditBlog />} />
           </Route>
 
           {/* WEBSITE */}
           <Route path="/" element={<NewHome openPopup={openPopup} />} />
 
           <Route path="/about" element={<About openPopup={openPopup} />} />
+
+          <Route path="/portfolio" element={<Portfolio />} />
 
           <Route path="/blogs" element={<Blogs />} />
 

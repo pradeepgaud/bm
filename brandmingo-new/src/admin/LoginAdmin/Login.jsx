@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
 
@@ -74,6 +74,15 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("adminToken");
+
+    // ALREADY LOGGED IN
+    if (token) {
+      navigate("/admin/dashboard");
+    }
+  }, []);
 
   // ── API CONNECT ──
   const handleSubmit = async (e) => {
